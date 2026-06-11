@@ -1,0 +1,3494 @@
+{
+  "restaurant": {
+    "name": "SESAMIE",
+    "subtitle": "Asia Kitchen & Sushi",
+    "menu_language": "de",
+    "currency": "EUR",
+    "source_file": "menu SESAMIE Deutsch 3.pdf",
+    "notes": [
+      "Prices in the source use comma decimal format, e.g. 6,50.",
+      "Some dishes are marked in the PDF with icons for vegan, mildly spicy, gluten-free and/or recommended; icon extraction may be approximate where source text is ambiguous.",
+      "Allergens/additives are transcribed from the menu symbols and visible text."
+    ]
+  },
+  "legend": {
+    "allergens": {
+      "a": "Gluten",
+      "b": "Krebstiere",
+      "c": "Eier",
+      "d": "Fisch",
+      "e": "Erdnüsse",
+      "f": "Soja",
+      "g": "Milch",
+      "h": "Schalenfrüchte",
+      "i": "Sellerie",
+      "j": "Senf",
+      "k": "Sesam",
+      "l": "Sulfite",
+      "m": "Lupine",
+      "n": "Weichtiere"
+    },
+    "additives": {
+      "1": "Farbstoff",
+      "2": "Konservierungsstoff",
+      "3": "Antioxidationsmittel",
+      "4": "Geschmacksverstärker",
+      "5": "geschwefelt",
+      "6": "Süßungsmittel",
+      "7": "Phenylalaninquelle",
+      "8": "koffeinhaltig",
+      "9": "chininhaltig",
+      "10": "Phosphat",
+      "11": "gewachst",
+      "12": "Stabilisatoren"
+    },
+    "symbols": {
+      "vegan": "vegan",
+      "mildly_spicy": "leicht scharf",
+      "gluten_free": "glutenfrei",
+      "recommended": "Empfehlung / Stern"
+    },
+    "notes": [
+      "Vegan-, glutenfreie und leicht scharfe Gerichte sind im Menü mit Symbolen gekennzeichnet.",
+      "Auf Wunsch mild oder ohne Schärfe."
+    ]
+  },
+  "sections": [
+    {
+      "name": "Hausgemachte Limonade",
+      "source_page": 3,
+      "items": [
+        {
+          "name": "Lime Twist",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "size": "0,4L",
+          "ingredients": [
+            "Limetten",
+            "Minze",
+            "Zucker",
+            "Soda"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Jasmine Peach",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "size": "0,4L",
+          "ingredients": [
+            "Pfirsich",
+            "Jasmintee",
+            "Orange",
+            "Zitrone",
+            "Minze",
+            "Zucker"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Orange Grass",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "size": "0,4L",
+          "ingredients": [
+            "Orange",
+            "Zitronengras",
+            "Ingwer",
+            "Zitrone",
+            "Zucker"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Tropical Mint",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "size": "0,4L",
+          "ingredients": [
+            "Guavasaft",
+            "Mangosaft",
+            "Zitrone",
+            "Minze",
+            "Basilikumsamen"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Tamarind Crunch",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "size": "0,4L",
+          "ingredients": [
+            "Tamarinde",
+            "Zucker",
+            "Erdnüsse"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Passion Bloom",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "size": "0,4L",
+          "ingredients": [
+            "Passionsfrucht",
+            "Aloe Vera",
+            "Früchtetee",
+            "Basilikumsamen"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Berry Breeze",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "size": "0,4L",
+          "ingredients": [
+            "Beerenmix",
+            "Minze",
+            "Limetten",
+            "Zuckersirup",
+            "Basilikumsamen"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Lychee Sunset",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "size": "0,4L",
+          "ingredients": [
+            "Litschisaft",
+            "Jasmintee",
+            "Limetten",
+            "Früchtetee",
+            "Basilikumsamen"
+          ],
+          "source_page": 3
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Homemade Lemonade"
+    },
+    {
+      "name": "Lassi-Shakes",
+      "source_page": 3,
+      "items": [
+        {
+          "name": "Mango Lassi",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "size": "0,3L",
+          "ingredients": [
+            "Mangopüree",
+            "Milch",
+            "Sahne",
+            "Joghurt",
+            "Zucker"
+          ],
+          "allergens": [
+            "g"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Very Berry",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "size": "0,3L",
+          "ingredients": [
+            "Beerenmix",
+            "Minze",
+            "Apfelsaft"
+          ],
+          "additives": [
+            "3"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Avocado Lassi",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "size": "0,3L",
+          "ingredients": [
+            "Avocado",
+            "Milch",
+            "Kokosmilch",
+            "Sahne",
+            "Joghurt",
+            "Zucker"
+          ],
+          "allergens": [
+            "g"
+          ],
+          "source_page": 3
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Lassi-Shakes"
+    },
+    {
+      "name": "Cafe",
+      "source_page": 3,
+      "items": [
+        {
+          "name": "Nâu Đá",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "ingredients": [
+            "Vietnamesischer Kaffee",
+            "Kondensmilch",
+            "Eis"
+          ],
+          "allergens": [
+            "g"
+          ],
+          "additives": [
+            "9"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Nâu Nóng",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "ingredients": [
+            "Vietnamesischer Kaffee",
+            "Kondensmilch"
+          ],
+          "allergens": [
+            "g"
+          ],
+          "additives": [
+            "9"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Espresso",
+          "price_display": "3,50",
+          "price_eur": 3.5,
+          "additives": [
+            "9"
+          ],
+          "source_page": 3
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Cafe"
+    },
+    {
+      "name": "Mocktails",
+      "source_page": 3,
+      "items": [
+        {
+          "name": "Virgin Pina Colada",
+          "price_display": "7,90",
+          "price_eur": 7.9,
+          "ingredients": [
+            "Ananassaft",
+            "Kokossirup",
+            "Sahne"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Tropical Punch",
+          "price_display": "7,90",
+          "price_eur": 7.9,
+          "ingredients": [
+            "Ananassaft",
+            "Mangosaft",
+            "Litschisaft",
+            "Kokossirup"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Ipanema",
+          "price_display": "7,90",
+          "price_eur": 7.9,
+          "ingredients": [
+            "Ginger Ale",
+            "Limetten",
+            "Zucker",
+            "Minze"
+          ],
+          "source_page": 3
+        },
+        {
+          "name": "Melon Kiss",
+          "price_display": "7,90",
+          "price_eur": 7.9,
+          "ingredients": [
+            "Orangensaft",
+            "Ananassaft",
+            "Melonsirup",
+            "Kokossirup",
+            "Sahne"
+          ],
+          "source_page": 3
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Mocktails"
+    },
+    {
+      "name": "Wasser",
+      "source_page": 4,
+      "items": [
+        {
+          "name": "Still",
+          "variants": [
+            {
+              "size": "0,25L",
+              "price_display": "3,50",
+              "price_eur": 3.5
+            },
+            {
+              "size": "0,75L",
+              "price_display": "6,90",
+              "price_eur": 6.9
+            }
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Sprudel",
+          "variants": [
+            {
+              "size": "0,25L",
+              "price_display": "3,50",
+              "price_eur": 3.5
+            },
+            {
+              "size": "0,75L",
+              "price_display": "6,90",
+              "price_eur": 6.9
+            }
+          ],
+          "source_page": 4
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Wasser"
+    },
+    {
+      "name": "Nektar & Spritzer",
+      "source_page": 4,
+      "items": [
+        {
+          "name": "Apfel",
+          "additives": [
+            "3"
+          ],
+          "variants": [
+            {
+              "size": "0,3L",
+              "price_display": "4,20",
+              "price_eur": 4.2
+            },
+            {
+              "size": "0,4L",
+              "price_display": "5,20",
+              "price_eur": 5.2
+            }
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Orange",
+          "additives": [
+            "3"
+          ],
+          "variants": [
+            {
+              "size": "0,3L",
+              "price_display": "4,20",
+              "price_eur": 4.2
+            },
+            {
+              "size": "0,4L",
+              "price_display": "5,20",
+              "price_eur": 5.2
+            }
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Mango",
+          "additives": [
+            "3"
+          ],
+          "variants": [
+            {
+              "size": "0,3L",
+              "price_display": "4,20",
+              "price_eur": 4.2
+            },
+            {
+              "size": "0,4L",
+              "price_display": "5,20",
+              "price_eur": 5.2
+            }
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Ananas",
+          "additives": [
+            "3"
+          ],
+          "variants": [
+            {
+              "size": "0,3L",
+              "price_display": "4,20",
+              "price_eur": 4.2
+            },
+            {
+              "size": "0,4L",
+              "price_display": "5,20",
+              "price_eur": 5.2
+            }
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Maracuja",
+          "additives": [
+            "3"
+          ],
+          "variants": [
+            {
+              "size": "0,3L",
+              "price_display": "4,20",
+              "price_eur": 4.2
+            },
+            {
+              "size": "0,4L",
+              "price_display": "5,20",
+              "price_eur": 5.2
+            }
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Guave",
+          "additives": [
+            "3"
+          ],
+          "variants": [
+            {
+              "size": "0,3L",
+              "price_display": "4,20",
+              "price_eur": 4.2
+            },
+            {
+              "size": "0,4L",
+              "price_display": "5,20",
+              "price_eur": 5.2
+            }
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Litchi",
+          "additives": [
+            "3"
+          ],
+          "variants": [
+            {
+              "size": "0,3L",
+              "price_display": "4,20",
+              "price_eur": 4.2
+            },
+            {
+              "size": "0,4L",
+              "price_display": "5,20",
+              "price_eur": 5.2
+            }
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Aloe Vera",
+          "additives": [
+            "3",
+            "6"
+          ],
+          "variants": [
+            {
+              "size": "0,3L",
+              "price_display": "4,20",
+              "price_eur": 4.2
+            },
+            {
+              "size": "0,4L",
+              "price_display": "5,20",
+              "price_eur": 5.2
+            }
+          ],
+          "source_page": 4
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Nektar & Spritzer"
+    },
+    {
+      "name": "Tee",
+      "source_page": 4,
+      "items": [
+        {
+          "name": "Sesamie Tea",
+          "price_display": "5,50",
+          "price_eur": 5.5,
+          "ingredients": [
+            "Zitronengras",
+            "Ingwer",
+            "Minze",
+            "Limette",
+            "getrocknete Rosenknospen",
+            "Gojibeeren"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Citrus Mint",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "ingredients": [
+            "Ingwer",
+            "Minze",
+            "Limette"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Orchard Zimt",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "ingredients": [
+            "Apfel",
+            "Orange",
+            "Ingwer",
+            "Zimt"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Rose Green",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "ingredients": [
+            "Grüner Tee",
+            "getrocknete Rosenknospen"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Jasmine Bloom",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "ingredients": [
+            "Jasmintee",
+            "getrocknete Jasminblüten"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Genmaicha",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "ingredients": [
+            "Japanischer Grüntee",
+            "gerösteter Reis"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 4
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Tee"
+    },
+    {
+      "name": "Softdrink",
+      "source_page": 4,
+      "items": [
+        {
+          "name": "Cola",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "0,3L",
+          "additives": [
+            "1",
+            "3",
+            "9",
+            "10"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Cola Zero",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "0,3L",
+          "additives": [
+            "1",
+            "3",
+            "6",
+            "9",
+            "10"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Fanta",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "0,3L",
+          "additives": [
+            "1",
+            "3"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Spezi",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "0,3L",
+          "additives": [
+            "1",
+            "3",
+            "9",
+            "10"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Sprite",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "0,3L",
+          "additives": [
+            "1",
+            "3"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Tonic",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "0,3L",
+          "additives": [
+            "1",
+            "3"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Wild Berry",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "0,3L",
+          "additives": [
+            "1",
+            "3"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Ginger Ale",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "0,3L",
+          "additives": [
+            "1",
+            "3"
+          ],
+          "source_page": 4
+        },
+        {
+          "name": "Spicy Ginger",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "0,3L",
+          "additives": [
+            "1",
+            "3"
+          ],
+          "source_page": 4
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Softdrink"
+    },
+    {
+      "name": "Cocktails",
+      "source_page": 5,
+      "items": [
+        {
+          "name": "Sesamie Chill",
+          "price_display": "10,90",
+          "price_eur": 10.9,
+          "ingredients": [
+            "Gin",
+            "Premium Sake",
+            "Limetten",
+            "Raspberry Syrup"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Cinnamon Colada",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "ingredients": [
+            "Bacardi",
+            "Baileys",
+            "Ananassaft",
+            "Ananassirup",
+            "Kokossirup",
+            "Zimt"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Moscow Mule",
+          "price_display": "8,90",
+          "price_eur": 8.9,
+          "ingredients": [
+            "Vodka",
+            "Ginger Beer",
+            "Limetten",
+            "Gurke"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Hanoi Mule",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "ingredients": [
+            "Nep Moi",
+            "Ginger Beer",
+            "Limetten",
+            "Zucker",
+            "Ingwer",
+            "Gurke"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Saigon Mule",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "ingredients": [
+            "Gin",
+            "Ginger Ale",
+            "Holundersirup",
+            "Limetten",
+            "Zucker",
+            "Koriander"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Mojito",
+          "price_display": "8,90",
+          "price_eur": 8.9,
+          "ingredients": [
+            "Havana",
+            "Limetten",
+            "Minze",
+            "Zucker",
+            "Soda"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Mai Tai",
+          "price_display": "10,90",
+          "price_eur": 10.9,
+          "ingredients": [
+            "Havana",
+            "Bacardi",
+            "Triple Sec",
+            "Orangensaft",
+            "Ananassaft",
+            "Zitronensaft",
+            "Mandelsirup"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Gin Basil Smash",
+          "price_display": "8,90",
+          "price_eur": 8.9,
+          "ingredients": [
+            "Gin",
+            "Limetten",
+            "Basilikum",
+            "Basilikum-Sirup"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Whisky Sour",
+          "price_display": "8,90",
+          "price_eur": 8.9,
+          "ingredients": [
+            "Bourbon Whisky",
+            "Limetten",
+            "Sugar Syrup"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Espresso Martini",
+          "price_display": "10,90",
+          "price_eur": 10.9,
+          "ingredients": [
+            "Vodka Below 42",
+            "Kahlua",
+            "Espresso",
+            "Vanillesirup"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 5
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Cocktails"
+    },
+    {
+      "name": "Long Drink / Aperitif Drink",
+      "source_page": 5,
+      "items": [
+        {
+          "name": "Lillet Wild Berry",
+          "price_display": "8,50",
+          "price_eur": 8.5,
+          "ingredients": [
+            "Lillet Blanc",
+            "Wild Berry",
+            "Beeren"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Cuba Libre",
+          "price_display": "8,50",
+          "price_eur": 8.5,
+          "ingredients": [
+            "Havana",
+            "Cola",
+            "Limetten"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Gin Tonic",
+          "price_display": "8,50",
+          "price_eur": 8.5,
+          "ingredients": [
+            "Gin",
+            "Tonicwasser"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Whisky Cola",
+          "price_display": "8,50",
+          "price_eur": 8.5,
+          "ingredients": [
+            "Whisky",
+            "Cola"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Aperol Maracuja Spritz",
+          "price_display": "8,50",
+          "price_eur": 8.5,
+          "ingredients": [
+            "Aperol",
+            "Prosecco",
+            "Soda",
+            "Maracuja"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Aperol Spritz",
+          "price_display": "8,50",
+          "price_eur": 8.5,
+          "ingredients": [
+            "Aperol",
+            "Prosecco",
+            "Soda",
+            "Orange"
+          ],
+          "source_page": 5
+        },
+        {
+          "name": "Hugo",
+          "price_display": "8,50",
+          "price_eur": 8.5,
+          "ingredients": [
+            "Prosecco",
+            "Holunderblütensirup",
+            "Minze",
+            "Limetten"
+          ],
+          "source_page": 5
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Long Drink / Aperitif Drink"
+    },
+    {
+      "name": "Bier",
+      "source_page": 6,
+      "items": [
+        {
+          "name": "Hell",
+          "price_display": "5,50",
+          "price_eur": 5.5,
+          "size": "0,5L",
+          "allergens": [
+            "a"
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Hefeweizen",
+          "price_display": "5,50",
+          "price_eur": 5.5,
+          "size": "0,5L",
+          "allergens": [
+            "a"
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Dunkles Hefeweizen",
+          "price_display": "5,50",
+          "price_eur": 5.5,
+          "size": "0,5L",
+          "allergens": [
+            "a"
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Alkoholfreies Helles",
+          "price_display": "5,50",
+          "price_eur": 5.5,
+          "size": "0,5L",
+          "allergens": [
+            "a"
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Alkoholfreies Hefeweizen",
+          "price_display": "5,50",
+          "price_eur": 5.5,
+          "size": "0,5L",
+          "allergens": [
+            "a"
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Kirin Ichiban",
+          "price_display": "4,50",
+          "price_eur": 4.5,
+          "size": "0,33L",
+          "allergens": [
+            "a"
+          ],
+          "source_page": 6
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Beer"
+    },
+    {
+      "name": "Spirituosen",
+      "source_page": 6,
+      "items": [
+        {
+          "name": "Nếp Mới",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "2cl",
+          "source_page": 6
+        },
+        {
+          "name": "Mekong",
+          "price_display": "3,90",
+          "price_eur": 3.9,
+          "size": "2cl",
+          "source_page": 6
+        },
+        {
+          "name": "Baileys",
+          "price_display": "4,50",
+          "price_eur": 4.5,
+          "size": "2cl",
+          "source_page": 6
+        },
+        {
+          "name": "Tequila",
+          "price_display": "4,50",
+          "price_eur": 4.5,
+          "size": "2cl",
+          "source_page": 6
+        },
+        {
+          "name": "Jägermeister",
+          "price_display": "4,50",
+          "price_eur": 4.5,
+          "size": "2cl",
+          "source_page": 6
+        },
+        {
+          "name": "Vodka Below 42",
+          "price_display": "4,50",
+          "price_eur": 4.5,
+          "size": "2cl",
+          "source_page": 6
+        },
+        {
+          "name": "Jack Daniel’s",
+          "price_display": "4,50",
+          "price_eur": 4.5,
+          "size": "2cl",
+          "source_page": 6
+        },
+        {
+          "name": "Johnnie Walker",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "size": "2cl",
+          "source_page": 6
+        },
+        {
+          "name": "Hendrick’s Gin",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "size": "2cl",
+          "source_page": 6
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Spirits"
+    },
+    {
+      "name": "Wein",
+      "source_page": 6,
+      "items": [
+        {
+          "name": "Hauswein Grauburgunder",
+          "description": "Württemberg, Deutschland. Frisch, fruchtig, trocken, harmonisch.",
+          "variants": [
+            {
+              "size": "0,2L",
+              "price_display": "6,50",
+              "price_eur": 6.5
+            }
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Riesling",
+          "description": "A. Dieh, Pfalz, Deutschland. Knackig, frisch, mineralisch, trocken.",
+          "variants": [
+            {
+              "size": "0,2L",
+              "price_display": "7,90",
+              "price_eur": 7.9
+            },
+            {
+              "size": "0,75L",
+              "price_display": "30,90",
+              "price_eur": 30.9
+            }
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Sauvignon Blanc",
+          "description": "La Forchetière Touraine, Frankreich. Frisch, zitronig, aromatisch und trocken.",
+          "variants": [
+            {
+              "size": "0,2L",
+              "price_display": "8,90",
+              "price_eur": 8.9
+            },
+            {
+              "size": "0,75L",
+              "price_display": "31,90",
+              "price_eur": 31.9
+            }
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Merlot",
+          "description": "de Gras, Chile. Fruchtig, weich, vollmundig, trocken.",
+          "variants": [
+            {
+              "size": "0,2L",
+              "price_display": "7,90",
+              "price_eur": 7.9
+            },
+            {
+              "size": "0,75L",
+              "price_display": "30,90",
+              "price_eur": 30.9
+            }
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Bordeaux",
+          "description": "Château Loyasson Rouge, Frankreich. Elegant, fruchtig, kräftig, harmonisch.",
+          "variants": [
+            {
+              "size": "0,2L",
+              "price_display": "8,50",
+              "price_eur": 8.5
+            },
+            {
+              "size": "0,75L",
+              "price_display": "31,90",
+              "price_eur": 31.9
+            }
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Rosé",
+          "description": "Domaine de Pellehaut, Frankreich. Erdbeerig, himbeerig, frisch, trocken.",
+          "variants": [
+            {
+              "size": "0,2L",
+              "price_display": "7,50",
+              "price_eur": 7.5
+            },
+            {
+              "size": "0,75L",
+              "price_display": "29,90",
+              "price_eur": 29.9
+            }
+          ],
+          "source_page": 6
+        },
+        {
+          "name": "Prosecco della casa",
+          "price_display": "5,50",
+          "price_eur": 5.5,
+          "size": "0,1L",
+          "source_page": 6
+        },
+        {
+          "name": "Prosecco Albinon Frizzante DOP",
+          "price_display": "36,00",
+          "price_eur": 36.0,
+          "size": "0,75L",
+          "description": "Albinon, Frizzante DOP, Italien. Frisch, spritzig, fruchtig, leicht, trocken.",
+          "source_page": 6
+        }
+      ],
+      "category": "Getränke",
+      "name_original_schema": "Wine"
+    },
+    {
+      "name": "Klassische Tapas",
+      "source_page": 7,
+      "items": [
+        {
+          "name": "Tacos (2 Stk.)",
+          "description": "Knusprige Algen-Taco-Schale | eingelegter Kohl & Karotten | Gurke | coriander | Sesam-Mayo-Sauce",
+          "tags": [
+            "recommended"
+          ],
+          "variants": [
+            {
+              "name": "Garnelen",
+              "price_display": "9,90",
+              "allergens": [
+                "a",
+                "b",
+                "k"
+              ],
+              "price_eur": 9.9
+            },
+            {
+              "name": "Hähnchen",
+              "price_display": "8,90",
+              "allergens": [
+                "a",
+                "k"
+              ],
+              "price_eur": 8.9
+            }
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Scallops Green (3 Stk.)",
+          "price_display": "12,90",
+          "price_eur": 12.9,
+          "description": "Gegrillte Jakobsmuscheln | Spargel | Algen | tobiko | coriander | Teriyaki-Sauce",
+          "allergens": [
+            "a",
+            "f",
+            "n"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Shrimp Dumplings (4 Stk.)",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "description": "Gedämpfte Garnelen-Dumplings | Soja-Essig-Sauce",
+          "allergens": [
+            "a",
+            "b",
+            "f"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Golden Wontons (4 Stk.)",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "description": "Crispy Teigtaschen mit Schwein & Garnelen | Süß-Chili-Dip",
+          "allergens": [
+            "a",
+            "b"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Crispy Shrimps (3 Stk.)",
+          "price_display": "8,90",
+          "price_eur": 8.9,
+          "description": "Frittierte Garnelen in grünen Reisflocken | Süß-Chili-Dip",
+          "allergens": [
+            "a",
+            "b"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Satay Chicken (2 Stk.)",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "description": "Gegrillte Hähnchenspieße | Erdnuss-Sauce",
+          "allergens": [
+            "e",
+            "k"
+          ],
+          "tags": [
+            "gluten_free"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Summer Rolls (4 Stk.)",
+          "description": "Reispapier | Reisnudeln | Kräuter | Salat | peanuts | Hoisin-Dip",
+          "variants": [
+            {
+              "name": "Garnelen",
+              "price_display": "7,90",
+              "allergens": [
+                "a",
+                "b",
+                "e",
+                "f"
+              ],
+              "price_eur": 7.9
+            },
+            {
+              "name": "Hähnchen",
+              "price_display": "6,90",
+              "allergens": [
+                "a",
+                "e",
+                "f"
+              ],
+              "price_eur": 6.9
+            }
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Nem Crispy Rolls (2 Stk.)",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "description": "Knusprige Frühlingsrollen | Schwein | Morcheln | Gemüse | Glasnudeln | hausgemachte Sauce",
+          "allergens": [
+            "a",
+            "c",
+            "d"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Salmon Tatar",
+          "price_display": "12,90",
+          "price_eur": 12.9,
+          "description": "Roher Lachs | Black-Tiger-Garnelen | Avocado | Algen salad | Frühlingszwiebeln | Spicy Mayo | Krabbenchips",
+          "allergens": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "f"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Tropical Salad",
+          "price_display": "8,90",
+          "price_eur": 8.9,
+          "description": "Gegrilltes Hähnchen | Mango | Salat | Gurke | Karotte | Kräuter | peanuts | hausgemachtes Dressing",
+          "allergens": [
+            "d",
+            "e",
+            "k"
+          ],
+          "tags": [
+            "recommended",
+            "gluten_free"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Ocean Mix Salad",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "description": "Garnelens | crispy Algen sheets | Salat | Gurke | Avocado | Radieschen | peanuts | Kräuter | Sesamsauce",
+          "allergens": [
+            "a",
+            "b",
+            "e",
+            "f",
+            "k"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Golden Wonton Soup",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "description": "Garnelen & Schwein dumplings | Knochenbrühe | Pilze | Gemüse | Frühlingszwiebeln | coriander",
+          "allergens": [
+            "a",
+            "b"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Ocean Soup",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "description": "Garnelen | Lachs | Pilze | Gemüse | leicht scharfe Brühe",
+          "allergens": [
+            "b",
+            "d"
+          ],
+          "tags": [
+            "gluten_free"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Salmon Miso Soup",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "description": "Lachs | Algen | spring onion | Miso-Brühe",
+          "allergens": [
+            "a",
+            "d",
+            "f"
+          ],
+          "source_page": 7
+        },
+        {
+          "name": "Mini Pho",
+          "description": "flat Reisnudeln | Rind- oder Hühnerbrühe | Frühlingszwiebeln | coriander",
+          "tags": [
+            "gluten_free"
+          ],
+          "variants": [
+            {
+              "name": "Rind",
+              "price_display": "6,90",
+              "price_eur": 6.9
+            },
+            {
+              "name": "Hähnchen",
+              "price_display": "6,90",
+              "price_eur": 6.9
+            }
+          ],
+          "source_page": 7
+        }
+      ],
+      "subtitle": "Fresh . Flavorful . Memorable",
+      "category": "Food",
+      "name_original_schema": "Classic Tapas"
+    },
+    {
+      "name": "Vegan Tapas",
+      "source_page": 8,
+      "items": [
+        {
+          "name": "Plant Tacos (2 Stk.)",
+          "price_display": "7,90",
+          "price_eur": 7.9,
+          "description": "Knusprige Algen-Taco-Schale | Tofu | eingelegter Kohl & Karotten | Gurke | coriander | Sesam-Mayo-Sauce",
+          "allergens": [
+            "a",
+            "f",
+            "k"
+          ],
+          "tags": [
+            "recommended",
+            "vegan"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Vegan Pockets (3 Stk.)",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "description": "crispy maultaschen filled with Gemüse | sweet chili sauce",
+          "allergens": [
+            "a",
+            "f",
+            "k"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Green Tofu",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "description": "Knuspriger Tofu in grünen Reisflocken | sweet chili sauce",
+          "allergens": [
+            "a",
+            "f",
+            "o"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Crispy Veg Chicken (4 Stk.)",
+          "price_display": "7,90",
+          "price_eur": 7.9,
+          "description": "Knuspriges veganes Hähnchen in grünen Reisflocken | sweet chili sauce",
+          "allergens": [
+            "a",
+            "f",
+            "o"
+          ],
+          "tags": [
+            "recommended",
+            "vegan"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Edamame",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "description": "Gebratene Edamame mit Knoblauch | vegan SESAMIE sauce",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "vegan",
+            "mildly_spicy"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Wakame Salad",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "description": "Algensalat | sesame seeds",
+          "allergens": [
+            "k"
+          ],
+          "tags": [
+            "vegan",
+            "gluten_free"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Exotic Mango Salad",
+          "price_display": "7,90",
+          "price_eur": 7.9,
+          "description": "Mango | Tofu | Salat | Gurke | Karotte | Kräuter | peanuts | hausgemachtes Vinaigrette-Dressing",
+          "allergens": [
+            "f",
+            "e"
+          ],
+          "tags": [
+            "vegan",
+            "gluten_free"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Avocado Glow Salad",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "description": "Avocado | veganes Hähnchen | Salat | Gurke | crispy Algen sheets | Kräuter | Sesamsauce",
+          "allergens": [
+            "a",
+            "f",
+            "k"
+          ],
+          "tags": [
+            "recommended",
+            "vegan"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Vegan Nem (2 Stk.)",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "description": "Knusprige Frühlingsrollen | veganes Hähnchen | Glasnudeln | Shiitake | Morcheln | Mungbohnen | Tofu | Gemüse | vegane hausgemachte Sauce",
+          "allergens": [
+            "e",
+            "f"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Vegan Har Gow (4 Stk.)",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "description": "steamed dumplings filled with Mungbohnen | Gemüse | Pilze | Sojasauce",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Yaki Tofu (2 Stk.)",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "description": "Tofu Spieße | Erdnuss-Sauce",
+          "allergens": [
+            "e",
+            "f"
+          ],
+          "tags": [
+            "vegan",
+            "gluten_free"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Vegan Rolls (4 Stk.)",
+          "description": "Reispapier | Reisnudeln | Kräuter | Salat | peanuts | peanut dip",
+          "tags": [
+            "vegan"
+          ],
+          "variants": [
+            {
+              "name": "Avocado",
+              "price_display": "6,50",
+              "allergens": [
+                "f",
+                "e"
+              ],
+              "price_eur": 6.5
+            },
+            {
+              "name": "Tofu",
+              "price_display": "6,50",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 6.5
+            }
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Miso Soup",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "description": "Tofu | Algen | spring onion | Miso-Brühe",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Cloud Dumplings Soup",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "description": "vegan dumplings | Shiitake | Gemüse | Gemüsebrühe | Frühlingszwiebeln | coriander",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 8
+        },
+        {
+          "name": "Mini Tofu Pho",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "description": "flat Reisnudeln | Tofu | Gemüsebrühe | Frühlingszwiebeln | coriander",
+          "allergens": [
+            "f"
+          ],
+          "tags": [
+            "vegan",
+            "gluten_free"
+          ],
+          "source_page": 8
+        }
+      ],
+      "subtitle": "Fresh . Plant-Based . Delicious",
+      "category": "Food",
+      "name_original_schema": "Vegan Tapas"
+    },
+    {
+      "name": "Empfehlung des Chefkochs",
+      "source_page": 9,
+      "items": [
+        {
+          "name": "Sesamie Stone Bowl",
+          "description": "Heisse Steinschale with shimeji Pilze, Shiitake, asparagus, Zuckerschoten and frischem Gemüse in roter SESAMIE-Sauce, serviert mit Reis. Wahl der Protein.",
+          "tags": [
+            "recommended",
+            "mildly_spicy"
+          ],
+          "variants": [
+            {
+              "name": "Gegrillte Barbarie-Entenbrust",
+              "price_display": "24,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 24.9
+            },
+            {
+              "name": "Meeresfrüchte",
+              "price_display": "23,90",
+              "allergens": [
+                "a",
+                "b",
+                "d",
+                "f",
+                "n"
+              ],
+              "price_eur": 23.9
+            }
+          ],
+          "source_page": 9
+        },
+        {
+          "name": "Ocean Grill Plate",
+          "price_display": "27,90",
+          "price_eur": 27.9,
+          "description": "Gegrillte Black Tiger Garnelen and Lachs with salat, Pak Choi, asparagus, Shiitake and shimeji Pilze and saisonalem Gemüse in a roter SESAMIE-Sauce, serviert mit Reis",
+          "allergens": [
+            "a",
+            "b",
+            "d",
+            "f"
+          ],
+          "tags": [
+            "recommended",
+            "mildly_spicy"
+          ],
+          "source_page": 9
+        },
+        {
+          "name": "Crispy Duck Pot",
+          "price_display": "18,90",
+          "price_eur": 18.9,
+          "description": "Knusprige Ente in a Tontopf with sautéed Pilze and seasonal frischem Gemüse, served with dunkle SESAMIE-Sauce and Süßkartoffel-Pommes",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "recommended",
+            "mildly_spicy"
+          ],
+          "source_page": 9
+        },
+        {
+          "name": "Udon Surf & Turf",
+          "price_display": "23,90",
+          "price_eur": 23.9,
+          "description": "Zart gegrilltes Entrecôte (medium) and gegrillte Riesengarnelen with frischem Gemüse and gebratenen Udon-Nudeln",
+          "allergens": [
+            "a",
+            "b",
+            "d"
+          ],
+          "tags": [
+            "recommended",
+            "mildly_spicy"
+          ],
+          "source_page": 9
+        },
+        {
+          "name": "Shaking Beef",
+          "price_display": "21,90",
+          "price_eur": 21.9,
+          "description": "Gebratene Entrecôte on a gusseisernen Pfanne with Zwiebeln, Paprikas, asparagus and Brechbohnen in grüner Pfeffersauce, serviert mit Reis",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "recommended",
+            "mildly_spicy"
+          ],
+          "source_page": 9
+        },
+        {
+          "name": "Sesamie Vegan Plate",
+          "price_display": "19,90",
+          "price_eur": 19.9,
+          "description": "knuspriges veganes „Hähnchen“ in rice flake crust and panierte vegane „Ente“ with saisonalem Gemüse, asparagus, Shiitake and shimeji Pilze, Pak Choi, dunkler veganer SESAMIE-Sauce and rice",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "recommended",
+            "vegan",
+            "mildly_spicy"
+          ],
+          "source_page": 9
+        },
+        {
+          "name": "Sesamie Vegan Bowl",
+          "price_display": "17,90",
+          "price_eur": 17.9,
+          "description": "Knuspriger Tofu and gebratenes veganes „Hähnchen“ with salad, Avocado, Gurke, edamame, Cherrytomaten, Paprika and Karottes in Sesamsauce, serviert mit Reis",
+          "allergens": [
+            "a",
+            "f",
+            "k"
+          ],
+          "tags": [
+            "recommended",
+            "vegan"
+          ],
+          "source_page": 9
+        }
+      ],
+      "category": "Food",
+      "name_original_schema": "Chef’s Recommendation"
+    },
+    {
+      "name": "Hauptspeisen",
+      "source_page": 10,
+      "items": [
+        {
+          "name": "Sesamie Grill Plate",
+          "description": "gegrillte Spargel | Zucchini | Spitzpaprika | Salat | Süßkartoffel-Pommes",
+          "tags": [
+            "recommended"
+          ],
+          "variants": [
+            {
+              "name": "Gegrillte Barbarie-Entenbrust",
+              "price_display": "21,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 21.9
+            },
+            {
+              "name": "Gegrillte Black Tiger Garnelen",
+              "price_display": "22,90",
+              "allergens": [
+                "a",
+                "b",
+                "f"
+              ],
+              "price_eur": 22.9
+            },
+            {
+              "name": "Gegrilltes Entrecôte",
+              "price_display": "23,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 23.9
+            }
+          ],
+          "source_page": 10
+        },
+        {
+          "name": "Sesamie Bowl",
+          "description": "Reis | Salat | Avocado | Gurke | edamame | Paprika | Karottes | Sesamsauce",
+          "tags": [
+            "gluten_free"
+          ],
+          "variants": [
+            {
+              "name": "Gegrilltes Hähnchen",
+              "price_display": "15,90",
+              "allergens": [
+                "k"
+              ],
+              "price_eur": 15.9
+            },
+            {
+              "name": "Flambierter Lachs",
+              "price_display": "18,90",
+              "allergens": [
+                "k",
+                "d"
+              ],
+              "price_eur": 18.9
+            },
+            {
+              "name": "Meeresfrüchte",
+              "price_display": "19,90",
+              "allergens": [
+                "k",
+                "b",
+                "d",
+                "n"
+              ],
+              "price_eur": 19.9
+            }
+          ],
+          "source_page": 10
+        },
+        {
+          "name": "Sesamie Signature Selection",
+          "description": "Served with gebratene Gemüse in Signature SESAMIE-Dunkelsauce | Salat | Reis",
+          "tags": [
+            "mildly_spicy"
+          ],
+          "variants": [
+            {
+              "name": "Gegrilltes Hähnchen SESAMIE",
+              "price_display": "15,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 15.9
+            },
+            {
+              "name": "Rindfleisch SESAMIE",
+              "price_display": "16,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 16.9
+            },
+            {
+              "name": "Garnelen SESAMIE",
+              "price_display": "18,50",
+              "allergens": [
+                "a",
+                "b",
+                "f"
+              ],
+              "price_eur": 18.5
+            },
+            {
+              "name": "Knusprige Ente SESAMIE",
+              "price_display": "18,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 18.9
+            },
+            {
+              "name": "Lachs SESAMIE",
+              "price_display": "19,90",
+              "allergens": [
+                "a",
+                "d",
+                "f"
+              ],
+              "price_eur": 19.9
+            }
+          ],
+          "source_page": 10
+        },
+        {
+          "name": "Pho Hanoi",
+          "description": "flat Reisnudeln | Rind- oder Hühnerbrühe | Frühlingszwiebeln | coriander",
+          "tags": [
+            "gluten_free"
+          ],
+          "variants": [
+            {
+              "name": "Rind",
+              "price_display": "16,90",
+              "price_eur": 16.9
+            },
+            {
+              "name": "Hähnchen",
+              "price_display": "15,90",
+              "price_eur": 15.9
+            }
+          ],
+          "source_page": 10
+        },
+        {
+          "name": "Peanut Selection",
+          "description": "saisonalem Gemüse | Salat | Reis",
+          "tags": [
+            "gluten_free"
+          ],
+          "variants": [
+            {
+              "name": "Gegrilltes Hähnchen Erdnuss",
+              "price_display": "15,90",
+              "allergens": [
+                "e"
+              ],
+              "price_eur": 15.9
+            },
+            {
+              "name": "Knusprige Ente Erdnuss",
+              "price_display": "18,90",
+              "allergens": [
+                "a",
+                "e"
+              ],
+              "price_eur": 18.9
+            },
+            {
+              "name": "Lachs Erdnuss",
+              "price_display": "19,90",
+              "allergens": [
+                "d",
+                "e"
+              ],
+              "price_eur": 19.9
+            }
+          ],
+          "source_page": 10
+        },
+        {
+          "name": "Curry Selection",
+          "description": "saisonalem Gemüse | Salat | Reis",
+          "tags": [
+            "mildly_spicy",
+            "gluten_free"
+          ],
+          "variants": [
+            {
+              "name": "Gegrilltes Hähnchen Curry",
+              "price_display": "15,90",
+              "allergens": [
+                "a"
+              ],
+              "price_eur": 15.9
+            },
+            {
+              "name": "Garnelen Curry",
+              "price_display": "18,50",
+              "allergens": [
+                "b"
+              ],
+              "price_eur": 18.5
+            },
+            {
+              "name": "Knusprige Ente Curry",
+              "price_display": "18,90",
+              "allergens": [
+                "a"
+              ],
+              "price_eur": 18.9
+            },
+            {
+              "name": "Lachs Curry",
+              "price_display": "19,90",
+              "allergens": [
+                "d"
+              ],
+              "price_eur": 19.9
+            }
+          ],
+          "source_page": 10
+        }
+      ],
+      "subtitle": "Bold . Flavorful . Crafted",
+      "category": "Food",
+      "name_original_schema": "Hauptspeisen / Main Course"
+    },
+    {
+      "name": "Hauptspeisen 2",
+      "source_page": 11,
+      "items": [
+        {
+          "name": "Bun Bowl",
+          "description": "Reisnudeln | Salat | Gurke | Karottes | fresh Kräuter | peanuts | hausgemachtes Dressing",
+          "tags": [
+            "recommended"
+          ],
+          "variants": [
+            {
+              "name": "Frühlingsrollen",
+              "price_display": "15,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 15.9
+            },
+            {
+              "name": "Gegrillter Hähnchenspieß",
+              "price_display": "14,90",
+              "allergens": [
+                "d"
+              ],
+              "price_eur": 14.9
+            },
+            {
+              "name": "Mariniertes Rind",
+              "price_display": "16,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 16.9
+            },
+            {
+              "name": "Knusprige Ente",
+              "price_display": "18,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 18.9
+            }
+          ],
+          "source_page": 11
+        },
+        {
+          "name": "Yaki Udon",
+          "description": "Gebratene Udon-Nudeln | Gemüse | Salat | dark SESAMIE sauce",
+          "tags": [
+            "mildly_spicy"
+          ],
+          "variants": [
+            {
+              "name": "Hähnchen",
+              "price_display": "16,50",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 16.5
+            },
+            {
+              "name": "Rind",
+              "price_display": "17,50",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 17.5
+            },
+            {
+              "name": "Knusprige Ente",
+              "price_display": "18,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 18.9
+            },
+            {
+              "name": "Lachs",
+              "price_display": "19,90",
+              "allergens": [
+                "a",
+                "f",
+                "d"
+              ],
+              "price_eur": 19.9
+            }
+          ],
+          "source_page": 11
+        }
+      ],
+      "subtitle": "Bold . Flavorful . Crafted",
+      "category": "Food",
+      "name_original_schema": "Hauptspeisen / Main Course 2"
+    },
+    {
+      "name": "Vegan Hauptspeise",
+      "source_page": 11,
+      "items": [
+        {
+          "name": "Vegan Pepper Duck",
+          "price_display": "17,90",
+          "price_eur": 17.9,
+          "description": "Knusprige vegane Ente | Gemüse | Betelblätter | Reis | grüner Pfeffersauce",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "recommended",
+            "vegan"
+          ],
+          "source_page": 11
+        },
+        {
+          "name": "Green Plate",
+          "price_display": "17,90",
+          "price_eur": 17.9,
+          "description": "Tofu in knuspriger Reisflockenpanade | veganes Hähnchen | Gemüse | Salat | Reis | vegan SESAMIE sauce",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 11
+        },
+        {
+          "name": "Tofu Garden",
+          "price_display": "14,50",
+          "price_eur": 14.5,
+          "description": "Tofu | Gemüse | Salat | rice. Choice of: Vegan SESAMIE-Sauce / Curry Sauce / Erdnuss-Sauce",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "variants": [
+            {
+              "name": "Veganer SESAMIE-Sauce",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "tags": [
+                "mildly_spicy"
+              ]
+            },
+            {
+              "name": "Currysauce",
+              "allergens": [
+                "a"
+              ]
+            },
+            {
+              "name": "Erdnusssauce",
+              "allergens": [
+                "e"
+              ]
+            }
+          ],
+          "source_page": 11
+        },
+        {
+          "name": "Vegan Pho",
+          "price_display": "16,90",
+          "price_eur": 16.9,
+          "description": "flat Reisnudeln | Tofu | Gemüsebrühe | Frühlingszwiebeln | coriander",
+          "allergens": [
+            "f"
+          ],
+          "tags": [
+            "vegan",
+            "gluten_free"
+          ],
+          "source_page": 11
+        },
+        {
+          "name": "Vegan Udon",
+          "price_display": "17,90",
+          "price_eur": 17.9,
+          "description": "Gebratene Udon-Nudeln | Tofu | knuspriges veganes „Hähnchen“ coated in rice flakes | Gemüse | Salat | vegan dark SESAMIE sauce",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "tags": [
+            "vegan",
+            "mildly_spicy"
+          ],
+          "source_page": 11
+        },
+        {
+          "name": "Vegan Bun Bowl",
+          "description": "Knusprige Algen-Taco-Schale | eingelegter Kohl & Karotten | Gurke | coriander | Sesam-Mayo-Sauce",
+          "tags": [
+            "recommended",
+            "vegan"
+          ],
+          "variants": [
+            {
+              "name": "veganes Hähnchen & tofu",
+              "price_display": "16,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "tags": [
+                "gluten_free"
+              ],
+              "price_eur": 16.9
+            },
+            {
+              "name": "Knusprige vegane Ente",
+              "price_display": "17,90",
+              "allergens": [
+                "a",
+                "f"
+              ],
+              "price_eur": 17.9
+            },
+            {
+              "name": "Vegan spring rolls",
+              "price_display": "15,90",
+              "allergens": [
+                "a"
+              ],
+              "price_eur": 15.9
+            }
+          ],
+          "source_page": 11
+        }
+      ],
+      "subtitle": "Plant-Based . Bold . Crafted",
+      "category": "Food",
+      "name_original_schema": "Vegan Main Course"
+    },
+    {
+      "name": "Beilagen",
+      "source_page": 12,
+      "items": [
+        {
+          "name": "Jasminreis",
+          "price_display": "2,50",
+          "price_eur": 2.5,
+          "source_page": 12
+        },
+        {
+          "name": "Sushi Reis",
+          "price_display": "4,00",
+          "price_eur": 4.0,
+          "source_page": 12
+        },
+        {
+          "name": "Reisnudeln",
+          "price_display": "2,50",
+          "price_eur": 2.5,
+          "source_page": 12
+        },
+        {
+          "name": "Reisbandnudeln",
+          "price_display": "2,50",
+          "price_eur": 2.5,
+          "source_page": 12
+        },
+        {
+          "name": "Udon Nudeln",
+          "price_display": "3,50",
+          "price_eur": 3.5,
+          "allergens": [
+            "a"
+          ],
+          "source_page": 12
+        },
+        {
+          "name": "Süßkartoffel-Pommes",
+          "price_display": "5,00",
+          "price_eur": 5.0,
+          "allergens": [
+            "a"
+          ],
+          "source_page": 12
+        }
+      ],
+      "category": "Food",
+      "name_original_schema": "Sides Dishes"
+    },
+    {
+      "name": "Kindergerichte",
+      "source_page": 12,
+      "items": [
+        {
+          "name": "K1. Đậu-Bối",
+          "price_display": "8,90",
+          "price_eur": 8.9,
+          "description": "Knuspriges Hähnchen | Pommes | Salat | Erdnuss-Sauce",
+          "allergens": [
+            "a",
+            "e"
+          ],
+          "source_page": 12
+        },
+        {
+          "name": "K2. Na-Na",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "description": "Knusprige Garnelen | Reis | Gurke | Teriyaki-Sauce",
+          "allergens": [
+            "a",
+            "b"
+          ],
+          "source_page": 12
+        },
+        {
+          "name": "K3. Jin-Jin",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "description": "4x Gurke Maki | 4x Mango-Avocado Maki | 8x Chicken Maki",
+          "allergens": [
+            "a",
+            "f"
+          ],
+          "source_page": 12
+        }
+      ],
+      "category": "Food",
+      "name_original_schema": "Kid’s Dishes"
+    },
+    {
+      "name": "Dessert",
+      "source_page": 12,
+      "items": [
+        {
+          "name": "Mango Sticky Rice",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "description": "Klebreis | Mango | Kokosmilch | Sesam",
+          "allergens": [
+            "k"
+          ],
+          "tags": [
+            "vegan",
+            "gluten_free"
+          ],
+          "source_page": 12
+        },
+        {
+          "name": "Sweet Crunchy Banana",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "description": "Bananen in Reisflocken | Honig | Vanilleeis | Mango-Schoko-Sauce",
+          "allergens": [
+            "a",
+            "g"
+          ],
+          "source_page": 12
+        },
+        {
+          "name": "Mango Bliss Cake",
+          "price_display": "8,50",
+          "price_eur": 8.5,
+          "description": "Hausgemachter Mango-Käsekuchen",
+          "allergens": [
+            "a",
+            "g"
+          ],
+          "source_page": 12
+        },
+        {
+          "name": "Matcha Mousse Cake",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "description": "Hausgemachtes Matcha Mousse mit pürierten exotischen Früchten",
+          "allergens": [
+            "a",
+            "g"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 12
+        },
+        {
+          "name": "Mochi Ice Cream",
+          "price_display": "7,90",
+          "price_eur": 7.9,
+          "description": "Reismehlteig | cremige Eisfüllung",
+          "allergens": [
+            "a",
+            "g"
+          ],
+          "source_page": 12
+        }
+      ],
+      "category": "Food",
+      "name_original_schema": "Dessert"
+    },
+    {
+      "name": "Sashimi",
+      "source_page": 13,
+      "items": [
+        {
+          "name": "Lachs-Sashimi",
+          "price_display": "14,90",
+          "price_eur": 14.9,
+          "description": "8 Stk.",
+          "allergens": [
+            "d"
+          ],
+          "tags": [
+            "gluten_free"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Thunfisch-Sashimi",
+          "price_display": "17,50",
+          "price_eur": 17.5,
+          "description": "8 Stk.",
+          "allergens": [
+            "d"
+          ],
+          "tags": [
+            "gluten_free"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Lachs-Thunfisch-Mix",
+          "price_display": "16,50",
+          "price_eur": 16.5,
+          "description": "4 Stk. Lachs + 4 Stk. Thunfisch",
+          "allergens": [
+            "d"
+          ],
+          "tags": [
+            "gluten_free"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Sesamie Sashimi Set",
+          "price_display": "28,50",
+          "price_eur": 28.5,
+          "description": "3 Stk. Lachs | 3 Stk. Thunfisch | 3 Stk. Butterfisch | 3 Stk. Garnelen | 2 Stk. Jakobsmuscheln | 1 bowl Lachs caviar",
+          "allergens": [
+            "b",
+            "d",
+            "n",
+            "k"
+          ],
+          "tags": [
+            "gluten_free"
+          ],
+          "source_page": 13
+        }
+      ],
+      "subtitle": "Served with seaweed salad",
+      "category": "Sushi",
+      "name_original_schema": "Sashimi"
+    },
+    {
+      "name": "Special Roll",
+      "source_page": 13,
+      "items": [
+        {
+          "name": "Salmon Special",
+          "price_display": "15,50",
+          "price_eur": 15.5,
+          "size": "8 psc.",
+          "description": "Lachs | Avocado | Gurke | Philadelphia | ummantelt mit Lachs | Lachskaviar",
+          "allergens": [
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Kurojin Roll",
+          "price_display": "14,90",
+          "price_eur": 14.9,
+          "size": "8 psc.",
+          "description": "Garnelen | Gurke | Avocado | Philadelphia | ummantelt mit Lachs",
+          "allergens": [
+            "b",
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Black Dragon Roll",
+          "price_display": "17,90",
+          "price_eur": 17.9,
+          "size": "8 psc.",
+          "description": "Frittierte Garnelen | Avocado | Gurke | Philadelphia | ummantelt mit Aal | Sesam",
+          "allergens": [
+            "b",
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Green Dragon Roll",
+          "price_display": "15,90",
+          "price_eur": 15.9,
+          "size": "8 psc.",
+          "description": "Frittierte Garnelen | Avocado | Gurke | Philadelphia | ummantelt mit Avocado | Sesam",
+          "allergens": [
+            "b",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Rainbow Roll",
+          "price_display": "14,90",
+          "price_eur": 14.9,
+          "size": "8 psc.",
+          "description": "Surimi | Avocado | Gurke | Philadelphia | ummantelt mit Lachs | Thunfisch | Butterfisch | Avocado",
+          "allergens": [
+            "b",
+            "d",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Sakekawa Roll",
+          "price_display": "14,90",
+          "price_eur": 14.9,
+          "size": "8 psc.",
+          "description": "Gegrillte Lachshaut | Avocado | Mango | Philadelphia | ummantelt mit flambiertem Lachs | Masago",
+          "allergens": [
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Unasake Roll",
+          "price_display": "15,90",
+          "price_eur": 15.9,
+          "size": "8 psc.",
+          "description": "Aal | Gurke | Philadelphia | ummantelt mit flambiertem Lachs",
+          "allergens": [
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Nanakai Roll",
+          "price_display": "17,50",
+          "price_eur": 17.5,
+          "size": "8 psc.",
+          "description": "Scharfer Thunfisch | Gurke | Schnittlauch | ummantelt mit flambiertem Thunfisch",
+          "allergens": [
+            "d",
+            "f",
+            "a",
+            "k"
+          ],
+          "tags": [
+            "mildly_spicy"
+          ],
+          "source_page": 13
+        },
+        {
+          "name": "Vegan Sesamie Roll",
+          "price_display": "14,50",
+          "price_eur": 14.5,
+          "size": "8 psc.",
+          "description": "fried asparagus | Gurke | Mango | Paprika | ummantelt mit Avocado | Sesam",
+          "allergens": [
+            "f",
+            "a",
+            "k"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 13
+        }
+      ],
+      "category": "Sushi",
+      "name_original_schema": "Special Roll"
+    },
+    {
+      "name": "Nigiri",
+      "source_page": 14,
+      "items": [
+        {
+          "name": "Sesamie Nigiri",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "size": "2 psc.",
+          "description": "Chopped Lachs | wrapped in Lachs",
+          "allergens": [
+            "d",
+            "f",
+            "a",
+            "k"
+          ],
+          "tags": [
+            "recommended"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Sake on Fire",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "size": "2 psc.",
+          "description": "flambiertem Lachs | Avocado",
+          "allergens": [
+            "d",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Tuna on Fire",
+          "price_display": "7,90",
+          "price_eur": 7.9,
+          "size": "2 psc.",
+          "description": "flambiertem Thunfisch | Spargel",
+          "allergens": [
+            "d",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Mutsu on Fire",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "size": "2 psc.",
+          "description": "flambiertem Butterfisch | Mango",
+          "allergens": [
+            "d",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Ebi Nigiri",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "size": "2 psc.",
+          "description": "Garnelen",
+          "allergens": [
+            "b"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Unagi Nigiri",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "size": "2 psc.",
+          "description": "Grilled Aal",
+          "allergens": [
+            "d",
+            "f",
+            "k"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Mutsu Nigiri",
+          "price_display": "5,90",
+          "price_eur": 5.9,
+          "size": "2 psc.",
+          "description": "Butterfisch",
+          "allergens": [
+            "d"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Sake Nigiri",
+          "price_display": "6,50",
+          "price_eur": 6.5,
+          "size": "2 psc.",
+          "description": "Lachs",
+          "allergens": [
+            "d"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Ikura Nigiri",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "size": "2 psc.",
+          "description": "Lachskaviar",
+          "allergens": [
+            "d"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Avocado Nigiri",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "size": "2 psc.",
+          "description": "Avocado",
+          "allergens": [
+            "k"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Asparagus Nigiri",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "size": "2 psc.",
+          "description": "Asparagus",
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Tuna Nigiri",
+          "price_display": "7,50",
+          "price_eur": 7.5,
+          "size": "2 psc.",
+          "description": "Thunfisch",
+          "allergens": [
+            "d"
+          ],
+          "source_page": 14
+        }
+      ],
+      "category": "Sushi",
+      "name_original_schema": "Nigiri"
+    },
+    {
+      "name": "Maki",
+      "source_page": 14,
+      "items": [
+        {
+          "name": "Sake",
+          "price_display": "5,90",
+          "price_eur": 5.9,
+          "size": "8 psc.",
+          "description": "Lachs",
+          "allergens": [
+            "d"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Sake Avocado",
+          "price_display": "5,90",
+          "price_eur": 5.9,
+          "size": "8 psc.",
+          "description": "Lachs & Avocado",
+          "allergens": [
+            "d"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Spicy Sake",
+          "price_display": "5,90",
+          "price_eur": 5.9,
+          "size": "8 psc.",
+          "description": "Scharfer Lachs",
+          "allergens": [
+            "d"
+          ],
+          "tags": [
+            "mildly_spicy"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Tuna",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "size": "8 psc.",
+          "description": "Thunfisch",
+          "allergens": [
+            "d"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Spicy Tuna",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "size": "8 psc.",
+          "description": "Scharfer Thunfisch",
+          "allergens": [
+            "d"
+          ],
+          "tags": [
+            "mildly_spicy"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Mutsu",
+          "price_display": "5,90",
+          "price_eur": 5.9,
+          "size": "8 psc.",
+          "description": "Butterfisch",
+          "allergens": [
+            "d"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Unagi",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "size": "8 psc.",
+          "description": "Grilled Aal",
+          "allergens": [
+            "d",
+            "f",
+            "a"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Salmon Skin",
+          "price_display": "5,90",
+          "price_eur": 5.9,
+          "size": "8 psc.",
+          "description": "Lachs skin",
+          "allergens": [
+            "d",
+            "f",
+            "a"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Ebi",
+          "price_display": "6,90",
+          "price_eur": 6.9,
+          "size": "8 psc.",
+          "description": "Garnelen",
+          "allergens": [
+            "b"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "California",
+          "price_display": "5,90",
+          "price_eur": 5.9,
+          "size": "8 psc.",
+          "description": "Surimi & Avocado",
+          "allergens": [
+            "b",
+            "d",
+            "f",
+            "a"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Avocado",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "size": "8 psc.",
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Mango",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "size": "8 psc.",
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Rucola",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "size": "8 psc.",
+          "description": "Arugula",
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Oshinko",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "size": "8 psc.",
+          "description": "Pickled Radieschen",
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 14
+        },
+        {
+          "name": "Kappa",
+          "price_display": "4,90",
+          "price_eur": 4.9,
+          "size": "8 psc.",
+          "description": "Gurke",
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 14
+        }
+      ],
+      "category": "Sushi",
+      "name_original_schema": "Maki"
+    },
+    {
+      "name": "Crunchy Roll",
+      "source_page": 15,
+      "items": [
+        {
+          "name": "Mini Spicy Sake Roll",
+          "price_display": "10,50",
+          "price_eur": 10.5,
+          "size": "6 psc.",
+          "description": "(8 Stk.) Scharfer Lachs | Schnittlauch",
+          "allergens": [
+            "d",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Mini Spicy Tuna Roll",
+          "price_display": "10,90",
+          "price_eur": 10.9,
+          "size": "6 psc.",
+          "description": "(8 Stk.) Scharfer Thunfisch | Schnittlauch",
+          "allergens": [
+            "d",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Mini Veggie Roll",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "size": "6 psc.",
+          "description": "(8 Stk.) Mango | Gurke",
+          "allergens": [
+            "f",
+            "a",
+            "k"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Kumamoto Roll",
+          "price_display": "12,90",
+          "price_eur": 12.9,
+          "size": "6 psc.",
+          "description": "Lachs | Avocado | Gurke | Philadelphia",
+          "allergens": [
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Yokohama Roll",
+          "price_display": "14,50",
+          "price_eur": 14.5,
+          "size": "6 psc.",
+          "description": "Thunfisch | Avocado | Gurke | Philadelphia",
+          "allergens": [
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Sakurajima Roll",
+          "price_display": "13,90",
+          "price_eur": 13.9,
+          "size": "6 psc.",
+          "description": "Garnelen | Avocado | Gurke | Philadelphia",
+          "allergens": [
+            "b",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Shinjuku Roll",
+          "price_display": "12,90",
+          "price_eur": 12.9,
+          "size": "6 psc.",
+          "description": "pickled Radieschen | Avocado | Gurke | Paprika",
+          "allergens": [
+            "f",
+            "a",
+            "k"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Okinawa Roll",
+          "price_display": "13,50",
+          "price_eur": 13.5,
+          "size": "6 psc.",
+          "description": "Spargel | Avocado | Gurke | Mango",
+          "allergens": [
+            "f",
+            "a",
+            "k"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 15
+        }
+      ],
+      "category": "Sushi",
+      "name_original_schema": "Crunchy Roll"
+    },
+    {
+      "name": "Inside Out Roll",
+      "source_page": 15,
+      "items": [
+        {
+          "name": "Sake I.O",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "size": "8 psc.",
+          "description": "Lachs | Avocado | Masago | Sesam",
+          "allergens": [
+            "d",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Spicy Sake I.O",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "size": "8 psc.",
+          "description": "Scharfer Lachs | Gurke | Schnittlauch | Sesam",
+          "allergens": [
+            "d",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Tuna I.O",
+          "price_display": "10,90",
+          "price_eur": 10.9,
+          "size": "8 psc.",
+          "description": "Thunfisch | Avocado | Masago | Sesam",
+          "allergens": [
+            "d",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Spicy Tuna I.O",
+          "price_display": "10,90",
+          "price_eur": 10.9,
+          "size": "8 psc.",
+          "description": "Scharfer Thunfisch | Gurke | Schnittlauch | Sesam",
+          "allergens": [
+            "d",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "California I.O",
+          "price_display": "9,90",
+          "price_eur": 9.9,
+          "size": "8 psc.",
+          "description": "Surimi | Avocado | Masago | Sesam",
+          "allergens": [
+            "b",
+            "d",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Salmon Skin I.O",
+          "price_display": "9,50",
+          "price_eur": 9.5,
+          "size": "8 psc.",
+          "description": "Lachs skin | Gurke | Philadelphia | Sesam",
+          "allergens": [
+            "a",
+            "d",
+            "f",
+            "g",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Ebi I.O",
+          "price_display": "9,50",
+          "price_eur": 9.5,
+          "size": "8 psc.",
+          "description": "Garnelen | Avocado | Masago | Sesam",
+          "allergens": [
+            "b",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Ebi Tempura I.O",
+          "price_display": "10,90",
+          "price_eur": 10.9,
+          "size": "8 psc.",
+          "description": "Frittierte Garnelen | Gurke | Philadelphia | Masago | Sesam",
+          "allergens": [
+            "b",
+            "g",
+            "d",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Yakitori I.O",
+          "price_display": "9,50",
+          "price_eur": 9.5,
+          "size": "8 psc.",
+          "description": "chicken | Gurke | Sesam",
+          "allergens": [
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Rucola I.O",
+          "price_display": "8,90",
+          "price_eur": 8.9,
+          "size": "8 psc.",
+          "description": "arugula | pickled Radieschen | Paprika | Sesam",
+          "allergens": [
+            "k"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Yasai I.O",
+          "price_display": "8,90",
+          "price_eur": 8.9,
+          "size": "8 psc.",
+          "description": "Mango | Avocado | Gurke | Sesam",
+          "allergens": [
+            "k"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 15
+        },
+        {
+          "name": "Asparagus I.O",
+          "price_display": "8,90",
+          "price_eur": 8.9,
+          "size": "8 psc.",
+          "description": "Spargel | Gurke | Avocado | Sesam",
+          "allergens": [
+            "k"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 15
+        }
+      ],
+      "category": "Sushi",
+      "name_original_schema": "Inside Out Roll"
+    },
+    {
+      "name": "Sushi Menü",
+      "source_page": 16,
+      "items": [
+        {
+          "name": "Basic Set",
+          "price_display": "12,90",
+          "price_eur": 12.9,
+          "description": "2 Stk. Nigiri (Sake, Mutsu) | 2 Stk. Sashimi (Sake, Mutsu) | 8 Stk. Sake Maki",
+          "allergens": [
+            "d"
+          ],
+          "source_page": 16
+        },
+        {
+          "name": "Sake Set",
+          "price_display": "22,90",
+          "price_eur": 22.9,
+          "description": "3 Stk. Sake Nigiri | 3 Stk. Sake Sashimi | 8 Stk. Sake Maki | 8 Stk. Sake Inside-Out",
+          "allergens": [
+            "d",
+            "k"
+          ],
+          "source_page": 16
+        },
+        {
+          "name": "Tuna Set",
+          "price_display": "28,90",
+          "price_eur": 28.9,
+          "description": "3 Stk. Thunfisch Nigiri | 3 Stk. Thunfisch Sashimi | 8 Stk. Thunfisch Maki | 8 Stk. Thunfisch Inside-Out",
+          "allergens": [
+            "d",
+            "k"
+          ],
+          "source_page": 16
+        },
+        {
+          "name": "Veggie Set",
+          "price_display": "16,90",
+          "price_eur": 16.9,
+          "description": "2 Stk. Nigiri (Avocado, Asparagus) | 8 Stk. Kappa Maki | 8 Stk. Yasai Inside-Out",
+          "allergens": [
+            "k"
+          ],
+          "tags": [
+            "vegan"
+          ],
+          "source_page": 16
+        },
+        {
+          "name": "Premium Set",
+          "price_display": "21,90",
+          "price_eur": 21.9,
+          "description": "4 Stk. Nigiri (Sake, Thunfisch, Mutsu, Ebi) | 8 Stk. Sake Maki | 8 Stk. Ebi Tempura Inside-Out",
+          "allergens": [
+            "b",
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 16
+        },
+        {
+          "name": "Sushi Meister Tip",
+          "price_display": "21,90",
+          "price_eur": 21.9,
+          "description": "2 Stk. Sashimi (Sake, Mutsu) | 3 Stk. Nigiri (Sake, Thunfisch, Mutsu) | 4 Stk. Sake Maki | 4 Stk. Thunfisch Maki | 6 Stk. Okinawa Crunchy | 8 Stk. California Inside-Out",
+          "allergens": [
+            "b",
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 16
+        },
+        {
+          "name": "Sesamie Set für 2",
+          "price_display": "51,90",
+          "price_eur": 51.9,
+          "description": "2 Stk. Sashimi | 6 Stk. Nigiri | 8 Stk. Maki | 8 Stk. Inside-Out | 6 Stk. Crunchy",
+          "allergens": [
+            "b",
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 16
+        },
+        {
+          "name": "Sesamie Set für 4",
+          "price_display": "94,90",
+          "price_eur": 94.9,
+          "description": "4 Stk. Tataki | 12 Stk. Sashimi | 8 Stk. Nigiri | 16 Stk. Maki | 8 Stk. Inside-Out | 8 Stk. Veggie Inside-Out | 8 Stk. Special Roll | 12 Stk. Crunchy",
+          "allergens": [
+            "b",
+            "d",
+            "g",
+            "f",
+            "a",
+            "k"
+          ],
+          "source_page": 16
+        }
+      ],
+      "category": "Sushi",
+      "name_original_schema": "Sushi Menü"
+    }
+  ],
+  "metadata": {
+    "section_count": 29,
+    "item_count": 216,
+    "language": "de",
+    "source_file": "menu SESAMIE Deutsch 3.pdf",
+    "extraction_basis": "Structured from the German SESAMIE PDF, using the same detailed schema as the English extraction."
+  }
+}

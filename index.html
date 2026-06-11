@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SESAMIE | Asia Kitchen & Sushi</title>
+    <meta
+      name="description"
+      content="Modern Asian Kitchen & Sushi in Ingolstadt. Speisekarte, Reservierung und Bestellung per WhatsApp."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="#start">
+          <span class="brand-mark">SE</span>
+          <span class="brand-copy">
+            <strong>SESAMIE</strong>
+            <small>Asia Kitchen &amp; Sushi</small>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#start" data-i18n="nav.home">Startseite</a>
+          <a href="#speisekarte" data-i18n="nav.menu">Speisekarte</a>
+          <a href="#reservieren" data-i18n="nav.reserve">Reservieren</a>
+          <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="language-switch" role="group" aria-label="Language switch">
+            <button type="button" class="is-active" data-language-switch="de">DE</button>
+            <button type="button" data-language-switch="en">EN</button>
+          </div>
+          <button type="button" class="button button-gold header-order" data-open-cart>
+            <span data-i18n="nav.order">Bestellen</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="start" data-animated-region>
+        <div class="hero-steam" aria-hidden="true">
+          <span data-loop-animation></span>
+          <span data-loop-animation></span>
+          <span data-loop-animation></span>
+        </div>
+        <div class="hero-aura" aria-hidden="true"></div>
+
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="hero-chapter">
+              <span>01 / Entree</span>
+              <span data-i18n="hero.eyebrow">Asia Kitchen &amp; Sushi</span>
+            </div>
+            <h1 data-i18n="hero.title">Modern Asian Kitchen &amp; Sushi in Ingolstadt</h1>
+            <p class="hero-text" data-i18n="hero.subtitle">
+              Frische Zutaten, handwerkliche Zubereitung und warme Gastfreundschaft - mitten in
+              Ingolstadt.
+            </p>
+
+            <div class="hero-cta">
+              <a class="button button-gold" href="#reservieren" data-i18n="hero.reserve">Tisch reservieren</a>
+              <a class="button button-ghost" href="#speisekarte" data-i18n="hero.menu">Speisekarte ansehen</a>
+              <button type="button" class="button button-soft" data-open-cart data-i18n="hero.order">Jetzt bestellen</button>
+            </div>
+
+            <div class="quick-chips">
+              <p data-i18n="hero.quickLabel">Ausgewahlt fur einen entspannten Abend</p>
+              <div class="chip-row">
+                <span>Tapas</span>
+                <span>Sushi</span>
+                <span>Vegan</span>
+                <span>Chef's Empfehlung</span>
+                <span>Drinks</span>
+              </div>
+            </div>
+
+            <div class="hero-signature">
+              <div>
+                <span data-i18n="hero.signatureLabel">Mood</span>
+                <strong data-i18n="hero.signatureValue">Mystic dining, warm light, quiet ritual.</strong>
+              </div>
+              <button type="button" class="ghost-link" data-open-cart data-i18n="hero.signatureAction">
+                Direkt aus dem Live-Menu bestellen
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="plate-card">
+              <div class="plate-card-ribbon">Midnight Dining</div>
+              <div class="plate-card-top">
+                <div>
+                  <p class="plate-label">Ingolstadt Edition</p>
+                  <h2>SESAMIE</h2>
+                </div>
+                <span data-i18n="hero.visualLabel">Midnight Service</span>
+              </div>
+
+              <div class="plate-scene" aria-hidden="true">
+                <div class="plate ring-one"></div>
+                <div class="plate ring-two"></div>
+                <div class="platter platter-one"></div>
+                <div class="platter platter-two"></div>
+                <div class="platter platter-three"></div>
+                <div class="platter glow"></div>
+              </div>
+
+              <div class="plate-card-footer">
+                <div>
+                  <p data-i18n="hero.openingLabel">Opening</p>
+                  <strong>Mo. - So. ab 11:00</strong>
+                  <small data-business="address"></small>
+                </div>
+                <img
+                  src="./assets/images/logo_sesamie_transparent.png"
+                  alt="SESAMIE Logo"
+                  width="88"
+                  height="88"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-rice">
+        <div class="container">
+          <div class="section-heading reveal split-heading">
+            <div>
+              <p class="section-kicker">Brand Promise</p>
+              <h2 data-i18n="promises.title">Warme Gastfreundschaft, sorgfaltig gekocht.</h2>
+            </div>
+            <p class="section-intro" data-i18n="promises.intro">
+              SESAMIE verbindet moderne Asia-Kitchen mit einem ruhigen, hochwertigen Ambiente und
+              klaren Aromen.
+            </p>
+          </div>
+
+          <div class="promise-grid">
+            <article class="promise-card reveal">
+              <div class="promise-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M10 4c5 3 6 8 2 12-3 2-7 2-10-1 2-4 4-8 8-11Z"></path>
+                </svg>
+              </div>
+              <h3 data-i18n="promises.items.0.title">Vielfaltig vegan</h3>
+              <p data-i18n="promises.items.0.body">
+                Pflanzliche Gerichte mit Tiefe, Textur und echter Balance.
+              </p>
+            </article>
+            <article class="promise-card reveal">
+              <div class="promise-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 11h16M6 7h12M8 15h8"></path>
+                </svg>
+              </div>
+              <h3 data-i18n="promises.items.1.title">Frische Zutaten</h3>
+              <p data-i18n="promises.items.1.body">
+                Sushi, Bowls und Tapas mit Fokus auf Qualitat und Saison.
+              </p>
+            </article>
+            <article class="promise-card reveal">
+              <div class="promise-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 14c3-1 4-4 6-8 1 3 4 5 6 6-2 3-5 5-9 5-2 0-4-1-5-3Z"></path>
+                </svg>
+              </div>
+              <h3 data-i18n="promises.items.2.title">Handwerklich gekocht</h3>
+              <p data-i18n="promises.items.2.body">
+                Saucen, Marinaden und Kompositionen mit Liebe zum Detail.
+              </p>
+            </article>
+            <article class="promise-card reveal">
+              <div class="promise-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M6 8c0-2 2-4 4-4s4 2 4 4-2 4-4 4-4-2-4-4Zm8 6c1-2 3-3 5-3 2 0 4 1 5 3"
+                  ></path>
+                </svg>
+              </div>
+              <h3 data-i18n="promises.items.3.title">Herzlich serviert</h3>
+              <p data-i18n="promises.items.3.body">
+                Personlicher Service, aufmerksam und entspannt zugleich.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-book" id="menu-book" data-animated-region>
+        <div class="container book-layout">
+          <div class="book-copy reveal">
+            <p class="section-kicker section-kicker-gold">Menu Book</p>
+            <h2 data-i18n="book.title">Die echte Speisekarte als atmospharisches Buch</h2>
+            <p class="section-intro light" data-i18n="book.subtitle">
+              Blattern Sie durch die echten Menu-Seiten. Fur Bestellungen nutzen Sie darunter das
+              Live-Menu mit Warenkorb und WhatsApp.
+            </p>
+
+            <div class="book-notes">
+              <article>
+                <span data-i18n="book.noteOneLabel">Source</span>
+                <strong data-i18n="book.noteOneValue">Direkt aus Ihren PDF-Menukarten erzeugt</strong>
+              </article>
+              <article>
+                <span data-i18n="book.noteTwoLabel">Flow</span>
+                <strong data-i18n="book.noteTwoValue">Buch zum Entdecken, Live-Daten zum Bestellen</strong>
+              </article>
+            </div>
+
+            <div class="hero-cta">
+              <a class="button button-gold" href="#speisekarte" data-i18n="book.ctaPrimary">Zum Live-Menu</a>
+              <button type="button" class="button button-ghost" data-open-cart data-i18n="book.ctaSecondary">
+                Bestellung offnen
+              </button>
+            </div>
+          </div>
+
+          <div class="book-stage reveal">
+            <div class="book-stage-top">
+              <div>
+                <p class="mini-label" data-i18n="book.viewerLabel">Page spread</p>
+                <strong data-book-page-indicator>1 - 2</strong>
+              </div>
+              <div class="book-controls">
+                <button type="button" class="icon-button" data-book-prev aria-label="Previous pages">
+                  &#8592;
+                </button>
+                <button type="button" class="icon-button" data-book-next aria-label="Next pages">
+                  &#8594;
+                </button>
+              </div>
+            </div>
+
+            <div class="menu-book-preview">
+              <div class="book-spine" aria-hidden="true">
+                <span>SESAMIE</span>
+                <small>Menu Ritual</small>
+              </div>
+              <div class="menu-book menu-book-trigger" data-menu-book></div>
+              <button type="button" class="book-preview-overlay" data-open-book-modal aria-label="Open menu book"></button>
+            </div>
+
+            <div class="book-stage-bottom">
+              <span data-book-caption data-i18n="book.caption">Deutsch und English wechseln oben im Header.</span>
+              <div class="book-stage-links">
+                <button type="button" class="ghost-link" data-open-book-modal data-i18n="book.expandLink">
+                  Buch gross offnen
+                </button>
+                <a class="ghost-link" href="#speisekarte" data-i18n="book.jumpLink">Zum Bestellbereich springen</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-paper" id="speisekarte">
+        <div class="container">
+          <div class="section-heading reveal split-heading">
+            <div>
+              <p class="section-kicker">Live Ordering</p>
+              <h2 data-i18n="menu.title">Bestellen aus den Live-Menudaten</h2>
+            </div>
+            <p class="section-intro" data-i18n="menu.subtitle">
+              Entdecken Sie Tapas, Stone Bowls, Signature Rolls und hausgemachte Drinks. Die Daten
+              stammen direkt aus Ihrem echten Menu.
+            </p>
+          </div>
+
+          <div class="menu-toolbar reveal">
+            <label class="search-field">
+              <span data-i18n="menu.search">Gericht suchen...</span>
+              <input type="search" id="menu-search" data-menu-search placeholder="Gericht suchen..." />
+            </label>
+            <div class="filter-group">
+              <p data-i18n="menu.filtersLabel">Kategorien</p>
+              <div class="filter-row" data-filter-list></div>
+            </div>
+          </div>
+
+          <div class="menu-status" data-menu-status></div>
+          <div class="menu-sections" data-menu-sections></div>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="reservieren">
+        <div class="container reservation-grid">
+          <div class="reveal">
+            <p class="section-kicker section-kicker-gold">Reservation</p>
+            <h2 data-i18n="reservation.title">Tisch reservieren</h2>
+            <p class="section-intro light" data-i18n="reservation.subtitle">
+              Schnell, direkt und ohne Umwege per WhatsApp.
+            </p>
+            <p class="hotline" data-i18n="reservation.hotline">Fur schnelle Ruckfragen: 0841 23238112</p>
+          </div>
+
+          <form class="reservation-form reveal" data-reservation-form>
+            <label>
+              <span data-i18n="reservation.name">Name</span>
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              <span data-i18n="reservation.phone">Telefon</span>
+              <input type="tel" name="phone" required />
+            </label>
+            <label>
+              <span data-i18n="reservation.date">Datum</span>
+              <input type="date" name="date" required />
+            </label>
+            <label>
+              <span data-i18n="reservation.time">Uhrzeit</span>
+              <input type="time" name="time" required />
+            </label>
+            <label class="full">
+              <span data-i18n="reservation.guests">Personen</span>
+              <input type="text" name="guests" required />
+            </label>
+            <label class="full">
+              <span data-i18n="reservation.note">Ihre Nachricht</span>
+              <textarea name="note" rows="4"></textarea>
+            </label>
+            <button type="submit" class="button button-gold full" data-i18n="reservation.submit">
+              Reservierung per WhatsApp senden
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section section-rice" id="kontakt">
+        <div class="container contact-grid">
+          <div class="contact-card reveal">
+            <p class="section-kicker">Contact</p>
+            <h2 data-i18n="contact.title">Besuchen Sie SESAMIE</h2>
+            <p class="section-intro" data-business="address"></p>
+
+            <div class="contact-block">
+              <p><strong>SESAMIE</strong></p>
+              <p data-business="address"></p>
+              <p>
+                <strong>Telefon:</strong>
+                <span data-business="phoneDisplay"></span>
+              </p>
+              <p>
+                <strong>Email:</strong>
+                <span data-business="email"></span>
+              </p>
+            </div>
+
+            <div class="contact-block">
+              <p class="mini-label" data-i18n="contact.opening">Offnungszeiten</p>
+              <div class="hours-list" data-business-hours></div>
+            </div>
+
+            <div class="contact-actions">
+              <a class="button button-dark" data-business-link="map" target="_blank" rel="noreferrer" data-i18n="contact.route">
+                Route planen
+              </a>
+              <a class="button button-light" data-business-link="phone" data-i18n="contact.call">Anrufen</a>
+              <a class="button button-light" data-business-link="email" data-i18n="contact.mail">E-Mail senden</a>
+            </div>
+          </div>
+
+          <div class="map-card reveal">
+            <iframe
+              title="SESAMIE map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              data-map-frame
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="footer-brand">SESAMIE</p>
+          <p data-i18n="footer.text">Modern Asian Kitchen &amp; Sushi in Ingolstadt.</p>
+        </div>
+        <div class="footer-meta">
+          <p data-business="address"></p>
+          <p>Menu book for atmosphere. Live menu for ordering.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="mobile-bar">
+      <a class="button button-gold" href="#reservieren" data-i18n="nav.reserve">Reservieren</a>
+      <button type="button" class="button button-soft" data-open-cart data-i18n="nav.order">Bestellen</button>
+    </div>
+
+    <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
+    <aside class="cart-drawer" data-cart-drawer aria-hidden="true">
+      <div class="drawer-header">
+        <div>
+          <p class="mini-label">WhatsApp</p>
+          <h2 data-i18n="order.title">Ihre Bestellung</h2>
+        </div>
+        <button type="button" class="icon-button" data-close-cart aria-label="Close cart">x</button>
+      </div>
+
+      <div class="cart-items" data-cart-items></div>
+
+      <div class="drawer-summary">
+        <div class="summary-row">
+          <span data-i18n="order.total">Gesamt</span>
+          <strong data-cart-total>0,00 EUR</strong>
+        </div>
+
+        <form data-order-form>
+          <label>
+            <span data-i18n="order.typeLabel">Anfrage</span>
+            <select name="type">
+              <option value="pickup" data-i18n="order.pickup">Abholung</option>
+              <option value="reservation" data-i18n="order.reservation">Tisch reservieren</option>
+              <option value="general" data-i18n="order.general">Allgemeine Anfrage</option>
+            </select>
+          </label>
+          <div class="form-two">
+            <label>
+              <span data-i18n="order.name">Name</span>
+              <input type="text" name="name" />
+            </label>
+            <label>
+              <span data-i18n="order.phone">Telefon</span>
+              <input type="tel" name="phone" />
+            </label>
+          </div>
+          <label>
+            <span data-i18n="order.desiredTime">Gewunschte Zeit</span>
+            <input type="text" name="desiredTime" />
+          </label>
+          <label>
+            <span data-i18n="order.message">Ihre Nachricht</span>
+            <textarea name="note" rows="3"></textarea>
+          </label>
+          <button type="submit" class="button button-dark full" data-i18n="order.submit">
+            Per WhatsApp senden
+          </button>
+        </form>
+      </div>
+    </aside>
+
+    <div class="modal-backdrop" data-option-backdrop hidden></div>
+    <div class="option-modal" data-option-modal aria-hidden="true">
+      <div class="option-modal-card">
+        <div class="drawer-header">
+          <div>
+            <p class="mini-label" data-i18n="menu.chooseOption">Option auswahlen</p>
+            <h2 data-option-title></h2>
+          </div>
+          <button type="button" class="icon-button" data-close-options aria-label="Close options">x</button>
+        </div>
+        <p class="option-copy" data-i18n="menu.chooseOptionBody">
+          Bitte wahlen Sie zuerst die passende Variante.
+        </p>
+        <div class="option-list" data-option-list></div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" data-book-backdrop hidden></div>
+    <div class="book-modal" data-book-modal aria-hidden="true">
+      <div class="book-modal-shell">
+        <div class="book-modal-top">
+          <div>
+            <p class="mini-label" data-i18n="book.modalEyebrow">Immersive Menu Book</p>
+            <h2 data-i18n="book.modalTitle">Blattern Sie durch die Speisekarte</h2>
+          </div>
+          <button type="button" class="icon-button" data-close-book-modal aria-label="Close menu book">x</button>
+        </div>
+
+        <div class="book-modal-stage">
+          <button type="button" class="book-nav-button" data-book-prev aria-label="Previous pages">
+            &#8592;
+          </button>
+          <div class="menu-book menu-book-modal" data-menu-book-modal></div>
+          <button type="button" class="book-nav-button" data-book-next aria-label="Next pages">
+            &#8594;
+          </button>
+        </div>
+
+        <div class="book-modal-bottom">
+          <strong data-book-page-indicator-modal>1 - 2</strong>
+          <span data-i18n="book.modalHint">Klicken Sie auf die Pfeile, um wie in einem Buch weiterzublattern.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" data-toast hidden></div>
+
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>
