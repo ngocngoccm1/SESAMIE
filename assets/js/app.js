@@ -16,6 +16,8 @@ const state = {
 const BOOK_PAGE_COUNT = 16;
 let revealObserver;
 let animationRegionObserver;
+let animeReady = null;
+let hasAnimatedMenuCards = false;
 
 const elements = {
   header: document.querySelector("[data-header]"),
@@ -53,6 +55,102 @@ const elements = {
 };
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function loadAnime() {
+  if (prefersReducedMotion) return Promise.resolve(null);
+  if (!animeReady) {
+    animeReady = import("https://cdn.jsdelivr.net/npm/animejs/+esm")
+      .then((module) => module?.default ?? module?.anime ?? null)
+      .catch(() => null);
+  }
+  return animeReady;
+}
+
+async function animatePageIntro() {
+  const anime = await loadAnime();
+  if (!anime) return;
+
+  anime.set([".site-header", ".hero-copy > *", ".hero-visual"], {
+    opacity: 0,
+    translateY: 22
+  });
+
+  anime({
+    targets: ".site-header",
+    opacity: [0, 1],
+    translateY: [-18, 0],
+    duration: 680,
+    easing: "easeOutExpo"
+  });
+
+  anime({
+    targets: ".hero-copy > *",
+    opacity: [0, 1],
+    translateY: [28, 0],
+    delay: anime.stagger(90, { start: 120 }),
+    duration: 760,
+    easing: "easeOutCubic"
+  });
+
+  anime({
+    targets: ".hero-visual",
+    opacity: [0, 1],
+    translateY: [34, 0],
+    scale: [0.97, 1],
+    delay: 260,
+    duration: 900,
+    easing: "easeOutExpo"
+  });
+}
+
+async function animateMenuCards(scope = elements.menuSections) {
+  if (prefersReducedMotion || !scope) return;
+  if (hasAnimatedMenuCards) return;
+  const cards = Array.from(scope.querySelectorAll(".menu-card")).slice(0, 8);
+  if (!cards.length) return;
+
+  const anime = await loadAnime();
+  if (!anime) return;
+
+  anime.remove(cards);
+  anime.set(cards, {
+    opacity: 0,
+    translateY: 26
+  });
+
+  anime({
+    targets: cards,
+    opacity: [0, 1],
+    translateY: [26, 0],
+    delay: anime.stagger(42),
+    duration: 380,
+    easing: "easeOutCubic"
+  });
+
+  hasAnimatedMenuCards = true;
+}
+
+async function animatePanelOpen(target) {
+  if (prefersReducedMotion || !target) return;
+  const anime = await loadAnime();
+  if (!anime) return;
+
+  anime.remove(target);
+  anime.set(target, {
+    opacity: 0,
+    translateY: 18,
+    scale: 0.985
+  });
+
+  anime({
+    targets: target,
+    opacity: [0, 1],
+    translateY: [18, 0],
+    scale: [0.985, 1],
+    duration: 320,
+    easing: "easeOutCubic"
+  });
+}
 
 function formatPrice(value) {
   return new Intl.NumberFormat(state.language === "de" ? "de-DE" : "en-GB", {
@@ -202,6 +300,7 @@ function renderMenu() {
     .join("");
 
   initScrollAnimations();
+  animateMenuCards();
 }
 
 function getBookImagePath(pageNumber) {
@@ -257,6 +356,7 @@ function openBookModal() {
     elements.bookModal.setAttribute("aria-hidden", "false");
   }
   document.body.classList.add("has-book-modal");
+  animatePanelOpen(document.querySelector(".book-modal-shell"));
 }
 
 function closeBookModal() {
@@ -399,6 +499,7 @@ function openCart() {
   elements.drawerBackdrop.hidden = false;
   elements.cartDrawer.classList.add("is-open");
   elements.cartDrawer.setAttribute("aria-hidden", "false");
+  animatePanelOpen(elements.cartDrawer);
 }
 
 function closeCart() {
@@ -433,6 +534,7 @@ function openOptions(item) {
   elements.optionBackdrop.hidden = false;
   elements.optionModal.classList.add("is-open");
   elements.optionModal.setAttribute("aria-hidden", "false");
+  animatePanelOpen(document.querySelector(".option-modal-card"));
 }
 
 function closeOptions() {
@@ -741,6 +843,7 @@ export function initApp() {
   renderMenuBook();
   initScrollAnimations();
   initAnimationRegions();
+  animatePageIntro();
   loadMenu(state.language);
 }
 
