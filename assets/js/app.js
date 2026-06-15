@@ -18,6 +18,11 @@ let revealObserver;
 let animationRegionObserver;
 let animeReady = null;
 let hasAnimatedMenuCards = false;
+let bookFlipSyncing = false;
+const bookFlips = {
+  preview: null,
+  modal: null
+};
 
 const elements = {
   header: document.querySelector("[data-header]"),
@@ -308,13 +313,35 @@ function getBookImagePath(pageNumber) {
   return `./assets/images/menu-book/${state.language}/page-${page}.jpg`;
 }
 
-function renderMenuBook() {
+function hasPageFlip() {
+  return Boolean(window.St?.PageFlip);
+}
+
+function normalizeBookPage(pageIndex) {
+  const safeIndex = Math.max(0, Math.min(BOOK_PAGE_COUNT - 1, pageIndex));
+  return safeIndex % 2 === 0 ? safeIndex : safeIndex - 1;
+}
+
+function getBookPagesMarkup() {
+  return Array.from({ length: BOOK_PAGE_COUNT }, (_, index) => {
+    const pageNumber = index + 1;
+    return `
+      <figure class="menu-book-page" data-book-page="${pageNumber}">
+        <img src="${getBookImagePath(pageNumber)}" alt="SESAMIE menu page ${pageNumber}" loading="lazy" />
+        <figcaption>Page ${pageNumber}</figcaption>
+      </figure>
+    `;
+  }).join("");
+}
+
+function getFallbackBookMarkup() {
   const leftPage = state.bookPage + 1;
   const rightPage = Math.min(leftPage + 1, BOOK_PAGE_COUNT);
   const pageNumbers = [leftPage, rightPage].filter(
     (page, index) => page <= BOOK_PAGE_COUNT && (index === 0 || rightPage !== leftPage)
   );
-  const markup = pageNumbers
+
+  return pageNumbers
     .map(
       (pageNumber) => `
         <figure class="menu-book-page" data-book-page="${pageNumber}">
@@ -324,15 +351,13 @@ function renderMenuBook() {
       `
     )
     .join("");
+}
 
-  if (elements.menuBook) {
-    elements.menuBook.innerHTML = markup;
-  }
-  if (elements.menuBookModal) {
-    elements.menuBookModal.innerHTML = markup;
-  }
+function updateBookIndicators() {
+  const leftPage = state.bookPage + 1;
+  const rightPage = Math.min(leftPage + 1, BOOK_PAGE_COUNT);
+  const indicatorText = rightPage > leftPage ? `${leftPage} - ${rightPage}` : `${leftPage}`;
 
-  const indicatorText = pageNumbers.length > 1 ? `${pageNumbers[0]} - ${pageNumbers[1]}` : `${pageNumbers[0]}`;
   if (elements.bookPageIndicator) {
     elements.bookPageIndicator.textContent = indicatorText;
   }
@@ -348,6 +373,126 @@ function renderMenuBook() {
   });
 }
 
+function destroyBookFlips() {
+  Object.keys(bookFlips).forEach((key) => {
+    const instance = bookFlips[key];
+    if (instance?.destroy) instance.destroy();
+    bookFlips[key] = null;
+  });
+}
+
+function syncBookStateFromFlip(pageIndex, sourceKey) {
+  if (bookFlipSyncing) return;
+
+  state.bookPage = normalizeBookPage(pageIndex);
+  updateBookIndicators();
+
+  bookFlipSyncing = true;
+  Object.entries(bookFlips).forEach(([key, instance]) => {
+    if (key === sourceKey || !instance?.turnToPage) return;
+    instance.turnToPage(state.bookPage);
+  });
+  bookFlipSyncing = false;
+}
+
+function createBookFlip(target, key, options = {}) {
+  if (!target || !hasPageFlip()) return null;
+
+  const PageFlip = window.St.PageFlip;
+  const instance = new PageFlip(target, {
+    width: options.width ?? 320,
+    height: options.height ?? 450,
+    size: "stretch",
+    minWidth: options.minWidth ?? 180,
+    maxWidth: options.maxWidth ?? 640,
+    minHeight: options.minHeight ?? 240,
+    maxHeight: options.maxHeight ?? 920,
+    maxShadowOpacity: options.maxShadowOpacity ?? 0.18,
+    showCover: false,
+    usePortrait: false,
+    mobileScrollSupport: false,
+    autoSize: true,
+    drawShadow: true,
+    flippingTime: 720,
+    startPage: state.bookPage
+  });
+
+  instance.loadFromHTML(target.querySelectorAll(".menu-book-page"));
+  target.classList.add("is-pageflip");
+
+  if (instance.on) {
+    instance.on("flip", (event) => {
+      if (typeof event.data === "number") {
+        syncBookStateFromFlip(event.data, key);
+      }
+    });
+  }
+
+  if (instance.turnToPage) {
+    instance.turnToPage(state.bookPage);
+  }
+
+  return instance;
+}
+
+function initBookFlipInstances() {
+  if (!hasPageFlip()) return;
+
+  destroyBookFlips();
+
+  bookFlips.preview = createBookFlip(elements.menuBook, "preview", {
+    width: 300,
+    height: 422,
+    minWidth: 160,
+    maxWidth: 360,
+    minHeight: 220,
+    maxHeight: 520,
+    maxShadowOpacity: 0.12
+  });
+
+  updateBookIndicators();
+}
+
+function ensureModalBookFlip() {
+  if (!hasPageFlip() || !elements.menuBookModal) return;
+  if (bookFlips.modal?.turnToPage) {
+    bookFlips.modal.turnToPage(state.bookPage);
+    updateBookIndicators();
+    return;
+  }
+
+  bookFlips.modal = createBookFlip(elements.menuBookModal, "modal", {
+    width: 620,
+    height: 874,
+    minWidth: 300,
+    maxWidth: 860,
+    minHeight: 420,
+    maxHeight: 1180,
+    maxShadowOpacity: 0.18
+  });
+
+  updateBookIndicators();
+}
+
+function renderMenuBook() {
+  const markup = hasPageFlip() ? getBookPagesMarkup() : getFallbackBookMarkup();
+
+  if (elements.menuBook) {
+    elements.menuBook.innerHTML = markup;
+    elements.menuBook.classList.toggle("is-pageflip", hasPageFlip());
+  }
+  if (elements.menuBookModal) {
+    elements.menuBookModal.innerHTML = markup;
+    elements.menuBookModal.classList.toggle("is-pageflip", hasPageFlip());
+  }
+
+  if (hasPageFlip()) {
+    initBookFlipInstances();
+  } else {
+    updateBookIndicators();
+  }
+}
+
 function openBookModal() {
   state.bookModalOpen = true;
   if (elements.bookBackdrop) elements.bookBackdrop.hidden = false;
@@ -357,6 +502,13 @@ function openBookModal() {
   }
   document.body.classList.add("has-book-modal");
   animatePanelOpen(document.querySelector(".book-modal-shell"));
+  if (hasPageFlip()) {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        ensureModalBookFlip();
+      });
+    });
+  }
 }
 
 function closeBookModal() {
@@ -727,7 +879,7 @@ function handleGlobalClick(event) {
     return;
   }
 
-  if (event.target.closest("[data-open-book-modal]") || event.target.closest(".menu-book-page")) {
+  if (event.target.closest("[data-open-book-modal]")) {
     openBookModal();
     return;
   }
@@ -771,14 +923,24 @@ function handleGlobalClick(event) {
   }
 
   if (event.target.closest("[data-book-prev]")) {
-    state.bookPage = Math.max(0, state.bookPage - 2);
-    renderMenuBook();
+    const activeFlip = state.bookModalOpen ? bookFlips.modal : bookFlips.preview;
+    if (activeFlip?.flipPrev) {
+      activeFlip.flipPrev();
+    } else {
+      state.bookPage = Math.max(0, state.bookPage - 2);
+      renderMenuBook();
+    }
     return;
   }
 
   if (event.target.closest("[data-book-next]")) {
-    state.bookPage = Math.min(BOOK_PAGE_COUNT - 2, state.bookPage + 2);
-    renderMenuBook();
+    const activeFlip = state.bookModalOpen ? bookFlips.modal : bookFlips.preview;
+    if (activeFlip?.flipNext) {
+      activeFlip.flipNext();
+    } else {
+      state.bookPage = Math.min(BOOK_PAGE_COUNT - 2, state.bookPage + 2);
+      renderMenuBook();
+    }
   }
 }
 
@@ -793,13 +955,21 @@ function handleGlobalKeydown(event) {
   if (!state.bookModalOpen) return;
 
   if (event.key === "ArrowRight") {
-    state.bookPage = Math.min(BOOK_PAGE_COUNT - 2, state.bookPage + 2);
-    renderMenuBook();
+    if (bookFlips.modal?.flipNext) {
+      bookFlips.modal.flipNext();
+    } else {
+      state.bookPage = Math.min(BOOK_PAGE_COUNT - 2, state.bookPage + 2);
+      renderMenuBook();
+    }
   }
 
   if (event.key === "ArrowLeft") {
-    state.bookPage = Math.max(0, state.bookPage - 2);
-    renderMenuBook();
+    if (bookFlips.modal?.flipPrev) {
+      bookFlips.modal.flipPrev();
+    } else {
+      state.bookPage = Math.max(0, state.bookPage - 2);
+      renderMenuBook();
+    }
   }
 }
 

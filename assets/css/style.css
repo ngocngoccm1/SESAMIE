@@ -40,9 +40,9 @@ body {
   margin: 0;
   font-family: "Manrope", sans-serif;
   color: var(--text-main);
-  background:
+  /* background:
     linear-gradient(180deg, rgba(255, 252, 246, 0.7), rgba(244, 233, 216, 0.62)),
-    url("../../bg.png") center top / cover fixed no-repeat;
+    url("../../bg.png") center top / cover fixed no-repeat; */
   min-height: 100dvh;
 }
 
@@ -189,6 +189,14 @@ select:focus {
   font-weight: 700;
   letter-spacing: 0.35em;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.brand-mark img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 3px 8px rgba(59, 41, 33, 0.12));
 }
 
 .brand-copy,
@@ -1260,12 +1268,17 @@ select:focus {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 1rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 .menu-book-modal {
   height: 100%;
   align-items: stretch;
+}
+
+.menu-book-modal.is-pageflip {
+  width: 100%;
+  height: min(78vh, 980px);
 }
 
 .menu-book-modal .menu-book-page {
@@ -1717,6 +1730,12 @@ select:focus {
     linear-gradient(180deg, rgba(255, 248, 236, 0.02), rgba(255, 248, 236, 0.02));
 }
 
+.menu-book.is-pageflip,
+.menu-book-modal.is-pageflip {
+  display: block;
+  width: 100%;
+}
+
 .menu-book-page {
   position: relative;
   background: #f5f2e9;
@@ -1733,6 +1752,46 @@ select:focus {
   bottom: 0.9rem;
   color: rgba(38, 24, 21, 0.72);
   letter-spacing: 0.26em;
+}
+
+.menu-book.is-pageflip .menu-book-page,
+.menu-book-modal.is-pageflip .menu-book-page {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(242, 228, 211, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 248, 236, 0.12), 0 18px 34px rgba(0, 0, 0, 0.22);
+}
+
+.menu-book.is-pageflip .menu-book-page img,
+.menu-book-modal.is-pageflip .menu-book-page img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-book-preview .stf__parent,
+.book-modal-stage .stf__parent {
+  margin-inline: auto;
+}
+
+.book-modal-stage .stf__parent {
+  width: min(100%, 1240px);
+}
+
+.book-modal-stage .stf__wrapper,
+.book-modal-stage .stf__block {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-book-preview .stf__block,
+.book-modal-stage .stf__block {
+  border-radius: 24px;
+}
+
+.menu-book-preview .stf__item,
+.book-modal-stage .stf__item {
+  background: transparent;
 }
 
 .book-preview-overlay {
@@ -2094,47 +2153,56 @@ select:focus {
   }
 }
 
-/* Background-image readability refresh */
+/* Earthy palette refresh */
 :root {
-  --text-main: #f7efdf;
-  --text-muted: rgba(247, 239, 223, 0.78);
-  --text-soft: rgba(247, 239, 223, 0.86);
-  --text-on-dark: #f7efdf;
-  --text-on-dark-muted: rgba(247, 239, 223, 0.78);
-  --text-on-dark-soft: rgba(247, 239, 223, 0.58);
-  --text-dark: #21170f;
-  --surface: rgba(22, 17, 14, 0.68);
-  --surface-strong: rgba(14, 11, 9, 0.82);
-  --surface-soft: rgba(245, 232, 210, 0.08);
-  --border-soft: rgba(255, 244, 227, 0.14);
-  --border-strong: rgba(227, 184, 116, 0.28);
-  --accent: #e1b46c;
-  --accent-2: #c98d56;
-  --gold-soft: #f2cb87;
-  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.4);
-  --text-shadow-soft: 0 2px 18px rgba(0, 0, 0, 0.45);
+  --background: #e8d8c3;
+  --background-secondary: #d9c1a3;
+  --surface: #efe1d0;
+  --primary: #7b573f;
+  --primary-dark: #4a3428;
+  --primary-deep: #3b2921;
+  --accent: #b07a3f;
+  --accent-hover: #7b573f;
+  --accent-soft: #c89a5a;
+  --text-primary: #2f221c;
+  --text-secondary: #6f5a4d;
+  --text: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --text-main: var(--text);
+  --text-soft: #5d483d;
+  --text-on-dark: #f1e3d2;
+  --text-on-dark-muted: rgba(241, 227, 210, 0.76);
+  --text-on-dark-soft: rgba(241, 227, 210, 0.58);
+  --text-dark: var(--primary-deep);
+  --surface-strong: #ddc4a6;
+  --surface-soft: rgba(239, 225, 208, 0.72);
+  --border-soft: rgba(123, 87, 63, 0.22);
+  --border-strong: rgba(176, 122, 63, 0.3);
+  --gold-soft: var(--accent);
+  --shadow-soft: 0 22px 56px rgba(59, 41, 33, 0.16);
+  --text-shadow-soft: 0 1px 10px rgba(59, 41, 33, 0.08);
 }
 
 body {
   color: var(--text-main);
   background:
-    linear-gradient(180deg, rgba(7, 5, 4, 0.56), rgba(13, 10, 8, 0.74)),
+    linear-gradient(180deg, rgba(232, 216, 195, 0.92), rgba(217, 193, 163, 0.9)),
     url("../../bg.png") center top / cover fixed no-repeat;
 }
 
 body::before {
   opacity: 1;
   background:
-    linear-gradient(180deg, rgba(5, 4, 4, 0.58) 0%, rgba(11, 10, 10, 0.22) 18%, rgba(8, 8, 8, 0.42) 54%, rgba(6, 5, 5, 0.76) 100%),
-    radial-gradient(circle at top, rgba(0, 0, 0, 0.12), transparent 34%);
+    linear-gradient(180deg, rgba(232, 216, 195, 0.4) 0%, rgba(217, 193, 163, 0.2) 20%, rgba(123, 87, 63, 0.08) 56%, rgba(59, 41, 33, 0.16) 100%),
+    radial-gradient(circle at top, rgba(123, 87, 63, 0.1), transparent 34%);
 }
 
 body::after {
   opacity: 1;
   background:
-    radial-gradient(circle at 18% 18%, rgba(225, 180, 108, 0.12), transparent 0 22%),
-    radial-gradient(circle at 82% 12%, rgba(201, 141, 86, 0.09), transparent 0 18%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.24));
+    radial-gradient(circle at 18% 18%, rgba(200, 154, 90, 0.14), transparent 0 22%),
+    radial-gradient(circle at 82% 12%, rgba(123, 87, 63, 0.1), transparent 0 18%),
+    linear-gradient(180deg, rgba(59, 41, 33, 0.02), rgba(59, 41, 33, 0.08));
 }
 
 .site-header,
@@ -2146,71 +2214,21 @@ body::after {
 .option-modal-card,
 .contact-card,
 .map-card,
-.promise-card,
-.menu-card,
-.hero-signature,
 .plate-card,
-.cart-empty,
-.cart-line,
 .drawer-summary,
-.option-item,
-.reservation-form,
-.contact-block,
-.hours-row,
-.hotline,
-.toast,
-.menu-book-page {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.promise-card,
-.menu-card,
-.contact-block,
-.hours-row,
-.cart-line,
-.cart-empty,
-.option-item,
-.hero-signature,
-.toast {
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+.reservation-form {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .site-header {
-  background: linear-gradient(180deg, rgba(12, 10, 9, 0.86), rgba(12, 10, 9, 0.58));
-  border-bottom-color: rgba(255, 244, 227, 0.08);
-  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(180deg, rgba(74, 52, 40, 0.94), rgba(59, 41, 33, 0.86));
+  border-bottom-color: rgba(200, 154, 90, 0.14);
+  box-shadow: 0 10px 30px rgba(59, 41, 33, 0.18);
 }
 
 .site-header.is-scrolled {
-  background: linear-gradient(180deg, rgba(10, 9, 8, 0.94), rgba(10, 9, 8, 0.82));
-}
-
-.brand-copy strong,
-.brand-copy small,
-.nav a,
-.ghost-link,
-.hero-copy h1,
-.hero-text,
-.section-heading h2,
-.section-intro,
-.hotline,
-.footer-brand,
-.footer-meta,
-.contact-card h2,
-.contact-block,
-.menu-section-header h3,
-.drawer-header h2,
-.summary-row strong,
-.book-modal-top h2,
-.book-modal-bottom strong,
-.plate-card h2,
-.plate-card-footer strong,
-.menu-card h3,
-.cart-line h3,
-.option-item strong {
-  text-shadow: var(--text-shadow-soft);
+  background: linear-gradient(180deg, rgba(74, 52, 40, 0.98), rgba(59, 41, 33, 0.92));
 }
 
 .brand-copy strong,
@@ -2224,8 +2242,11 @@ body::after {
 .menu-card h3,
 .cart-line h3,
 .option-item strong,
-.summary-row strong {
-  color: var(--text-main);
+.summary-row strong,
+.promise-card h3,
+.option-modal-card h2 {
+  color: var(--primary-dark);
+  text-shadow: var(--text-shadow-soft);
 }
 
 .brand-copy small,
@@ -2244,27 +2265,20 @@ body::after {
 .option-copy,
 .menu-card p,
 .menu-ingredients,
-.allergen-line {
+.allergen-line,
+.promise-card p,
+.hours-row,
+.hotline {
   color: var(--text-muted);
 }
 
-.menu-card,
-.promise-card,
-.contact-card,
-.reservation-form,
-.drawer-summary,
-.menu-status,
-.book-stage,
-.menu-toolbar,
-.cart-drawer,
-.book-modal-shell,
-.option-modal-card,
-.section-dark,
-.site-footer,
-.hero-signature {
-  --text-main: var(--text-on-dark);
-  --text-muted: var(--text-on-dark-muted);
-  --text-soft: var(--text-on-dark-soft);
+.site-header .brand-copy strong,
+.site-header .brand-copy small,
+.site-header .nav a,
+.site-header .ghost-link,
+.site-header .language-switch button {
+  color: var(--text-on-dark);
+  text-shadow: none;
 }
 
 .section-rice,
@@ -2282,13 +2296,26 @@ body::after {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(15, 12, 10, 0.48), rgba(15, 12, 10, 0.22));
+  background: linear-gradient(180deg, rgba(232, 216, 195, 0.12), rgba(217, 193, 163, 0.1));
 }
 
-.section-rice > .container,
-.section-paper > .container,
-.section-dark > .container,
-.site-footer > .container {
+.section-rice {
+  background: rgba(232, 216, 195, 0.34);
+}
+
+.section-paper,
+.section-book {
+  background: rgba(217, 193, 163, 0.22);
+}
+
+.section-dark {
+  background: rgba(123, 87, 63, 0.1);
+}
+
+.section-rice>.container,
+.section-paper>.container,
+.section-dark>.container,
+.site-footer>.container {
   position: relative;
   z-index: 1;
 }
@@ -2307,11 +2334,11 @@ body::after {
 .hero-copy::after {
   content: "";
   position: absolute;
-  inset: -1.75rem -1.5rem -1.75rem -1rem;
+  inset: -1.65rem -1.4rem -1.65rem -0.9rem;
   z-index: -1;
   border-radius: 32px;
-  background: linear-gradient(180deg, rgba(10, 8, 7, 0.62), rgba(10, 8, 7, 0.32));
-  border: 1px solid rgba(255, 244, 227, 0.08);
+  background: linear-gradient(90deg, rgba(59, 41, 33, 0.78), rgba(74, 52, 40, 0.46), rgba(74, 52, 40, 0.16));
+  border: 1px solid rgba(200, 154, 90, 0.12);
   box-shadow: var(--shadow-soft);
 }
 
@@ -2334,7 +2361,7 @@ body::after {
 .hours-row,
 .hotline,
 .toast {
-  background: linear-gradient(180deg, rgba(24, 19, 16, 0.76), rgba(17, 14, 12, 0.7));
+  background: linear-gradient(180deg, rgba(239, 225, 208, 0.9), rgba(217, 193, 163, 0.8));
   border: 1px solid var(--border-soft);
   box-shadow: var(--shadow-soft);
 }
@@ -2345,17 +2372,32 @@ body::after {
 .map-card,
 .site-footer {
   border-radius: 28px;
-  padding: 1.2rem;
+  padding: 1.35rem;
 }
 
-.menu-card,
 .promise-card,
+.menu-card,
 .contact-block,
 .hours-row,
 .cart-line,
 .cart-empty,
-.option-item {
-  background: linear-gradient(180deg, rgba(22, 17, 14, 0.78), rgba(17, 13, 11, 0.72));
+.option-item,
+.hero-signature {
+  background: linear-gradient(180deg, rgba(239, 225, 208, 0.96), rgba(224, 203, 175, 0.9));
+}
+
+.hero-signature {
+  background: linear-gradient(180deg, rgba(74, 52, 40, 0.88), rgba(59, 41, 33, 0.8));
+  border-color: rgba(200, 154, 90, 0.16);
+}
+
+.hero-signature span,
+.hero-signature .ghost-link {
+  color: var(--text-on-dark-muted);
+}
+
+.hero-signature strong {
+  color: var(--text-on-dark);
 }
 
 .plate-card::before,
@@ -2366,26 +2408,31 @@ body::after {
 .cart-drawer::before,
 .book-modal-shell::before,
 .option-modal-card::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%);
+  background: linear-gradient(180deg, rgba(255, 248, 239, 0.22), transparent 22%);
 }
 
 .button {
   border: 1px solid var(--border-soft);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 8px 22px rgba(73, 51, 41, 0.08);
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .button:hover,
 .button:focus-visible {
   transform: translateY(-1px);
-  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 24px rgba(73, 51, 41, 0.14);
 }
 
 .button-gold,
 .filter-row button.is-active {
-  background: linear-gradient(135deg, var(--accent), #f0cb88);
-  color: #21170f;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  color: #fff9f1;
   border-color: transparent;
+}
+
+.button-gold:hover,
+.filter-row button.is-active:hover {
+  background: linear-gradient(135deg, var(--accent-hover), var(--primary));
 }
 
 .button-ghost,
@@ -2397,37 +2444,42 @@ body::after {
 .icon-button,
 .book-nav-button,
 .menu-add {
-  background: rgba(255, 244, 227, 0.08);
-  color: var(--text-main);
+  background: rgba(239, 225, 208, 0.72);
+  color: var(--primary-dark);
   border: 1px solid var(--border-soft);
 }
 
 .button-dark {
-  background: linear-gradient(135deg, rgba(225, 180, 108, 0.16), rgba(201, 141, 86, 0.08)), rgba(17, 14, 12, 0.9);
+  background: linear-gradient(135deg, rgba(129, 91, 67, 0.94), rgba(73, 51, 41, 0.96));
+  color: #fff9f1;
 }
 
 .button-ghost:hover,
 .button-soft:hover,
 .button-light:hover,
-.button-dark:hover,
 .filter-row button:hover,
 .language-switch button:hover,
 .icon-button:hover,
 .book-nav-button:hover,
 .menu-add:hover {
-  background: rgba(255, 244, 227, 0.14);
+  background: rgba(239, 225, 208, 0.94);
   border-color: var(--border-strong);
+}
+
+.button-dark:hover {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-color: rgba(73, 51, 41, 0.22);
 }
 
 .language-switch,
 .filter-row {
-  gap: 0.7rem;
+  gap: 0.72rem;
 }
 
 .language-switch button.is-active {
-  background: linear-gradient(135deg, rgba(225, 180, 108, 0.92), rgba(201, 141, 86, 0.92));
-  color: #21170f;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  color: #fff9f1;
+  box-shadow: 0 10px 20px rgba(184, 137, 79, 0.18);
 }
 
 .search-field input,
@@ -2436,8 +2488,8 @@ body::after {
 .drawer-summary input,
 .drawer-summary textarea,
 .drawer-summary select {
-  background: rgba(255, 248, 236, 0.08);
-  border-color: var(--border-soft);
+  background: rgba(239, 225, 208, 0.84);
+  border-color: rgba(123, 87, 63, 0.18);
   color: var(--text-main);
 }
 
@@ -2446,7 +2498,7 @@ body::after {
 .reservation-form textarea::placeholder,
 .drawer-summary input::placeholder,
 .drawer-summary textarea::placeholder {
-  color: rgba(247, 239, 223, 0.48);
+  color: rgba(121, 106, 97, 0.74);
 }
 
 .search-field input:focus,
@@ -2455,9 +2507,9 @@ body::after {
 .drawer-summary input:focus,
 .drawer-summary textarea:focus,
 .drawer-summary select:focus {
-  background: rgba(255, 248, 236, 0.12);
-  border-color: rgba(225, 180, 108, 0.45);
-  box-shadow: 0 0 0 4px rgba(225, 180, 108, 0.12);
+  background: rgba(245, 235, 222, 0.96);
+  border-color: rgba(176, 122, 63, 0.44);
+  box-shadow: 0 0 0 4px rgba(200, 154, 90, 0.14);
 }
 
 .section-kicker,
@@ -2472,36 +2524,7 @@ body::after {
 .book-spine span,
 .book-spine small,
 .quick-chips p {
-  color: rgba(247, 239, 223, 0.82);
-}
-
-.hero-copy h1,
-.section-heading h2,
-.promise-card h3,
-.menu-card h3,
-.contact-card h2,
-.drawer-header h2,
-.option-modal-card h2,
-.book-modal-top h2 {
-  color: var(--text-main);
-}
-
-.menu-card p,
-.promise-card p,
-.option-copy,
-.contact-block,
-.hours-row,
-.cart-line-meta,
-.menu-ingredients,
-.allergen-line {
-  color: var(--text-muted);
-}
-
-.menu-category,
-.cart-line-section,
-.option-meta,
-.remove-line {
-  color: var(--text-soft);
+  color: var(--primary);
 }
 
 .tag,
@@ -2514,22 +2537,24 @@ body::after {
 .remove-line,
 .menu-ingredients,
 .allergen-line {
-  color: #f1cc8a;
-  border-color: rgba(225, 180, 108, 0.24);
+  color: var(--primary);
+  border-color: rgba(184, 137, 79, 0.2);
 }
 
 .status-pill,
 .category-pill,
 .tag,
 .option-tag {
-  background: rgba(225, 180, 108, 0.1);
+  background: rgba(200, 154, 90, 0.12);
 }
 
 .price-display,
 .option-price,
 .summary-row strong,
-.plate-card-footer strong {
-  color: #f2cb87;
+.plate-card-footer strong,
+.book-stage-top strong,
+.hero-signature strong {
+  color: var(--accent);
 }
 
 .menu-toolbar {
@@ -2549,9 +2574,9 @@ body::after {
 
 .cart-drawer {
   background:
-    radial-gradient(circle at top, rgba(225, 180, 108, 0.12), transparent 28%),
-    linear-gradient(180deg, rgba(15, 12, 10, 0.96), rgba(10, 9, 8, 0.98));
-  border: 1px solid var(--border-soft);
+    radial-gradient(circle at top, rgba(200, 154, 90, 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(239, 225, 208, 0.98), rgba(217, 193, 163, 0.96));
+  border: 1px solid rgba(123, 87, 63, 0.18);
 }
 
 .option-modal,
@@ -2562,28 +2587,80 @@ body::after {
 .option-modal-card,
 .book-modal-shell {
   background:
-    radial-gradient(circle at top, rgba(225, 180, 108, 0.12), transparent 24%),
-    linear-gradient(180deg, rgba(18, 14, 12, 0.96), rgba(11, 9, 8, 0.98));
+    radial-gradient(circle at top, rgba(200, 154, 90, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(239, 225, 208, 0.98), rgba(217, 193, 163, 0.95));
 }
 
 .drawer-backdrop,
 .modal-backdrop {
-  background: rgba(4, 3, 3, 0.72);
-  backdrop-filter: blur(14px);
+  background: rgba(73, 51, 41, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .map-card iframe {
-  filter: saturate(0.68) sepia(0.1) hue-rotate(-10deg) brightness(0.7) contrast(1.02);
+  filter: saturate(0.72) sepia(0.08) hue-rotate(-10deg) brightness(0.92) contrast(1.02);
 }
 
 .mobile-bar {
-  background: rgba(10, 9, 8, 0.92);
-  border-color: rgba(255, 244, 227, 0.1);
+  background: rgba(74, 52, 40, 0.94);
+  border-color: rgba(200, 154, 90, 0.14);
 }
 
 .site-footer {
-  background: linear-gradient(180deg, rgba(16, 13, 11, 0.74), rgba(11, 9, 8, 0.82));
-  border-top: 1px solid rgba(255, 244, 227, 0.08);
+  background: linear-gradient(180deg, rgba(74, 52, 40, 0.96), rgba(59, 41, 33, 0.98));
+  border-top: 1px solid rgba(200, 154, 90, 0.14);
+}
+
+.site-footer .footer-brand,
+.site-footer p,
+.site-footer a {
+  color: var(--text-on-dark);
+}
+
+.section-dark {
+  --text-main: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --text-soft: #5d483d;
+  color: var(--text-primary);
+}
+
+.section-dark h2,
+.section-dark .section-intro,
+.section-dark .hotline,
+.section-dark .reservation-form span,
+.section-dark .reservation-form label span {
+  color: var(--text-primary);
+}
+
+.section-dark .section-kicker,
+.section-dark .section-kicker-gold,
+.section-dark .mini-label,
+.section-dark .reservation-form span,
+.section-dark .reservation-form label span {
+  color: var(--primary);
+}
+
+.section-dark .section-intro.light,
+.section-dark .hotline,
+.section-dark .reservation-form input,
+.section-dark .reservation-form textarea,
+.section-dark .reservation-form input::placeholder,
+.section-dark .reservation-form textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.section-dark .hotline {
+  background: rgba(239, 225, 208, 0.9);
+  border-color: rgba(123, 87, 63, 0.16);
+}
+
+.section-dark .reservation-form {
+  background: linear-gradient(180deg, rgba(239, 225, 208, 0.96), rgba(224, 203, 175, 0.92));
+}
+
+.section-dark .reservation-form input,
+.section-dark .reservation-form textarea {
+  background: rgba(247, 239, 228, 0.94);
 }
 
 @media (max-width: 760px) {
@@ -2604,4 +2681,146 @@ body::after {
     right: 0.75rem;
     bottom: 0.75rem;
   }
+}
+
+/* Global contrast pass */
+.hero-copy h1,
+.section-heading h2,
+.promise-card h3,
+.menu-card h3,
+.contact-card h2,
+.drawer-header h2,
+.option-modal-card h2,
+.book-modal-top h2,
+.book-modal-bottom strong,
+.menu-section-header h3,
+.cart-line h3,
+.option-item strong,
+.summary-row strong,
+.plate-card h2,
+.plate-card-footer strong {
+  color: var(--primary-deep);
+}
+
+.hero-text,
+.section-intro,
+.promise-card p,
+.menu-card p,
+.option-copy,
+.contact-block,
+.hours-row,
+.cart-line-meta,
+.menu-ingredients,
+.allergen-line,
+.footer-meta,
+.book-modal-bottom span,
+.plate-card-top span,
+.plate-card-footer p,
+.plate-card-footer small,
+.menu-status {
+  color: var(--text-secondary);
+}
+
+.section-kicker,
+.section-kicker-gold,
+.mini-label,
+.search-field span,
+.filter-group p,
+.reservation-form span,
+.reservation-form label span,
+.drawer-summary span,
+.contact-card .mini-label,
+.hero-chapter span,
+.plate-card-ribbon,
+.book-spine span,
+.book-spine small,
+.quick-chips p,
+.menu-category,
+.cart-line-section,
+.option-meta,
+.remove-line {
+  color: var(--primary);
+}
+
+.menu-card,
+.promise-card,
+.contact-card,
+.map-card,
+.reservation-form,
+.drawer-summary,
+.option-item,
+.cart-line,
+.cart-empty,
+.contact-block,
+.hours-row,
+.menu-toolbar,
+.plate-card,
+.toast {
+  color: var(--text-primary);
+}
+
+.menu-card p,
+.promise-card p,
+.contact-block p,
+.hours-row span,
+.reservation-form input,
+.reservation-form textarea,
+.drawer-summary input,
+.drawer-summary textarea,
+.drawer-summary select,
+.search-field input,
+.option-item,
+.cart-line {
+  color: var(--text-primary);
+}
+
+.reservation-form input::placeholder,
+.reservation-form textarea::placeholder,
+.drawer-summary input::placeholder,
+.drawer-summary textarea::placeholder,
+.search-field input::placeholder {
+  color: rgba(111, 90, 77, 0.9);
+}
+
+.tag,
+.status-pill,
+.category-pill,
+.option-tag {
+  color: var(--primary);
+  background: rgba(200, 154, 90, 0.14);
+  border-color: rgba(176, 122, 63, 0.22);
+}
+
+.price-display,
+.option-price,
+.book-stage-top strong,
+.hero-signature strong,
+.plate-card-footer strong,
+.summary-row strong {
+  color: var(--accent);
+}
+
+.site-header .brand-copy strong,
+.site-header .brand-copy small,
+.site-header .nav a,
+.site-header .ghost-link,
+.site-header .language-switch button,
+.site-header .header-order,
+.mobile-bar .button {
+  color: var(--text-on-dark);
+}
+
+.site-footer,
+.site-footer .footer-brand,
+.site-footer p,
+.site-footer a,
+.site-footer .footer-meta {
+  color: var(--text-on-dark);
+}
+
+.hero-signature,
+.cart-drawer,
+.book-modal-shell,
+.option-modal-card {
+  color: var(--text-primary);
 }
