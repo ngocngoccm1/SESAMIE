@@ -1,509 +1,566 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html class="dark" lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SESAMIE | Asia Kitchen & Sushi</title>
-  <meta name="description"
-    content="Modern Asian Kitchen & Sushi in Ingolstadt. Speisekarte, Reservierung und Bestellung per WhatsApp." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SESAMIE | Asia Kitchen & Sushi</title>
+    <meta content="Modern Asian Kitchen & Sushi in Ingolstadt. Speisekarte, Reservierung und Bestellung per WhatsApp." name="description"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        surface: "#1a120b",
+                        "secondary-container": "#484741",
+                        "on-tertiary": "#4c2700",
+                        "surface-bright": "#42372f",
+                        "on-primary-fixed-variant": "#574335",
+                        "outline-variant": "#4f453f",
+                        tertiary: "#ffb779",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#705a4c",
+                        "inverse-surface": "#f1dfd3",
+                        "tertiary-fixed-dim": "#ffb779",
+                        "on-tertiary-fixed": "#2e1500",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#382f26",
+                        "on-tertiary-fixed-variant": "#6c3a00",
+                        "on-tertiary-container": "#d38437",
+                        outline: "#9b8e87",
+                        "on-secondary": "#31302b",
+                        "warm-paper": "#E8E2D6",
+                        "surface-dim": "#1a120b",
+                        "primary-fixed": "#fbddca",
+                        "on-surface-variant": "#d2c4bc",
+                        "on-primary-container": "#ac9181",
+                        "earth-shadow": "#2A1E16",
+                        "primary-container": "#3d2b1f",
+                        "surface-container-high": "#322820",
+                        "surface-container-lowest": "#140d06",
+                        primary: "#dec1af",
+                        "on-primary": "#3f2c20",
+                        "on-primary-fixed": "#28180d",
+                        "on-secondary-container": "#b8b5ae",
+                        "tertiary-fixed": "#ffdcc1",
+                        "surface-container-highest": "#3d332b",
+                        error: "#ffb4ab",
+                        "secondary-fixed-dim": "#c9c6bf",
+                        "secondary-fixed": "#e6e2da",
+                        "on-surface": "#f1dfd3",
+                        secondary: "#c9c6bf",
+                        background: "#1a120b",
+                        "bronze-glimmer": "#A67C52",
+                        "tertiary-container": "#4a2600",
+                        "on-error": "#690005",
+                        "surface-tint": "#dec1af",
+                        "surface-container": "#271e16",
+                        "on-secondary-fixed-variant": "#484741",
+                        "primary-fixed-dim": "#dec1af",
+                        "surface-variant": "#3d332b",
+                        "surface-container-low": "#221a13",
+                        "on-background": "#f1dfd3",
+                        "on-secondary-fixed": "#1c1c17"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        unit: "8px",
+                        "section-padding": "120px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        gutter: "24px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Montserrat"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "label-lg": ["Montserrat"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Montserrat"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "headline-lg": ["48px", { lineHeight: "56px", fontWeight: "600" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }]
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="./assets/css/style.css" rel="stylesheet"/>
 </head>
-
-<body>
-  <header class="site-header" data-header>
-    <div class="container header-inner">
-      <a class="brand" href="#start">
-        <span class="brand-mark">
-          <img src="./assets/images/logo_sesamie_transparent.png" alt="SESAMIE logo" width="40" height="40" />
-        </span>
-        <span class="brand-copy">
-          <strong>SESAMIE</strong>
-          <small>Asia Kitchen &amp; Sushi</small>
-        </span>
-      </a>
-
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#start" data-i18n="nav.home">Startseite</a>
-        <a href="#speisekarte" data-i18n="nav.menu">Speisekarte</a>
-        <a href="#reservieren" data-i18n="nav.reserve">Reservieren</a>
-        <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
-      </nav>
-
-      <div class="header-actions">
-        <div class="language-switch" role="group" aria-label="Language switch">
-          <button type="button" class="is-active" data-language-switch="de">DE</button>
-          <button type="button" data-language-switch="en">EN</button>
-        </div>
-        <button type="button" class="button button-gold header-order" data-open-cart>
-          <span data-i18n="nav.order">Bestellen</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="start" data-animated-region>
-      <div class="hero-steam" aria-hidden="true">
-        <span data-loop-animation></span>
-        <span data-loop-animation></span>
-        <span data-loop-animation></span>
-      </div>
-      <div class="hero-aura" aria-hidden="true"></div>
-
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <div class="hero-chapter">
-            <span>01 / Entree</span>
-            <span data-i18n="hero.eyebrow">Asia Kitchen &amp; Sushi</span>
-          </div>
-          <h1 data-i18n="hero.title">Modern Asian Kitchen &amp; Sushi in Ingolstadt</h1>
-          <p class="hero-text" data-i18n="hero.subtitle">
-            Frische Zutaten, handwerkliche Zubereitung und warme Gastfreundschaft - mitten in
-            Ingolstadt.
-          </p>
-
-          <div class="hero-cta">
-            <a class="button button-gold" href="#reservieren" data-i18n="hero.reserve">Tisch reservieren</a>
-            <a class="button button-ghost" href="#speisekarte" data-i18n="hero.menu">Speisekarte ansehen</a>
-            <button type="button" class="button button-soft" data-open-cart data-i18n="hero.order">Jetzt
-              bestellen</button>
-          </div>
-
-          <div class="quick-chips">
-            <p data-i18n="hero.quickLabel">Ausgewahlt fur einen entspannten Abend</p>
-            <div class="chip-row">
-              <span>Tapas</span>
-              <span>Sushi</span>
-              <span>Vegan</span>
-              <span>Chef's Empfehlung</span>
-              <span>Drinks</span>
+<body class="bg-surface text-on-surface selection:bg-bronze-glimmer selection:text-white">
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md" data-header>
+        <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="font-headline-md text-headline-md text-bronze-glimmer tracking-tighter">SESAMIE</div>
+            <div class="hidden md:flex items-center space-x-8">
+                <span class="tab-link active font-body-md text-body-md uppercase tracking-widest" data-tab="home" data-i18n="nav.home">Home</span>
+                <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface" data-tab="menu" data-i18n="nav.menu">Speisekarte</span>
+                <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface" data-tab="reservation" data-i18n="nav.reserve">Reservierung</span>
+                <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface" data-tab="contact" data-i18n="nav.contact">Kontakt</span>
             </div>
-          </div>
+            <div class="flex items-center gap-3">
+                <div class="language-switch" role="group" aria-label="Language switch">
+                    <button class="is-active" data-language-switch="de" type="button">DE</button>
+                    <button data-language-switch="en" type="button">EN</button>
+                </div>
+                <button class="bg-bronze-glimmer text-on-primary px-6 py-3 font-body-md text-body-md uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 duration-150" data-tab-target="reservation" type="button">
+                    <span data-i18n="nav.reserve">Reservierung</span>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden flex items-center gap-6 px-6 py-2 border-t border-outline-variant/30 overflow-x-auto no-scrollbar tab-links-mobile bg-surface/80">
+            <span class="tab-link active font-label-sm text-label-sm uppercase tracking-widest" data-tab="home" data-i18n="nav.home">Home</span>
+            <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="menu" data-i18n="nav.menu">Speisekarte</span>
+            <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="reservation" data-i18n="nav.reserve">Reservierung</span>
+            <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="contact" data-i18n="nav.contact">Kontakt</span>
+        </div>
+    </nav>
 
-          <div class="hero-signature">
+    <main>
+        <div class="tab-content active" id="home">
+            <section class="relative h-screen flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <img class="w-full h-full object-cover opacity-60" src="./assets/images/site/hero-home.jpg"/>
+                    <div class="absolute inset-0 bg-gradient-to-b from-surface/40 via-transparent to-surface"></div>
+                </div>
+                <div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop">
+                    <span class="inline-block mb-6 font-label-lg text-label-lg uppercase tracking-[0.3em] text-bronze-glimmer animate-pulse">
+                        The Art of Asian Fusion
+                    </span>
+                    <h1 class="font-display-lg text-display-lg md:text-display-lg leading-tight mb-6 max-w-4xl mx-auto">
+                        SESAMIE — Asian Fusion Cuisine
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10" data-i18n="hero.subtitle">
+                        Einzigartige Geschmackserlebnisse in Ingolstadt. Wo Tradition auf Innovation trifft.
+                    </p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                        <button class="bg-bronze-glimmer text-white px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer/90 transition-all bronze-glow" data-tab-target="reservation" type="button">
+                            <span data-i18n="hero.discover">Entdecken Sie Mehr</span>
+                        </button>
+                        <button class="border border-bronze-glimmer text-bronze-glimmer px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-white transition-all" data-tab-target="menu" type="button">
+                            <span data-i18n="hero.fullMenu">Unsere Speisekarte</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+                    <span class="material-symbols-outlined text-bronze-glimmer text-4xl">keyboard_double_arrow_down</span>
+                </div>
+            </section>
+
+            <section class="py-section-padding bg-surface-container-low" id="philosophy">
+                <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                    <div class="reveal-on-scroll">
+                        <div class="relative">
+                            <div class="absolute -top-10 -left-10 w-40 h-40 border-t-2 border-l-2 border-bronze-glimmer/30"></div>
+                            <img class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700" src="./assets/images/site/philosophy.jpg"/>
+                            <div class="absolute -bottom-10 -right-10 w-40 h-40 border-b-2 border-r-2 border-bronze-glimmer/30"></div>
+                        </div>
+                    </div>
+                    <div class="reveal-on-scroll">
+                        <h2 class="font-headline-lg text-headline-lg text-bronze-glimmer mb-8" data-i18n="home.philosophyEyebrow">Philosophie &amp; Handwerk</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed" data-i18n="home.philosophyBodyOne"></p>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed" data-i18n="home.philosophyBodyTwo"></p>
+                        <div class="grid grid-cols-2 gap-8 border-t border-outline-variant pt-10">
+                            <div>
+                                <span class="block font-headline-md text-headline-md text-bronze-glimmer mb-2" data-i18n="home.freshValue">100%</span>
+                                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" data-i18n="home.freshLabel">Frische Garantie</span>
+                            </div>
+                            <div>
+                                <span class="block font-headline-md text-headline-md text-bronze-glimmer mb-2" data-i18n="home.craftValue">Artisan</span>
+                                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" data-i18n="home.craftLabel">Handgemachte Details</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-section-padding bg-surface">
+                <div class="max-w-container-max mx-auto px-margin-desktop mb-20 text-center">
+                    <span class="font-label-lg text-label-lg uppercase tracking-[0.3em] text-bronze-glimmer mb-4 block" data-i18n="home.featuredEyebrow">Auswahl des Hauses</span>
+                    <h2 class="font-headline-lg text-headline-lg" data-i18n="home.featuredTitle">Kulinarische Highlights</h2>
+                </div>
+                <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter" data-featured-menu></div>
+                <div class="mt-20 text-center">
+                    <button class="font-label-lg text-label-lg uppercase tracking-widest text-bronze-glimmer border-b border-bronze-glimmer pb-2 hover:opacity-70 transition-opacity" data-tab-target="menu" type="button" data-i18n="home.featuredCta">
+                        Vollständige Speisekarte ansehen
+                    </button>
+                </div>
+            </section>
+
+            <section class="relative py-section-padding bg-earth-shadow overflow-hidden">
+                <div class="max-w-container-max mx-auto px-margin-desktop flex flex-col items-center text-center">
+                    <div class="reveal-on-scroll max-w-3xl">
+                        <h2 class="font-display-lg text-display-lg text-on-surface mb-8" data-i18n="home.reservationTitle">Reservieren Sie Ihren Tisch</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-12" data-i18n="home.reservationBody"></p>
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                            <button class="bg-bronze-glimmer text-on-primary px-16 py-6 font-label-lg text-label-lg uppercase tracking-[0.2em] hover:scale-105 transition-all duration-300 bronze-glow" data-tab-target="reservation" type="button" data-i18n="home.reservationPrimary">
+                                JETZT RESERVIEREN
+                            </button>
+                            <button class="border border-bronze-glimmer text-bronze-glimmer px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-white transition-all" data-tab-target="menu" type="button" data-i18n="home.reservationSecondary">
+                                Zur Speisekarte
+                            </button>
+                        </div>
+                        <p class="mt-8 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+                            <span data-i18n="reservation.hotline">Fur schnelle Ruckfragen: 0841 23238112</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-content" id="menu">
+            <section class="relative h-[614px] flex items-center justify-center overflow-hidden pt-20">
+                <div class="absolute inset-0 z-0">
+                    <img class="w-full h-full object-cover brightness-50" src="./assets/images/site/hero-menu.jpg"/>
+                </div>
+                <div class="relative z-10 text-center px-4">
+                    <span class="font-label-lg text-bronze-glimmer tracking-[0.3em] uppercase mb-4 block" data-i18n="menu.eyebrow">Kulinarische Meisterschaft</span>
+                    <h1 class="font-display-lg text-display-lg text-on-surface mb-6" data-i18n="nav.menu">Speisekarte</h1>
+                    <div class="w-24 h-1 bg-bronze-glimmer mx-auto"></div>
+                </div>
+            </section>
+
+            <section class="py-section-padding px-margin-desktop max-w-[800px] mx-auto text-center">
+                <p class="font-headline-md text-bronze-glimmer italic mb-8" data-i18n="menu.quote">"Qualität, die man schmeckt. Tradition, die man fühlt."</p>
+                <p class="font-body-lg text-on-surface-variant leading-relaxed" data-i18n="menu.intro"></p>
+            </section>
+
+            <section class="pb-section-padding px-margin-desktop max-w-container-max mx-auto">
+                <div class="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_360px] gap-10 items-start">
+                    <div class="space-y-12">
+                        <section class="glass-panel p-6 md:p-8">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+                                <div>
+                                    <span class="block mb-3 text-xs uppercase tracking-[0.28em] text-bronze-glimmer" data-i18n="book.viewerLabel">Doppelseite</span>
+                                    <h2 class="font-headline-lg text-headline-lg text-on-surface" data-i18n="book.title"></h2>
+                                </div>
+                                <div class="book-controls">
+                                    <button aria-label="Previous pages" class="icon-button" data-book-prev type="button">&#8592;</button>
+                                    <button aria-label="Next pages" class="icon-button" data-book-next type="button">&#8594;</button>
+                                </div>
+                            </div>
+                            <div class="menu-book-preview">
+                                <div class="book-spine" aria-hidden="true">
+                                    <span>SESAMIE</span>
+                                    <small>Menu Ritual</small>
+                                </div>
+                                <div class="menu-book menu-book-trigger" data-menu-book></div>
+                                <button aria-label="Open menu book" class="book-preview-overlay" data-open-book-modal type="button"></button>
+                            </div>
+                            <div class="book-stage-bottom mt-6">
+                                <span data-book-caption data-i18n="book.caption"></span>
+                                <div class="flex items-center gap-5">
+                                    <strong data-book-page-indicator>1 - 2</strong>
+                                    <button class="ghost-link" data-open-book-modal type="button" data-i18n="book.expandLink">Buch gross offnen</button>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="glass-panel p-8 md:p-10 text-center">
+                            <p class="font-label-lg text-label-lg uppercase tracking-[0.3em] text-bronze-glimmer mb-4" data-i18n="menu.title">Bestellen aus den Live-Menudaten</p>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Bestellung auf eigener Seite</h2>
+                            <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8" data-i18n="menu.subtitle"></p>
+                            <a class="inline-flex items-center justify-center bg-bronze-glimmer text-on-primary px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 duration-150" href="./order.html">
+                                <span data-i18n="nav.order">Bestellen</span>
+                            </a>
+                        </section>
+                    </div>
+
+                    <aside class="space-y-8">
+                        <div class="glass-panel p-8">
+                            <h3 class="font-headline-md text-headline-md text-bronze-glimmer mb-4" data-i18n="menu.title"></h3>
+                            <p class="font-body-md text-on-surface-variant leading-relaxed" data-i18n="menu.subtitle"></p>
+                        </div>
+                        <div class="glass-panel p-8">
+                            <p class="font-label-lg text-bronze-glimmer uppercase tracking-widest mb-4" data-i18n="book.noteOneLabel">Quelle</p>
+                            <p class="font-body-md text-on-surface-variant mb-6" data-i18n="book.noteOneValue"></p>
+                            <p class="font-label-lg text-bronze-glimmer uppercase tracking-widest mb-4" data-i18n="book.noteTwoLabel">Flow</p>
+                            <p class="font-body-md text-on-surface-variant" data-i18n="book.noteTwoValue"></p>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-content" id="reservation">
+            <header class="relative pt-32 pb-20 overflow-hidden">
+                <div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+                    <span class="font-label-lg text-label-lg text-bronze-glimmer uppercase mb-4 block" data-i18n="reservation.eyebrow">Exklusiv Genießen</span>
+                    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6" data-i18n="reservation.title">Tisch Reservieren</h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto" data-i18n="reservation.intro"></p>
+                </div>
+            </header>
+            <main class="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-section-padding">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+                    <div class="lg:col-span-8 bg-surface-container p-8 md:p-12 border border-outline-variant/30 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-bronze-glimmer/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-bronze-glimmer/10 transition-all duration-700"></div>
+                        <form class="space-y-10 relative z-10" data-reservation-form>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div class="space-y-2 group">
+                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.date">Datum</label>
+                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300" name="date" required="" type="date"/>
+                                </div>
+                                <div class="space-y-2 group">
+                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.time">Uhrzeit</label>
+                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300" name="time" required="" type="time"/>
+                                </div>
+                                <div class="space-y-2 group">
+                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.guests">Personenanzahl</label>
+                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300" min="1" name="guests" required="" type="number"/>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                                <div class="space-y-2 group">
+                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.name">Vollständiger Name</label>
+                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300 placeholder:text-outline-variant/50" name="name" required="" type="text"/>
+                                </div>
+                                <div class="space-y-2 group">
+                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.phone">Telefonnummer</label>
+                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300 placeholder:text-outline-variant/50" name="phone" required="" type="tel"/>
+                                </div>
+                                <div class="space-y-2 group md:col-span-2">
+                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.note">Besondere Wünsche</label>
+                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300 placeholder:text-outline-variant/50" name="note" type="text"/>
+                                </div>
+                            </div>
+                            <div class="pt-8">
+                                <button class="w-full md:w-auto px-12 py-5 bg-bronze-glimmer text-on-surface-variant font-label-lg text-label-lg uppercase tracking-[0.2em] font-bold hover:bg-opacity-80 transition-all duration-300 active:scale-95" data-i18n="reservation.submit" type="submit">
+                                    Jetzt Tisch Anfragen
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="lg:col-span-4 space-y-gutter">
+                        <div class="relative h-64 w-full group overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="./assets/images/site/hero-reservation.jpg"/>
+                            <div class="absolute inset-0 bg-surface/40 group-hover:bg-surface/20 transition-all duration-500"></div>
+                        </div>
+                        <div class="bg-surface-container-high p-8 border border-outline-variant/30">
+                            <h3 class="font-headline-md text-[24px] text-on-surface mb-4" data-i18n="reservation.expressTitle">Express Buchung</h3>
+                            <p class="font-body-md text-on-surface-variant mb-8" data-i18n="reservation.expressBody"></p>
+                            <a class="inline-flex items-center gap-3 px-6 py-4 border border-bronze-glimmer text-bronze-glimmer font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-on-primary transition-all duration-300" data-business-link="phone" href="#">
+                                <span class="material-symbols-outlined">chat</span>
+                                <span data-i18n="reservation.expressButton">WhatsApp Reservierung</span>
+                            </a>
+                        </div>
+                        <div class="p-8 border-l-2 border-bronze-glimmer bg-earth-shadow/30">
+                            <h4 class="font-label-lg text-label-lg text-bronze-glimmer uppercase mb-2" data-i18n="reservation.questionsTitle"></h4>
+                            <p class="font-body-md text-on-surface mb-4" data-i18n="reservation.questionsBody"></p>
+                            <a class="font-body-md text-on-surface underline hover:text-bronze-glimmer transition-colors" data-business="email" data-business-link="email" href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div class="tab-content" id="contact">
+            <main class="pt-32 pb-section-padding">
+                <header class="px-margin-desktop max-w-container-max mx-auto mb-24">
+                    <div class="max-w-3xl">
+                        <span class="text-bronze-glimmer font-label-lg uppercase tracking-[0.3em] block mb-4" data-i18n="contact.eyebrow">Verbindung aufnehmen</span>
+                        <h1 class="font-display-lg text-display-lg leading-tight mb-8" data-i18n="contact.title">Kontakt &amp; Anfahrt</h1>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl" data-i18n="contact.intro"></p>
+                    </div>
+                </header>
+                <section class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+                    <div class="lg:col-span-5 space-y-gutter">
+                        <div class="glass-panel p-10 flex flex-col justify-between h-full min-h-[400px]">
+                            <div>
+                                <h2 class="font-headline-md text-headline-md text-on-surface mb-8" data-i18n="contact.location">Standort</h2>
+                                <div class="space-y-6">
+                                    <div class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-bronze-glimmer mt-1">location_on</span>
+                                        <div>
+                                            <p class="font-body-lg text-body-lg" data-business="address"></p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-bronze-glimmer mt-1">call</span>
+                                        <a class="font-body-lg text-body-lg" data-business="phoneDisplay" data-business-link="phone" href="#"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-12 pt-12 border-t border-outline-variant/30">
+                                <h3 class="font-label-lg text-bronze-glimmer uppercase tracking-widest mb-6" data-i18n="contact.opening">Öffnungszeiten</h3>
+                                <div class="space-y-3 font-body-md text-on-surface-variant" data-business-hours></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="bg-surface-container p-10 h-full border border-outline-variant/10">
+                            <h2 class="font-headline-md text-headline-md text-on-surface mb-8" data-i18n="contact.messageTitle">Nachricht senden</h2>
+                            <form class="space-y-8">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="relative">
+                                        <label class="block text-label-sm text-on-surface-variant uppercase mb-2">Name</label>
+                                        <input class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all" placeholder="Ihr vollständiger Name" type="text"/>
+                                    </div>
+                                    <div class="relative">
+                                        <label class="block text-label-sm text-on-surface-variant uppercase mb-2">E-Mail</label>
+                                        <input class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all" placeholder="ihre@mail.de" type="email"/>
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <label class="block text-label-sm text-on-surface-variant uppercase mb-2">Betreff</label>
+                                    <input class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all" placeholder="Worum geht es?" type="text"/>
+                                </div>
+                                <div class="relative">
+                                    <label class="block text-label-sm text-on-surface-variant uppercase mb-2">Ihre Nachricht</label>
+                                    <textarea class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all resize-none" placeholder="Wie können wir Ihnen helfen?" rows="4"></textarea>
+                                </div>
+                                <div class="pt-4">
+                                    <button class="bg-bronze-glimmer text-on-primary font-label-lg px-12 py-4 tracking-widest hover:opacity-90 transition-all active:scale-95" type="button" data-i18n="contact.messageSubmit">
+                                        NACHRICHT ABSCHICKEN
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-12 mt-12 relative group overflow-hidden">
+                        <div class="w-full h-[500px] bg-surface-container-highest flex items-center justify-center relative">
+                            <img class="w-full h-full object-cover opacity-60 grayscale group-hover:scale-105 transition-transform duration-700" src="./assets/images/site/philosophy.jpg"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40"></div>
+                            <div class="absolute flex flex-col items-center justify-center text-center p-8">
+                                <div class="w-16 h-16 bg-bronze-glimmer flex items-center justify-center mb-4 rounded-full shadow-2xl">
+                                    <span class="material-symbols-outlined text-on-primary text-3xl">location_on</span>
+                                </div>
+                                <a class="glass-panel px-8 py-4" data-business-link="map" href="#">
+                                    <h4 class="font-headline-md text-headline-md text-on-surface mb-1">SESAMIE Ingolstadt</h4>
+                                    <p class="font-body-md text-on-surface-variant" data-i18n="contact.route">Klicken Sie, um die Route in Google Maps zu planen</p>
+                                </a>
+                            </div>
+                            <iframe class="sr-only" data-map-frame src=""></iframe>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </main>
+
+    <footer class="bg-surface-container-lowest py-section-padding border-t border-outline-variant/10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+            <div class="space-y-6">
+                <div class="font-headline-md text-headline-md text-bronze-glimmer">SESAMIE</div>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-xs leading-relaxed" data-i18n="footer.text"></p>
+                <div class="flex space-x-6">
+                    <a class="text-on-surface hover:text-bronze-glimmer transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+                    <a class="text-on-surface hover:text-bronze-glimmer transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+                    <a class="text-on-surface hover:text-bronze-glimmer transition-colors" href="#"><span class="material-symbols-outlined">restaurant</span></a>
+                </div>
+            </div>
+            <div class="space-y-8">
+                <h4 class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface" data-i18n="contact.opening">Öffnungszeiten</h4>
+                <div class="space-y-4 font-body-md text-body-md text-on-surface-variant" data-business-hours></div>
+            </div>
+            <div class="space-y-8">
+                <h4 class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface" data-i18n="nav.contact">Kontakt</h4>
+                <address class="not-italic space-y-4 font-body-md text-body-md text-on-surface-variant">
+                    <p data-business="address"></p>
+                    <p>
+                        <a data-business="phoneDisplay" data-business-link="phone" href="#"></a><br/>
+                        <a data-business="email" data-business-link="email" href="#"></a>
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <div class="md:hidden fixed bottom-0 w-full z-50 bg-bronze-glimmer px-6 py-4 flex justify-center shadow-[0_-10px_20px_rgba(0,0,0,0.3)]">
+        <button class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-white flex items-center gap-3" data-tab-target="reservation" type="button">
+            <span class="material-symbols-outlined">calendar_today</span>
+            <span data-i18n="nav.reserve">Reservierung</span>
+        </button>
+    </div>
+
+    <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
+    <aside class="cart-drawer" data-cart-drawer aria-hidden="true">
+        <div class="drawer-header">
             <div>
-              <span data-i18n="hero.signatureLabel">Mood</span>
-              <strong data-i18n="hero.signatureValue">Mystic dining, warm light, quiet ritual.</strong>
+                <p class="text-xs uppercase tracking-[0.28em] text-bronze-glimmer">SESAMIE</p>
+                <h2 data-i18n="order.title">Ihre Bestellung</h2>
             </div>
-            <button type="button" class="ghost-link" data-open-cart data-i18n="hero.signatureAction">
-              Direkt aus dem Live-Menu bestellen
-            </button>
-          </div>
+            <button aria-label="Close cart" class="icon-button" data-close-cart type="button">&times;</button>
         </div>
-
-        <div class="hero-visual reveal">
-          <div class="plate-card">
-            <div class="plate-card-ribbon">Midnight Dining</div>
-            <div class="plate-card-top">
-              <div>
-                <p class="plate-label">Ingolstadt Edition</p>
-                <h2>SESAMIE</h2>
-              </div>
-              <span data-i18n="hero.visualLabel">Midnight Service</span>
+        <div class="cart-items" data-cart-items></div>
+        <div class="drawer-summary">
+            <div class="summary-row">
+                <span data-i18n="order.total">Gesamt</span>
+                <strong data-cart-total>0,00 €</strong>
             </div>
-
-            <div class="plate-scene" aria-hidden="true">
-              <img class="plate-scene-image" src="./rtr.png" alt="" width="720" height="720" loading="eager" />
-            </div>
-
-            <div class="plate-card-footer">
-              <div>
-                <p data-i18n="hero.openingLabel">Opening</p>
-                <strong>Mo. - So. ab 11:00</strong>
-                <small data-business="address"></small>
-              </div>
-              <img src="./assets/images/logo_sesamie_transparent.png" alt="SESAMIE Logo" width="88" height="88" />
-            </div>
-          </div>
+            <form class="drawer-form" data-order-form>
+                <label><span data-i18n="order.name">Name</span><input name="name" required type="text"/></label>
+                <label><span data-i18n="order.phone">Telefon</span><input name="phone" required type="tel"/></label>
+                <label>
+                    <span data-i18n="order.typeLabel">Anfrage</span>
+                    <select name="type">
+                        <option value="pickup">Abholung</option>
+                        <option value="reservation">Tisch reservieren</option>
+                        <option value="general">Allgemeine Anfrage</option>
+                    </select>
+                </label>
+                <label><span data-i18n="order.desiredTime">Gewunschte Zeit</span><input name="desiredTime" type="text"/></label>
+                <label><span data-i18n="order.message">Ihre Nachricht</span><textarea name="note" rows="3"></textarea></label>
+                <button class="drawer-submit" data-i18n="order.submit" type="submit">Per WhatsApp senden</button>
+            </form>
         </div>
-      </div>
-    </section>
+    </aside>
 
-    <section class="section section-rice">
-      <div class="container">
-        <div class="section-heading reveal split-heading">
-          <div>
-            <p class="section-kicker">Brand Promise</p>
-            <h2 data-i18n="promises.title">Warme Gastfreundschaft, sorgfaltig gekocht.</h2>
-          </div>
-          <p class="section-intro" data-i18n="promises.intro">
-            SESAMIE verbindet moderne Asia-Kitchen mit einem ruhigen, hochwertigen Ambiente und
-            klaren Aromen.
-          </p>
-        </div>
-
-        <div class="promise-grid">
-          <article class="promise-card reveal">
-            <div class="promise-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M10 4c5 3 6 8 2 12-3 2-7 2-10-1 2-4 4-8 8-11Z"></path>
-              </svg>
+    <div class="option-backdrop" data-option-backdrop hidden></div>
+    <div class="option-modal" data-option-modal aria-hidden="true">
+        <div class="option-modal-card">
+            <div class="drawer-header">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.28em] text-bronze-glimmer" data-i18n="menu.chooseOption">Option auswahlen</p>
+                    <h2 data-option-title></h2>
+                </div>
+                <button aria-label="Close options" class="icon-button" data-close-options type="button">&times;</button>
             </div>
-            <h3 data-i18n="promises.items.0.title">Vielfaltig vegan</h3>
-            <p data-i18n="promises.items.0.body">
-              Pflanzliche Gerichte mit Tiefe, Textur und echter Balance.
-            </p>
-          </article>
-          <article class="promise-card reveal">
-            <div class="promise-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 11h16M6 7h12M8 15h8"></path>
-              </svg>
-            </div>
-            <h3 data-i18n="promises.items.1.title">Frische Zutaten</h3>
-            <p data-i18n="promises.items.1.body">
-              Sushi, Bowls und Tapas mit Fokus auf Qualitat und Saison.
-            </p>
-          </article>
-          <article class="promise-card reveal">
-            <div class="promise-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 14c3-1 4-4 6-8 1 3 4 5 6 6-2 3-5 5-9 5-2 0-4-1-5-3Z"></path>
-              </svg>
-            </div>
-            <h3 data-i18n="promises.items.2.title">Handwerklich gekocht</h3>
-            <p data-i18n="promises.items.2.body">
-              Saucen, Marinaden und Kompositionen mit Liebe zum Detail.
-            </p>
-          </article>
-          <article class="promise-card reveal">
-            <div class="promise-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 8c0-2 2-4 4-4s4 2 4 4-2 4-4 4-4-2-4-4Zm8 6c1-2 3-3 5-3 2 0 4 1 5 3"></path>
-              </svg>
-            </div>
-            <h3 data-i18n="promises.items.3.title">Herzlich serviert</h3>
-            <p data-i18n="promises.items.3.body">
-              Personlicher Service, aufmerksam und entspannt zugleich.
-            </p>
-          </article>
+            <p class="option-modal-copy" data-i18n="menu.chooseOptionBody"></p>
+            <div class="option-list" data-option-list></div>
         </div>
-      </div>
-    </section>
-
-    <section class="section section-book" id="menu-book" data-animated-region>
-      <div class="container book-layout">
-        <div class="book-copy reveal">
-          <p class="section-kicker section-kicker-gold">Menu Book</p>
-          <h2 data-i18n="book.title">Die echte Speisekarte als atmospharisches Buch</h2>
-          <p class="section-intro light" data-i18n="book.subtitle">
-            Blattern Sie durch die echten Menu-Seiten. Fur Bestellungen nutzen Sie darunter das
-            Live-Menu mit Warenkorb und WhatsApp.
-          </p>
-
-          <div class="book-notes">
-            <article>
-              <span data-i18n="book.noteOneLabel">Source</span>
-              <strong data-i18n="book.noteOneValue">Direkt aus Ihren PDF-Menukarten erzeugt</strong>
-            </article>
-            <article>
-              <span data-i18n="book.noteTwoLabel">Flow</span>
-              <strong data-i18n="book.noteTwoValue">Buch zum Entdecken, Live-Daten zum Bestellen</strong>
-            </article>
-          </div>
-
-          <div class="hero-cta">
-            <a class="button button-gold" href="#speisekarte" data-i18n="book.ctaPrimary">Zum Live-Menu</a>
-            <button type="button" class="button button-ghost" data-open-cart data-i18n="book.ctaSecondary">
-              Bestellung offnen
-            </button>
-          </div>
-        </div>
-
-        <div class="book-stage reveal">
-          <div class="book-stage-top">
-            <div>
-              <p class="mini-label" data-i18n="book.viewerLabel">Page spread</p>
-              <strong data-book-page-indicator>1 - 2</strong>
-            </div>
-            <div class="book-controls">
-              <button type="button" class="icon-button" data-book-prev aria-label="Previous pages">
-                &#8592;
-              </button>
-              <button type="button" class="icon-button" data-book-next aria-label="Next pages">
-                &#8594;
-              </button>
-            </div>
-          </div>
-
-          <div class="menu-book-preview">
-            <div class="book-spine" aria-hidden="true">
-              <span>SESAMIE</span>
-              <small>Menu Ritual</small>
-            </div>
-            <div class="menu-book menu-book-trigger" data-menu-book></div>
-            <button type="button" class="book-preview-overlay" data-open-book-modal
-              aria-label="Open menu book"></button>
-          </div>
-
-          <div class="book-stage-bottom">
-            <span data-book-caption data-i18n="book.caption">Deutsch und English wechseln oben im Header.</span>
-            <div class="book-stage-links">
-              <button type="button" class="ghost-link" data-open-book-modal data-i18n="book.expandLink">
-                Buch gross offnen
-              </button>
-              <a class="ghost-link" href="#speisekarte" data-i18n="book.jumpLink">Zum Bestellbereich springen</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-paper" id="speisekarte">
-      <div class="container">
-        <div class="section-heading reveal split-heading">
-          <div>
-            <p class="section-kicker">Live Ordering</p>
-            <h2 data-i18n="menu.title">Bestellen aus den Live-Menudaten</h2>
-          </div>
-          <p class="section-intro" data-i18n="menu.subtitle">
-            Entdecken Sie Tapas, Stone Bowls, Signature Rolls und hausgemachte Drinks. Die Daten
-            stammen direkt aus Ihrem echten Menu.
-          </p>
-        </div>
-
-        <div class="menu-toolbar reveal">
-          <label class="search-field">
-            <span data-i18n="menu.search">Gericht suchen...</span>
-            <input type="search" id="menu-search" data-menu-search placeholder="Gericht suchen..." />
-          </label>
-          <div class="filter-group">
-            <p data-i18n="menu.filtersLabel">Kategorien</p>
-            <div class="filter-row" data-filter-list></div>
-          </div>
-        </div>
-
-        <div class="menu-status" data-menu-status></div>
-        <div class="menu-sections" data-menu-sections></div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="reservieren">
-      <div class="container reservation-grid">
-        <div class="reveal">
-          <p class="section-kicker section-kicker-gold">Reservation</p>
-          <h2 data-i18n="reservation.title">Tisch reservieren</h2>
-          <p class="section-intro light" data-i18n="reservation.subtitle">
-            Schnell, direkt und ohne Umwege per WhatsApp.
-          </p>
-          <p class="hotline" data-i18n="reservation.hotline">Fur schnelle Ruckfragen: 0841 23238112</p>
-        </div>
-
-        <form class="reservation-form reveal" data-reservation-form>
-          <label>
-            <span data-i18n="reservation.name">Name</span>
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            <span data-i18n="reservation.phone">Telefon</span>
-            <input type="tel" name="phone" required />
-          </label>
-          <label>
-            <span data-i18n="reservation.date">Datum</span>
-            <input type="date" name="date" required />
-          </label>
-          <label>
-            <span data-i18n="reservation.time">Uhrzeit</span>
-            <input type="time" name="time" required />
-          </label>
-          <label class="full">
-            <span data-i18n="reservation.guests">Personen</span>
-            <input type="text" name="guests" required />
-          </label>
-          <label class="full">
-            <span data-i18n="reservation.note">Ihre Nachricht</span>
-            <textarea name="note" rows="4"></textarea>
-          </label>
-          <button type="submit" class="button button-gold full" data-i18n="reservation.submit">
-            Reservierung per WhatsApp senden
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <section class="section section-rice" id="kontakt">
-      <div class="container contact-grid">
-        <div class="contact-card reveal">
-          <p class="section-kicker">Contact</p>
-          <h2 data-i18n="contact.title">Besuchen Sie SESAMIE</h2>
-          <p class="section-intro" data-business="address"></p>
-
-          <div class="contact-block">
-            <p><strong>SESAMIE</strong></p>
-            <p data-business="address"></p>
-            <p>
-              <strong>Telefon:</strong>
-              <span data-business="phoneDisplay"></span>
-            </p>
-            <p>
-              <strong>Email:</strong>
-              <span data-business="email"></span>
-            </p>
-          </div>
-
-          <div class="contact-block">
-            <p class="mini-label" data-i18n="contact.opening">Offnungszeiten</p>
-            <div class="hours-list" data-business-hours></div>
-          </div>
-
-          <div class="contact-actions">
-            <a class="button button-dark" data-business-link="map" target="_blank" rel="noreferrer"
-              data-i18n="contact.route">
-              Route planen
-            </a>
-            <a class="button button-light" data-business-link="phone" data-i18n="contact.call">Anrufen</a>
-            <a class="button button-light" data-business-link="email" data-i18n="contact.mail">E-Mail senden</a>
-          </div>
-        </div>
-
-        <div class="map-card reveal">
-          <iframe title="SESAMIE map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            data-map-frame></iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <p class="footer-brand">SESAMIE</p>
-        <p data-i18n="footer.text">Modern Asian Kitchen &amp; Sushi in Ingolstadt.</p>
-      </div>
-      <div class="footer-meta">
-        <p data-business="address"></p>
-        <p>Menu book for atmosphere. Live menu for ordering.</p>
-      </div>
-    </div>
-  </footer>
-
-  <div class="mobile-bar">
-    <a class="button button-gold" href="#reservieren" data-i18n="nav.reserve">Reservieren</a>
-    <button type="button" class="button button-soft" data-open-cart data-i18n="nav.order">Bestellen</button>
-  </div>
-
-  <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
-  <aside class="cart-drawer" data-cart-drawer aria-hidden="true">
-    <div class="drawer-header">
-      <div>
-        <p class="mini-label">WhatsApp</p>
-        <h2 data-i18n="order.title">Ihre Bestellung</h2>
-      </div>
-      <button type="button" class="icon-button" data-close-cart aria-label="Close cart">x</button>
     </div>
 
-    <div class="cart-items" data-cart-items></div>
-
-    <div class="drawer-summary">
-      <div class="summary-row">
-        <span data-i18n="order.total">Gesamt</span>
-        <strong data-cart-total>0,00 EUR</strong>
-      </div>
-
-      <form data-order-form>
-        <label>
-          <span data-i18n="order.typeLabel">Anfrage</span>
-          <select name="type">
-            <option value="pickup" data-i18n="order.pickup">Abholung</option>
-            <option value="reservation" data-i18n="order.reservation">Tisch reservieren</option>
-            <option value="general" data-i18n="order.general">Allgemeine Anfrage</option>
-          </select>
-        </label>
-        <div class="form-two">
-          <label>
-            <span data-i18n="order.name">Name</span>
-            <input type="text" name="name" />
-          </label>
-          <label>
-            <span data-i18n="order.phone">Telefon</span>
-            <input type="tel" name="phone" />
-          </label>
+    <div class="book-backdrop" data-book-backdrop hidden></div>
+    <div class="book-modal" data-book-modal aria-hidden="true">
+        <div class="book-modal-shell">
+            <div class="drawer-header">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.28em] text-bronze-glimmer" data-i18n="book.modalEyebrow"></p>
+                    <h2 data-i18n="book.modalTitle"></h2>
+                </div>
+                <button aria-label="Close book" class="icon-button" data-close-book-modal type="button">&times;</button>
+            </div>
+            <p class="option-modal-copy" data-i18n="book.modalHint"></p>
+            <div class="book-stage-top modal-book-stage-top">
+                <strong data-book-page-indicator-modal>1 - 2</strong>
+                <div class="book-controls">
+                    <button aria-label="Previous pages" class="icon-button" data-book-prev type="button">&#8592;</button>
+                    <button aria-label="Next pages" class="icon-button" data-book-next type="button">&#8594;</button>
+                </div>
+            </div>
+            <div class="menu-book menu-book-modal" data-menu-book-modal></div>
         </div>
-        <label>
-          <span data-i18n="order.desiredTime">Gewunschte Zeit</span>
-          <input type="text" name="desiredTime" />
-        </label>
-        <label>
-          <span data-i18n="order.message">Ihre Nachricht</span>
-          <textarea name="note" rows="3"></textarea>
-        </label>
-        <button type="submit" class="button button-dark full" data-i18n="order.submit">
-          Per WhatsApp senden
-        </button>
-      </form>
     </div>
-  </aside>
 
-  <div class="modal-backdrop" data-option-backdrop hidden></div>
-  <div class="option-modal" data-option-modal aria-hidden="true">
-    <div class="option-modal-card">
-      <div class="drawer-header">
-        <div>
-          <p class="mini-label" data-i18n="menu.chooseOption">Option auswahlen</p>
-          <h2 data-option-title></h2>
-        </div>
-        <button type="button" class="icon-button" data-close-options aria-label="Close options">x</button>
-      </div>
-      <p class="option-copy" data-i18n="menu.chooseOptionBody">
-        Bitte wahlen Sie zuerst die passende Variante.
-      </p>
-      <div class="option-list" data-option-list></div>
-    </div>
-  </div>
+    <div class="toast" data-toast hidden></div>
 
-  <div class="modal-backdrop" data-book-backdrop hidden></div>
-  <div class="book-modal" data-book-modal aria-hidden="true">
-    <div class="book-modal-shell">
-      <div class="book-modal-top">
-        <div>
-          <p class="mini-label" data-i18n="book.modalEyebrow">Immersive Menu Book</p>
-          <h2 data-i18n="book.modalTitle">Blattern Sie durch die Speisekarte</h2>
-        </div>
-        <button type="button" class="icon-button" data-close-book-modal aria-label="Close menu book">x</button>
-      </div>
-
-      <div class="book-modal-stage">
-        <button type="button" class="book-nav-button" data-book-prev aria-label="Previous pages">
-          &#8592;
-        </button>
-        <div class="menu-book menu-book-modal" data-menu-book-modal></div>
-        <button type="button" class="book-nav-button" data-book-next aria-label="Next pages">
-          &#8594;
-        </button>
-      </div>
-
-      <div class="book-modal-bottom">
-        <strong data-book-page-indicator-modal>1 - 2</strong>
-        <span data-i18n="book.modalHint">Klicken Sie auf die Pfeile, um wie in einem Buch weiterzublattern.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="toast" data-toast hidden></div>
-
-  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
-  <script type="module" src="./assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+    <script src="./assets/js/app.js" type="module"></script>
 </body>
-<footer class="credit">
-  Made by @Hoangcasterteam
-</footer>
-
-<style>
-  .credit {
-    position: fixed;
-    bottom: 10px;
-    right: 15px;
-    font-size: 12px;
-    color: #888;
-    opacity: 0.8;
-    z-index: 9999;
-  }
-</style>
-
 </html>

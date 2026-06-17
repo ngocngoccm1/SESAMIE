@@ -19,6 +19,9 @@ let animationRegionObserver;
 let animeReady = null;
 let hasAnimatedMenuCards = false;
 let bookFlipSyncing = false;
+let cartTriggerElement = null;
+let orderUiQuantityLast = 0;
+let orderUiBumpTimer = null;
 const bookFlips = {
   preview: null,
   modal: null
@@ -26,13 +29,17 @@ const bookFlips = {
 
 const elements = {
   header: document.querySelector("[data-header]"),
+  tabLinks: document.querySelectorAll("[data-tab]"),
+  tabPanels: document.querySelectorAll(".tab-content"),
   businessFields: document.querySelectorAll("[data-business]"),
-  hoursList: document.querySelector("[data-business-hours]"),
+  hoursLists: document.querySelectorAll("[data-business-hours]"),
   mapFrame: document.querySelector("[data-map-frame]"),
-  mapLink: document.querySelector('[data-business-link="map"]'),
-  phoneLink: document.querySelector('[data-business-link="phone"]'),
-  emailLink: document.querySelector('[data-business-link="email"]'),
+  mapLinks: document.querySelectorAll('[data-business-link="map"]'),
+  phoneLinks: document.querySelectorAll('[data-business-link="phone"]'),
+  emailLinks: document.querySelectorAll('[data-business-link="email"]'),
   languageButtons: document.querySelectorAll("[data-language-switch]"),
+  featuredMenu: document.querySelector("[data-featured-menu]"),
+  menuNav: document.querySelector("[data-menu-nav]"),
   filterList: document.querySelector("[data-filter-list]"),
   menuSearch: document.querySelector("[data-menu-search]"),
   menuStatus: document.querySelector("[data-menu-status]"),
@@ -56,10 +63,22 @@ const elements = {
   bookPageIndicatorModal: document.querySelector("[data-book-page-indicator-modal]"),
   bookCaption: document.querySelector("[data-book-caption]"),
   bookBackdrop: document.querySelector("[data-book-backdrop]"),
-  bookModal: document.querySelector("[data-book-modal]")
+  bookModal: document.querySelector("[data-book-modal]"),
+  orderUiBadge: document.querySelector("[data-order-ui-badge]"),
+  orderUiTotal: document.querySelector("[data-order-ui-total]")
 };
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const mobileBookQuery = window.matchMedia("(max-width: 768px)");
+const isOrderPage =
+  document.body.classList.contains("order-page") ||
+  window.location.pathname.toLowerCase().includes("order.html");
+const placeholderLogo = "./assets/images/logo_sesamie_transparent.png";
+const featuredHomeImages = [
+  "./assets/images/site/featured-1.jpg",
+  "./assets/images/site/featured-2.jpg",
+  "./assets/images/site/featured-3.jpg"
+];
 
 function loadAnime() {
   if (prefersReducedMotion) return Promise.resolve(null);
@@ -69,6 +88,44 @@ function loadAnime() {
       .catch(() => null);
   }
   return animeReady;
+}
+
+function getMenuTabNameFromHash() {
+  const hash = window.location.hash.replace("#", "").trim().toLowerCase();
+  if (hash.startsWith("menu-section-")) return "menu";
+  const allowedTabs = new Set(["home", "menu", "reservation", "contact"]);
+  return allowedTabs.has(hash) ? hash : "home";
+}
+
+function setActiveTab(tabName, { updateHash = true, scrollToTop = true } = {}) {
+  const safeTab = ["home", "menu", "reservation", "contact"].includes(tabName) ? tabName : "home";
+
+  elements.tabPanels.forEach((panel) => {
+    panel.classList.toggle("active", panel.id === safeTab);
+  });
+
+  elements.tabLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("data-tab") === safeTab);
+  });
+
+  if (updateHash) {
+    const newHash = `#${safeTab}`;
+    if (window.location.hash !== newHash) {
+      window.history.replaceState(null, "", newHash);
+    }
+  }
+
+  if (scrollToTop) {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+  }
+}
+
+function initTabs() {
+  setActiveTab(getMenuTabNameFromHash(), { updateHash: false, scrollToTop: false });
+
+  window.addEventListener("hashchange", () => {
+    setActiveTab(getMenuTabNameFromHash(), { updateHash: false, scrollToTop: false });
+  });
 }
 
 async function animatePageIntro() {
@@ -109,27 +166,22 @@ async function animatePageIntro() {
 }
 
 async function animateMenuCards(scope = elements.menuSections) {
-  if (prefersReducedMotion || !scope) return;
-  if (hasAnimatedMenuCards) return;
-  const cards = Array.from(scope.querySelectorAll(".menu-card")).slice(0, 8);
+  if (prefersReducedMotion || !scope || hasAnimatedMenuCards) return;
+  const cards = Array.from(scope.querySelectorAll(".menu-card")).slice(0, 6);
   if (!cards.length) return;
 
   const anime = await loadAnime();
   if (!anime) return;
 
   anime.remove(cards);
-  anime.set(cards, {
-    opacity: 0,
-    translateY: 26
-  });
+  anime.set(cards, { opacity: 0 });
 
   anime({
     targets: cards,
     opacity: [0, 1],
-    translateY: [26, 0],
-    delay: anime.stagger(42),
-    duration: 380,
-    easing: "easeOutCubic"
+    delay: anime.stagger(30),
+    duration: 240,
+    easing: "linear"
   });
 
   hasAnimatedMenuCards = true;
@@ -171,7 +223,11 @@ function getCopy() {
 function setLanguage(language) {
   state.language = language;
   state.activeFilter = "all";
+  state.searchQuery = "";
   state.bookPage = 0;
+  if (elements.menuSearch) {
+    elements.menuSearch.value = "";
+  }
   applyTranslations();
   initLanguageSwitcher();
   updateCart();
@@ -195,13 +251,15 @@ function applyTranslations() {
     }
   });
 
-  elements.menuSearch.placeholder = copy.menu.search;
+  if (elements.menuSearch) {
+    elements.menuSearch.placeholder = copy.menu.search;
+  }
   elements.businessFields.forEach((node) => {
     const key = node.getAttribute("data-business");
     if (key && BUSINESS[key]) node.textContent = BUSINESS[key];
   });
 
-  elements.hoursList.innerHTML = BUSINESS.hours
+  const hoursMarkup = BUSINESS.hours
     .map(
       (item) => `
         <div class="hours-row">
@@ -212,16 +270,32 @@ function applyTranslations() {
     )
     .join("");
 
-  elements.mapLink.href = BUSINESS.mapUrl;
-  elements.phoneLink.href = BUSINESS.phoneHref;
-  elements.emailLink.href = `mailto:${BUSINESS.email}`;
-  elements.mapFrame.src = BUSINESS.mapEmbedUrl;
+  elements.hoursLists.forEach((node) => {
+    node.innerHTML = hoursMarkup;
+  });
+
+  elements.mapLinks.forEach((node) => {
+    node.href = BUSINESS.mapUrl;
+  });
+  elements.phoneLinks.forEach((node) => {
+    node.href = BUSINESS.phoneHref;
+  });
+  elements.emailLinks.forEach((node) => {
+    node.href = `mailto:${BUSINESS.email}`;
+  });
+  if (elements.mapFrame) {
+    elements.mapFrame.src = BUSINESS.mapEmbedUrl;
+  }
 }
 
 async function loadMenu(language) {
   const copy = getCopy();
-  elements.menuStatus.textContent = copy.menu.loading;
-  elements.menuSections.innerHTML = "";
+  if (elements.menuStatus) {
+    elements.menuStatus.textContent = copy.menu.loading;
+  }
+  if (elements.menuSections) {
+    elements.menuSections.innerHTML = "";
+  }
 
   try {
     if (!state.menuCache[language]) {
@@ -232,19 +306,20 @@ async function loadMenu(language) {
     }
 
     state.menu = state.menuCache[language];
+    renderFeaturedMenu();
     renderFilters();
     renderMenu();
   } catch (error) {
     console.error(error);
     state.menu = null;
-    elements.filterList.innerHTML = "";
-    elements.menuSections.innerHTML = "";
-    elements.menuStatus.textContent = copy.menu.empty;
+    if (elements.filterList) elements.filterList.innerHTML = "";
+    if (elements.menuSections) elements.menuSections.innerHTML = "";
+    if (elements.menuStatus) elements.menuStatus.textContent = copy.menu.empty;
   }
 }
 
 function renderFilters() {
-  if (!state.menu) return;
+  if (!state.menu || !elements.filterList) return;
   const filtersMarkup = state.menu.filters
     .map(
       (filter) => `
@@ -260,6 +335,54 @@ function renderFilters() {
     .join("");
 
   elements.filterList.innerHTML = filtersMarkup;
+}
+
+function renderMenuNavigation(sections) {
+  if (!elements.menuNav) return;
+
+  elements.menuNav.innerHTML = sections
+    .map(
+      (section) => `
+        <a class="menu-tab-anchor" href="#menu-section-${section.id}">
+          ${section.name}
+        </a>
+      `
+    )
+    .join("");
+}
+
+function getFeaturedPreviewPath(index) {
+  if (isOrderPage) return placeholderLogo;
+  return featuredHomeImages[index % featuredHomeImages.length];
+}
+
+function renderFeaturedMenu() {
+  if (!elements.featuredMenu || !state.menu) return;
+
+  const recommendedItems = state.menu.items.filter((item) => item.tags.includes("recommended"));
+  const sourceItems = (recommendedItems.length >= 3 ? recommendedItems : state.menu.items).slice(0, 3);
+
+  elements.featuredMenu.innerHTML = sourceItems
+    .map((item, index) => {
+      const detail = item.description || item.ingredients.slice(0, 3).join(" | ");
+      const previewImage = getFeaturedPreviewPath(index);
+
+      return `
+        <article class="featured-menu-card reveal-on-scroll">
+          <div class="featured-menu-image">
+            <img src="${previewImage}" alt="${item.name}" loading="lazy" />
+          </div>
+          <div class="featured-menu-copy">
+            <div class="featured-menu-heading">
+              <h3>${item.name}</h3>
+              <span>${formatPrice(item.variants[0]?.price ?? item.price ?? 0)}</span>
+            </div>
+            <p>${detail}</p>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
 }
 
 function getVisibleSections() {
@@ -286,24 +409,30 @@ function renderMenu() {
   const visibleSections = getVisibleSections();
   const visibleCount = visibleSections.reduce((sum, section) => sum + section.items.length, 0);
 
-  elements.menuStatus.innerHTML = `<span class="status-pill">${visibleCount}</span> ${copy.menu.results}`;
+  if (elements.menuStatus) {
+    elements.menuStatus.innerHTML = `<span class="status-pill">${visibleCount}</span> ${copy.menu.results}`;
+  }
 
-  elements.menuSections.innerHTML = visibleSections
-    .map(
-      (section) => `
-        <section class="reveal">
-          <div class="menu-section-header">
-            <h3>${section.name}</h3>
-            <span class="category-pill">${section.items.length}</span>
-          </div>
-          <div class="menu-section-grid">
-            ${section.items.map((item) => renderMenuCard(item, tagLabels, copy)).join("")}
-          </div>
-        </section>
-      `
-    )
-    .join("");
+  if (elements.menuSections) {
+    const sectionRevealClass = isOrderPage ? "" : "reveal";
+    elements.menuSections.innerHTML = visibleSections
+      .map(
+        (section) => `
+          <section class="${sectionRevealClass} menu-render-section" id="menu-section-${section.id}">
+            <div class="menu-section-header">
+              <h3>${section.name}</h3>
+              <span class="category-pill">${section.items.length}</span>
+            </div>
+            <div class="menu-section-grid">
+              ${section.items.map((item) => renderMenuCard(item, tagLabels, copy)).join("")}
+            </div>
+          </section>
+        `
+      )
+      .join("");
+  }
 
+  renderMenuNavigation(visibleSections);
   initScrollAnimations();
   animateMenuCards();
 }
@@ -315,6 +444,10 @@ function getBookImagePath(pageNumber) {
 
 function hasPageFlip() {
   return Boolean(window.St?.PageFlip);
+}
+
+function usePageFlipBook() {
+  return hasPageFlip() && !mobileBookQuery.matches;
 }
 
 function normalizeBookPage(pageIndex) {
@@ -353,6 +486,18 @@ function getFallbackBookMarkup() {
     .join("");
 }
 
+function getScrollBookMarkup() {
+  return Array.from({ length: BOOK_PAGE_COUNT }, (_, index) => {
+    const pageNumber = index + 1;
+    return `
+      <figure class="menu-book-page menu-book-page--scroll" data-book-page="${pageNumber}">
+        <img src="${getBookImagePath(pageNumber)}" alt="SESAMIE menu page ${pageNumber}" loading="lazy" />
+        <figcaption>Page ${pageNumber}</figcaption>
+      </figure>
+    `;
+  }).join("");
+}
+
 function updateBookIndicators() {
   const leftPage = state.bookPage + 1;
   const rightPage = Math.min(leftPage + 1, BOOK_PAGE_COUNT);
@@ -370,6 +515,36 @@ function updateBookIndicators() {
   });
   document.querySelectorAll("[data-book-next]").forEach((button) => {
     button.disabled = state.bookPage >= BOOK_PAGE_COUNT - 2;
+  });
+}
+
+function updateOrderUi() {
+  const quantityTotal = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+  const priceTotal = state.cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
+  const checkoutButtons = document.querySelectorAll(".drawer-submit");
+
+  if (elements.orderUiTotal) {
+    elements.orderUiTotal.textContent = formatPrice(priceTotal);
+  }
+
+  if (elements.orderUiBadge) {
+    elements.orderUiBadge.textContent = String(quantityTotal);
+    elements.orderUiBadge.hidden = quantityTotal === 0;
+    if (quantityTotal !== orderUiQuantityLast) {
+      elements.orderUiBadge.classList.remove("is-bumped");
+      window.clearTimeout(orderUiBumpTimer);
+      elements.orderUiBadge.getBoundingClientRect();
+      elements.orderUiBadge.classList.add("is-bumped");
+      orderUiBumpTimer = window.setTimeout(() => {
+        elements.orderUiBadge.classList.remove("is-bumped");
+      }, 240);
+      orderUiQuantityLast = quantityTotal;
+    }
+  }
+
+  checkoutButtons.forEach((button) => {
+    button.disabled = quantityTotal === 0;
+    button.setAttribute("aria-disabled", quantityTotal === 0 ? "true" : "false");
   });
 }
 
@@ -396,7 +571,7 @@ function syncBookStateFromFlip(pageIndex, sourceKey) {
 }
 
 function createBookFlip(target, key, options = {}) {
-  if (!target || !hasPageFlip()) return null;
+  if (!target || !usePageFlipBook()) return null;
 
   const PageFlip = window.St.PageFlip;
   const instance = new PageFlip(target, {
@@ -436,7 +611,7 @@ function createBookFlip(target, key, options = {}) {
 }
 
 function initBookFlipInstances() {
-  if (!hasPageFlip()) return;
+  if (!usePageFlipBook()) return;
 
   destroyBookFlips();
 
@@ -454,7 +629,7 @@ function initBookFlipInstances() {
 }
 
 function ensureModalBookFlip() {
-  if (!hasPageFlip() || !elements.menuBookModal) return;
+  if (!usePageFlipBook() || !elements.menuBookModal) return;
   if (bookFlips.modal?.turnToPage) {
     bookFlips.modal.turnToPage(state.bookPage);
     updateBookIndicators();
@@ -475,20 +650,21 @@ function ensureModalBookFlip() {
 }
 
 function renderMenuBook() {
-  const markup = hasPageFlip() ? getBookPagesMarkup() : getFallbackBookMarkup();
+  const markup = usePageFlipBook() ? getBookPagesMarkup() : getScrollBookMarkup();
 
   if (elements.menuBook) {
     elements.menuBook.innerHTML = markup;
-    elements.menuBook.classList.toggle("is-pageflip", hasPageFlip());
+    elements.menuBook.classList.toggle("is-pageflip", usePageFlipBook());
   }
   if (elements.menuBookModal) {
     elements.menuBookModal.innerHTML = markup;
-    elements.menuBookModal.classList.toggle("is-pageflip", hasPageFlip());
+    elements.menuBookModal.classList.toggle("is-pageflip", usePageFlipBook());
   }
 
-  if (hasPageFlip()) {
+  if (usePageFlipBook()) {
     initBookFlipInstances();
   } else {
+    destroyBookFlips();
     updateBookIndicators();
   }
 }
@@ -502,7 +678,7 @@ function openBookModal() {
   }
   document.body.classList.add("has-book-modal");
   animatePanelOpen(document.querySelector(".book-modal-shell"));
-  if (hasPageFlip()) {
+  if (usePageFlipBook()) {
     window.requestAnimationFrame(() => {
       window.requestAnimationFrame(() => {
         ensureModalBookFlip();
@@ -546,6 +722,28 @@ function renderMenuCard(item, tagLabels, copy) {
           ${item.additives.length > 0 ? `Zusatzstoffe: ${item.additives.join(", ")}` : ""}
         </p>`
       : "";
+
+  if (isOrderPage) {
+    const orderPreview = getFeaturedPreviewPath(item.name.length);
+    return `
+      <article class="menu-card order-product-card" data-menu-item="${item.id}">
+        <div class="order-product-media">
+          <img src="${orderPreview}" alt="${item.name}" loading="lazy" />
+        </div>
+        <div class="order-product-copy">
+          <h3>${item.name}</h3>
+          ${ingredientText ? `<p>${ingredientText}</p>` : ""}
+          ${detailText}
+          ${tagsMarkup ? `<div class="tag-row">${tagsMarkup}</div>` : ""}
+          <div class="order-product-footer">
+            <strong class="price-display">${priceText}</strong>
+            <button type="button" class="menu-add order-add" data-add-item="${item.id}" aria-label="${copy.menu.add}">+</button>
+          </div>
+          ${allergenText}
+        </div>
+      </article>
+    `;
+  }
 
   return `
     <article class="menu-card" data-menu-item="${item.id}">
@@ -604,10 +802,12 @@ function addToCart(item, variant = null) {
 }
 
 function updateCart() {
+  if (!elements.cartTotal || !elements.cartItems) return;
   const copy = getCopy();
   const total = state.cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
 
   elements.cartTotal.textContent = formatPrice(total);
+  updateOrderUi();
 
   if (state.cart.length === 0) {
     elements.cartItems.innerHTML = `<div class="cart-empty">${copy.order.empty}</div>`;
@@ -637,9 +837,13 @@ function updateCart() {
             <button type="button" class="remove-line" data-remove-item="${item.id}">${copy.order.remove}</button>
           </div>
 
-          <label>
-            <span>${copy.order.note}</span>
-            <textarea rows="2" data-note-item="${item.id}">${item.note}</textarea>
+          <label class="cart-note-field">
+            <textarea
+              rows="2"
+              data-note-item="${item.id}"
+              aria-label="${copy.order.note}"
+              placeholder=""
+            >${item.note}</textarea>
           </label>
         </article>
       `;
@@ -648,19 +852,38 @@ function updateCart() {
 }
 
 function openCart() {
+  if (!elements.drawerBackdrop || !elements.cartDrawer) return;
+  cartTriggerElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
   elements.drawerBackdrop.hidden = false;
   elements.cartDrawer.classList.add("is-open");
   elements.cartDrawer.setAttribute("aria-hidden", "false");
+  document.body.classList.add("has-cart-open");
+  document.querySelectorAll("[data-open-cart]").forEach((button) => {
+    button.setAttribute("aria-expanded", "true");
+  });
   animatePanelOpen(elements.cartDrawer);
+  window.requestAnimationFrame(() => {
+    const firstFocusable = elements.cartDrawer.querySelector("button, textarea, input, select, [href], [tabindex]:not([tabindex='-1'])");
+    if (firstFocusable instanceof HTMLElement) firstFocusable.focus();
+  });
 }
 
 function closeCart() {
+  if (!elements.drawerBackdrop || !elements.cartDrawer) return;
   elements.drawerBackdrop.hidden = true;
   elements.cartDrawer.classList.remove("is-open");
   elements.cartDrawer.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("has-cart-open");
+  document.querySelectorAll("[data-open-cart]").forEach((button) => {
+    button.setAttribute("aria-expanded", "false");
+  });
+  if (cartTriggerElement instanceof HTMLElement) {
+    cartTriggerElement.focus();
+  }
 }
 
 function openOptions(item) {
+  if (!elements.optionTitle || !elements.optionList || !elements.optionBackdrop || !elements.optionModal) return;
   state.optionItem = item;
   const copy = getCopy();
   elements.optionTitle.textContent = item.name;
@@ -690,6 +913,7 @@ function openOptions(item) {
 }
 
 function closeOptions() {
+  if (!elements.optionBackdrop || !elements.optionModal) return;
   state.optionItem = null;
   elements.optionBackdrop.hidden = true;
   elements.optionModal.classList.remove("is-open");
@@ -697,6 +921,7 @@ function closeOptions() {
 }
 
 function buildWhatsAppOrderMessage() {
+  if (!elements.orderForm) return "";
   const copy = getCopy();
   const formData = new FormData(elements.orderForm);
   const total = state.cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
@@ -740,6 +965,7 @@ function buildWhatsAppOrderMessage() {
 }
 
 function buildWhatsAppReservationMessage() {
+  if (!elements.reservationForm) return "";
   const formData = new FormData(elements.reservationForm);
   return [
     state.language === "de" ? "SESAMIE Tischreservierung" : "SESAMIE Table Reservation",
@@ -762,6 +988,7 @@ function sendWhatsApp(message) {
 }
 
 function showToast(message) {
+  if (!elements.toast) return;
   elements.toast.textContent = message;
   elements.toast.hidden = false;
   window.clearTimeout(showToast.timer);
@@ -787,7 +1014,7 @@ function initScrollAnimations() {
     );
   }
 
-  document.querySelectorAll(".reveal:not(.is-visible)").forEach((node) => {
+  document.querySelectorAll(".reveal:not(.is-visible), .reveal-on-scroll:not(.is-visible)").forEach((node) => {
     if (node.hasAttribute("data-reveal-observed")) return;
     node.setAttribute("data-reveal-observed", "true");
     revealObserver.observe(node);
@@ -825,11 +1052,22 @@ function initLanguageSwitcher() {
 }
 
 function handleSearch() {
+  if (!elements.menuSearch) return;
   state.searchQuery = elements.menuSearch.value;
   renderMenu();
 }
 
 function handleGlobalClick(event) {
+  const tabTrigger = event.target.closest("[data-tab], [data-tab-target]");
+  if (tabTrigger) {
+    const tabName = tabTrigger.getAttribute("data-tab") || tabTrigger.getAttribute("data-tab-target");
+    if (tabName) {
+      event.preventDefault();
+      setActiveTab(tabName);
+      return;
+    }
+  }
+
   const filterButton = event.target.closest("[data-filter]");
   if (filterButton) {
     state.activeFilter = filterButton.getAttribute("data-filter");
@@ -952,6 +1190,29 @@ function handleGlobalKeydown(event) {
     return;
   }
 
+  if (elements.cartDrawer?.classList.contains("is-open") && event.key === "Tab") {
+    const focusables = elements.cartDrawer.querySelectorAll(
+      "button, textarea, input, select, [href], [tabindex]:not([tabindex='-1'])"
+    );
+    if (focusables.length === 0) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey && active === first) {
+      event.preventDefault();
+      last.focus();
+      return;
+    }
+
+    if (!event.shiftKey && active === last) {
+      event.preventDefault();
+      first.focus();
+      return;
+    }
+  }
+
   if (!state.bookModalOpen) return;
 
   if (event.key === "ArrowRight") {
@@ -982,34 +1243,50 @@ function handleCartInput(event) {
 
 function bindEvents() {
   window.addEventListener("scroll", () => {
-    elements.header.classList.toggle("is-scrolled", window.scrollY > 24);
+    if (elements.header) {
+      elements.header.classList.toggle("is-scrolled", window.scrollY > 24);
+    }
   });
 
   elements.languageButtons.forEach((button) => {
     button.addEventListener("click", () => setLanguage(button.getAttribute("data-language-switch")));
   });
 
-  elements.menuSearch.addEventListener("input", handleSearch);
+  if (elements.menuSearch) {
+    elements.menuSearch.addEventListener("input", handleSearch);
+  }
   document.addEventListener("click", handleGlobalClick);
   document.addEventListener("input", handleCartInput);
   document.addEventListener("keydown", handleGlobalKeydown);
 
-  elements.orderForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    sendWhatsApp(buildWhatsAppOrderMessage());
-  });
+  if (elements.orderForm) {
+    elements.orderForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      sendWhatsApp(buildWhatsAppOrderMessage());
+    });
+  }
 
-  elements.reservationForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    sendWhatsApp(buildWhatsAppReservationMessage());
-  });
+  if (elements.reservationForm) {
+    elements.reservationForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      sendWhatsApp(buildWhatsAppReservationMessage());
+    });
+  }
+
+  if (mobileBookQuery.addEventListener) {
+    mobileBookQuery.addEventListener("change", renderMenuBook);
+  } else if (mobileBookQuery.addListener) {
+    mobileBookQuery.addListener(renderMenuBook);
+  }
 }
 
 export function initApp() {
   applyTranslations();
   initLanguageSwitcher();
+  initTabs();
   bindEvents();
   updateCart();
+  updateOrderUi();
   renderMenuBook();
   initScrollAnimations();
   initAnimationRegions();

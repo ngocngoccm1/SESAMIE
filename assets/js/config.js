@@ -37,7 +37,29 @@ export const UI_COPY = {
       signatureValue: "Mystisches Dining, warmes Licht, ruhiges Ritual.",
       signatureAction: "Direkt aus dem Live-Menu bestellen",
       visualLabel: "Midnight Service",
-      openingLabel: "Opening"
+      openingLabel: "Opening",
+      discover: "Mehr entdecken",
+      fullMenu: "Unsere Speisekarte"
+    },
+    home: {
+      philosophyEyebrow: "Philosophie & Handwerk",
+      philosophyBodyOne:
+        "Bei SESAMIE wird Essen als ruhiges Gesamterlebnis gedacht - mit warmem Licht, klarer Prasentation und Aromen, die bewusst aufeinander aufbauen.",
+      philosophyBodyTwo:
+        "Die Speisekarte verbindet Asia Kitchen, Sushi und moderne Teller mit handwerklicher Zubereitung, frischen Zutaten und einem entspannten Rhythmus fur den Abend.",
+      freshValue: "100%",
+      freshLabel: "Frische Zutaten",
+      craftValue: "Artisan",
+      craftLabel: "Handgemachte Details",
+      featuredEyebrow: "Auswahl des Hauses",
+      featuredTitle: "Kulinarische Highlights",
+      featuredCta: "Vollstandige Speisekarte ansehen",
+      reservationEyebrow: "Reservierung",
+      reservationTitle: "Reservieren Sie Ihren Tisch",
+      reservationBody:
+        "Sichern Sie sich Ihren Platz fur einen entspannten Abend bei SESAMIE oder wechseln Sie direkt zur Speisekarte fur Ihre Bestellung.",
+      reservationPrimary: "Zur Reservierung",
+      reservationSecondary: "Zur Speisekarte"
     },
     promises: {
       title: "Warme Gastfreundschaft, sorgfaltig gekocht.",
@@ -66,6 +88,11 @@ export const UI_COPY = {
       title: "Bestellen aus den Live-Menudaten",
       subtitle:
         "Unter dem echten Menu-Buch finden Sie hier alle Gerichte als durchsuchbare Live-Daten fur Bestellung und WhatsApp-Anfrage.",
+      eyebrow: "Kulinarische Meisterschaft",
+      quote: "Qualitat, die man schmeckt. Tradition, die man fuhlt.",
+      intro:
+        "Entdecken Sie die echte Speisekarte von SESAMIE als dynamische Auswahl mit Suche, Filtern, Varianten und direkter WhatsApp-Bestellung.",
+      navLabel: "Kategorien",
       search: "Gericht suchen...",
       filtersLabel: "Kategorien",
       empty: "Speisekarte konnte nicht geladen werden.",
@@ -114,8 +141,11 @@ export const UI_COPY = {
       note: "Notiz"
     },
     reservation: {
+      eyebrow: "Exklusiv geniessen",
       title: "Tisch reservieren",
       subtitle: "Schnell, direkt und ohne Umwege per WhatsApp.",
+      intro:
+        "Senden Sie Ihre Anfrage direkt an SESAMIE. Fur Gruppen oder besondere Wunsche konnen Sie uns jederzeit zusatzlich per E-Mail kontaktieren.",
       name: "Name",
       phone: "Telefon",
       date: "Datum",
@@ -123,10 +153,21 @@ export const UI_COPY = {
       guests: "Personen",
       note: "Ihre Nachricht",
       submit: "Reservierung per WhatsApp senden",
-      hotline: "Fur schnelle Ruckfragen: 0841 23238112"
+      hotline: "Fur schnelle Ruckfragen: 0841 23238112",
+      expressTitle: "Express Buchung",
+      expressBody: "Reservieren Sie lieber sofort uber WhatsApp und erhalten Sie schnell eine Ruckmeldung.",
+      expressButton: "WhatsApp Reservierung",
+      questionsTitle: "Fragen zur Reservierung?",
+      questionsBody: "Fur Gruppenanfragen oder besondere Events erreichen Sie uns direkt per E-Mail."
     },
     contact: {
       title: "Besuchen Sie SESAMIE",
+      eyebrow: "Verbindung aufnehmen",
+      intro:
+        "Ob Reservierung, Bestellung oder allgemeine Anfrage - wir freuen uns darauf, von Ihnen zu horen und Sie in Ingolstadt willkommen zu heissen.",
+      location: "Standort",
+      messageTitle: "Nachricht senden",
+      messageSubmit: "Nachricht abschicken",
       route: "Route planen",
       call: "Anrufen",
       mail: "E-Mail senden",
@@ -177,7 +218,29 @@ export const UI_COPY = {
       signatureValue: "Mystic dining, warm light, quiet ritual.",
       signatureAction: "Order straight from the live menu",
       visualLabel: "Midnight Service",
-      openingLabel: "Opening"
+      openingLabel: "Opening",
+      discover: "Discover more",
+      fullMenu: "Our menu"
+    },
+    home: {
+      philosophyEyebrow: "Philosophy & Craft",
+      philosophyBodyOne:
+        "At SESAMIE, dining is treated as a complete experience with warm light, composed presentation and flavors that unfold in calm layers.",
+      philosophyBodyTwo:
+        "The menu blends Asian kitchen classics, sushi and modern plates with careful preparation, fresh ingredients and an easy rhythm for the evening.",
+      freshValue: "100%",
+      freshLabel: "Fresh ingredients",
+      craftValue: "Artisan",
+      craftLabel: "Handmade details",
+      featuredEyebrow: "House selection",
+      featuredTitle: "Culinary highlights",
+      featuredCta: "View the full menu",
+      reservationEyebrow: "Reservation",
+      reservationTitle: "Reserve your table",
+      reservationBody:
+        "Secure your place for a warm evening at SESAMIE or move straight to the menu to place your order.",
+      reservationPrimary: "Go to reservation",
+      reservationSecondary: "Go to menu"
     },
     promises: {
       title: "Warm hospitality, carefully prepared.",
@@ -193,6 +256,11 @@ export const UI_COPY = {
       title: "Order from the live menu data",
       subtitle:
         "Below the visual menu book, every dish is available here as searchable live data for ordering and WhatsApp requests.",
+      eyebrow: "Culinary mastery",
+      quote: "Quality you can taste. Tradition you can feel.",
+      intro:
+        "Explore the real SESAMIE menu as a dynamic selection with search, filters, variants and direct WhatsApp ordering.",
+      navLabel: "Categories",
       search: "Search dishes...",
       filtersLabel: "Categories",
       empty: "The menu could not be loaded.",
@@ -241,8 +309,11 @@ export const UI_COPY = {
       note: "Note"
     },
     reservation: {
+      eyebrow: "Exclusive dining",
       title: "Reserve a table",
       subtitle: "Fast and direct via WhatsApp.",
+      intro:
+        "Send your reservation request directly to SESAMIE. For groups or special requests, you can also reach us by email anytime.",
       name: "Name",
       phone: "Phone",
       date: "Date",
@@ -250,10 +321,21 @@ export const UI_COPY = {
       guests: "Guests",
       note: "Your message",
       submit: "Send reservation via WhatsApp",
-      hotline: "For quick questions: 0841 23238112"
+      hotline: "For quick questions: 0841 23238112",
+      expressTitle: "Express booking",
+      expressBody: "Prefer to reserve instantly through WhatsApp and receive a quick response.",
+      expressButton: "WhatsApp reservation",
+      questionsTitle: "Questions about booking?",
+      questionsBody: "For group requests or special events, contact us directly by email."
     },
     contact: {
       title: "Visit SESAMIE",
+      eyebrow: "Get in touch",
+      intro:
+        "Whether it is a reservation, an order or a general question, we are happy to hear from you and welcome you in Ingolstadt.",
+      location: "Location",
+      messageTitle: "Send a message",
+      messageSubmit: "Send message",
       route: "Plan route",
       call: "Call now",
       mail: "Send email",
