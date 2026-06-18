@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html class="dark" lang="de">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>SESAMIE | Asia Kitchen & Sushi</title>
-    <meta content="Modern Asian Kitchen & Sushi in Ingolstadt. Speisekarte, Reservierung und Bestellung per WhatsApp." name="description"/>
+    <meta content="Modern Asian Kitchen & Sushi in Ingolstadt. Speisekarte, Reservierung und Bestellung per WhatsApp."
+        name="description" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -103,88 +108,122 @@
             }
         };
     </script>
-    <link href="./assets/css/style.css" rel="stylesheet"/>
+    <link href="./assets/css/style.css" rel="stylesheet" />
 </head>
-<body class="bg-surface text-on-surface selection:bg-bronze-glimmer selection:text-white">
-    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md" data-header>
-        <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
-            <div class="font-headline-md text-headline-md text-bronze-glimmer tracking-tighter">SESAMIE</div>
-            <div class="hidden md:flex items-center space-x-8">
-                <span class="tab-link active font-body-md text-body-md uppercase tracking-widest" data-tab="home" data-i18n="nav.home">Home</span>
-                <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface" data-tab="menu" data-i18n="nav.menu">Speisekarte</span>
-                <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface" data-tab="reservation" data-i18n="nav.reserve">Reservierung</span>
-                <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface" data-tab="contact" data-i18n="nav.contact">Kontakt</span>
-            </div>
-            <div class="flex items-center gap-3">
-                <div class="language-switch" role="group" aria-label="Language switch">
-                    <button class="is-active" data-language-switch="de" type="button">DE</button>
-                    <button data-language-switch="en" type="button">EN</button>
-                </div>
-                <button class="bg-bronze-glimmer text-on-primary px-6 py-3 font-body-md text-body-md uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 duration-150" data-tab-target="reservation" type="button">
-                    <span data-i18n="nav.reserve">Reservierung</span>
-                </button>
-            </div>
+
+<body class="bg-surface text-on-surface selection:bg-bronze-glimmer selection:text-white>
+    <nav class=" fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md" data-header>
+    <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+        <div class="font-headline-md text-headline-md text-bronze-glimmer tracking-tighter">SESAMIE</div>
+        <div class="hidden md:flex items-center space-x-8">
+            <span class="tab-link active font-body-md text-body-md uppercase tracking-widest" data-tab="home"
+                data-i18n="nav.home">Home</span>
+            <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface" data-tab="menu"
+                data-i18n="nav.menu">Speisekarte</span>
+            <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
+                data-tab="reservation" data-i18n="nav.reserve">Reservierung</span>
+            <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
+                data-tab="contact" data-i18n="nav.contact">Kontakt</span>
         </div>
-        <div class="md:hidden flex items-center gap-6 px-6 py-2 border-t border-outline-variant/30 overflow-x-auto no-scrollbar tab-links-mobile bg-surface/80">
-            <span class="tab-link active font-label-sm text-label-sm uppercase tracking-widest" data-tab="home" data-i18n="nav.home">Home</span>
-            <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="menu" data-i18n="nav.menu">Speisekarte</span>
-            <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="reservation" data-i18n="nav.reserve">Reservierung</span>
-            <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="contact" data-i18n="nav.contact">Kontakt</span>
+        <div class="flex items-center gap-3">
+            <div class="language-switch" role="group" aria-label="Language switch">
+                <button class="is-active" data-language-switch="de" type="button">DE</button>
+                <button data-language-switch="en" type="button">EN</button>
+            </div>
+            <button
+                class="bg-bronze-glimmer text-on-primary px-6 py-3 font-body-md text-body-md uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 duration-150"
+                data-tab-target="reservation" type="button">
+                <span data-i18n="nav.reserve">Reservierung</span>
+            </button>
         </div>
+    </div>
+    <div
+        class="md:hidden flex items-center gap-6 px-6 py-2 border-t border-outline-variant/30 overflow-x-auto no-scrollbar tab-links-mobile bg-surface/80">
+        <span class="tab-link active font-label-sm text-label-sm uppercase tracking-widest" data-tab="home"
+            data-i18n="nav.home">Home</span>
+        <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="menu"
+            data-i18n="nav.menu">Speisekarte</span>
+        <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface"
+            data-tab="reservation" data-i18n="nav.reserve">Reservierung</span>
+        <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="contact"
+            data-i18n="nav.contact">Kontakt</span>
+    </div>
     </nav>
 
     <main>
         <div class="tab-content active" id="home">
             <section class="relative h-screen flex items-center justify-center overflow-hidden">
                 <div class="absolute inset-0 z-0">
-                    <img class="w-full h-full object-cover opacity-60" src="./assets/images/site/hero-home.jpg"/>
+                    <img class="w-full h-full object-cover opacity-60" src="./assets/images/site/hero-home.jpg" />
                     <div class="absolute inset-0 bg-gradient-to-b from-surface/40 via-transparent to-surface"></div>
                 </div>
                 <div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop">
-                    <span class="inline-block mb-6 font-label-lg text-label-lg uppercase tracking-[0.3em] text-bronze-glimmer animate-pulse">
+                    <span
+                        class="inline-block mb-6 font-label-lg text-label-lg uppercase tracking-[0.3em] text-bronze-glimmer animate-pulse">
                         The Art of Asian Fusion
                     </span>
                     <h1 class="font-display-lg text-display-lg md:text-display-lg leading-tight mb-6 max-w-4xl mx-auto">
                         SESAMIE — Asian Fusion Cuisine
                     </h1>
-                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10" data-i18n="hero.subtitle">
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10"
+                        data-i18n="hero.subtitle">
                         Einzigartige Geschmackserlebnisse in Ingolstadt. Wo Tradition auf Innovation trifft.
                     </p>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                        <button class="bg-bronze-glimmer text-white px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer/90 transition-all bronze-glow" data-tab-target="reservation" type="button">
+                        <button
+                            class="bg-bronze-glimmer text-white px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer/90 transition-all bronze-glow"
+                            data-tab-target="reservation" type="button">
                             <span data-i18n="hero.discover">Entdecken Sie Mehr</span>
                         </button>
-                        <button class="border border-bronze-glimmer text-bronze-glimmer px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-white transition-all" data-tab-target="menu" type="button">
+                        <button
+                            class="border border-bronze-glimmer text-bronze-glimmer px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-white transition-all"
+                            data-tab-target="menu" type="button">
                             <span data-i18n="hero.fullMenu">Unsere Speisekarte</span>
                         </button>
                     </div>
                 </div>
                 <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-                    <span class="material-symbols-outlined text-bronze-glimmer text-4xl">keyboard_double_arrow_down</span>
+                    <span
+                        class="material-symbols-outlined text-bronze-glimmer text-4xl">keyboard_double_arrow_down</span>
                 </div>
             </section>
 
             <section class="py-section-padding bg-surface-container-low" id="philosophy">
-                <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                <div
+                    class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
                     <div class="reveal-on-scroll">
                         <div class="relative">
-                            <div class="absolute -top-10 -left-10 w-40 h-40 border-t-2 border-l-2 border-bronze-glimmer/30"></div>
-                            <img class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700" src="./assets/images/site/philosophy.jpg"/>
-                            <div class="absolute -bottom-10 -right-10 w-40 h-40 border-b-2 border-r-2 border-bronze-glimmer/30"></div>
+                            <div
+                                class="absolute -top-10 -left-10 w-40 h-40 border-t-2 border-l-2 border-bronze-glimmer/30">
+                            </div>
+                            <img class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                src="./assets/images/site/philosophy.jpg" />
+                            <div
+                                class="absolute -bottom-10 -right-10 w-40 h-40 border-b-2 border-r-2 border-bronze-glimmer/30">
+                            </div>
                         </div>
                     </div>
                     <div class="reveal-on-scroll">
-                        <h2 class="font-headline-lg text-headline-lg text-bronze-glimmer mb-8" data-i18n="home.philosophyEyebrow">Philosophie &amp; Handwerk</h2>
-                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed" data-i18n="home.philosophyBodyOne"></p>
-                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed" data-i18n="home.philosophyBodyTwo"></p>
+                        <h2 class="font-headline-lg text-headline-lg text-bronze-glimmer mb-8"
+                            data-i18n="home.philosophyEyebrow">Philosophie &amp; Handwerk</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed"
+                            data-i18n="home.philosophyBodyOne"></p>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed"
+                            data-i18n="home.philosophyBodyTwo"></p>
                         <div class="grid grid-cols-2 gap-8 border-t border-outline-variant pt-10">
                             <div>
-                                <span class="block font-headline-md text-headline-md text-bronze-glimmer mb-2" data-i18n="home.freshValue">100%</span>
-                                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" data-i18n="home.freshLabel">Frische Garantie</span>
+                                <span class="block font-headline-md text-headline-md text-bronze-glimmer mb-2"
+                                    data-i18n="home.freshValue">100%</span>
+                                <span
+                                    class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant"
+                                    data-i18n="home.freshLabel">Frische Garantie</span>
                             </div>
                             <div>
-                                <span class="block font-headline-md text-headline-md text-bronze-glimmer mb-2" data-i18n="home.craftValue">Artisan</span>
-                                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" data-i18n="home.craftLabel">Handgemachte Details</span>
+                                <span class="block font-headline-md text-headline-md text-bronze-glimmer mb-2"
+                                    data-i18n="home.craftValue">Artisan</span>
+                                <span
+                                    class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant"
+                                    data-i18n="home.craftLabel">Handgemachte Details</span>
                             </div>
                         </div>
                     </div>
@@ -193,12 +232,17 @@
 
             <section class="py-section-padding bg-surface">
                 <div class="max-w-container-max mx-auto px-margin-desktop mb-20 text-center">
-                    <span class="font-label-lg text-label-lg uppercase tracking-[0.3em] text-bronze-glimmer mb-4 block" data-i18n="home.featuredEyebrow">Auswahl des Hauses</span>
-                    <h2 class="font-headline-lg text-headline-lg" data-i18n="home.featuredTitle">Kulinarische Highlights</h2>
+                    <span class="font-label-lg text-label-lg uppercase tracking-[0.3em] text-bronze-glimmer mb-4 block"
+                        data-i18n="home.featuredEyebrow">Auswahl des Hauses</span>
+                    <h2 class="font-headline-lg text-headline-lg" data-i18n="home.featuredTitle">Kulinarische Highlights
+                    </h2>
                 </div>
-                <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter" data-featured-menu></div>
+                <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter"
+                    data-featured-menu></div>
                 <div class="mt-20 text-center">
-                    <button class="font-label-lg text-label-lg uppercase tracking-widest text-bronze-glimmer border-b border-bronze-glimmer pb-2 hover:opacity-70 transition-opacity" data-tab-target="menu" type="button" data-i18n="home.featuredCta">
+                    <button
+                        class="font-label-lg text-label-lg uppercase tracking-widest text-bronze-glimmer border-b border-bronze-glimmer pb-2 hover:opacity-70 transition-opacity"
+                        data-tab-target="menu" type="button" data-i18n="home.featuredCta">
                         Vollständige Speisekarte ansehen
                     </button>
                 </div>
@@ -207,13 +251,19 @@
             <section class="relative py-section-padding bg-earth-shadow overflow-hidden">
                 <div class="max-w-container-max mx-auto px-margin-desktop flex flex-col items-center text-center">
                     <div class="reveal-on-scroll max-w-3xl">
-                        <h2 class="font-display-lg text-display-lg text-on-surface mb-8" data-i18n="home.reservationTitle">Reservieren Sie Ihren Tisch</h2>
-                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-12" data-i18n="home.reservationBody"></p>
+                        <h2 class="font-display-lg text-display-lg text-on-surface mb-8"
+                            data-i18n="home.reservationTitle">Reservieren Sie Ihren Tisch</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-12"
+                            data-i18n="home.reservationBody"></p>
                         <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                            <button class="bg-bronze-glimmer text-on-primary px-16 py-6 font-label-lg text-label-lg uppercase tracking-[0.2em] hover:scale-105 transition-all duration-300 bronze-glow" data-tab-target="reservation" type="button" data-i18n="home.reservationPrimary">
+                            <button
+                                class="bg-bronze-glimmer text-on-primary px-16 py-6 font-label-lg text-label-lg uppercase tracking-[0.2em] hover:scale-105 transition-all duration-300 bronze-glow"
+                                data-tab-target="reservation" type="button" data-i18n="home.reservationPrimary">
                                 JETZT RESERVIEREN
                             </button>
-                            <button class="border border-bronze-glimmer text-bronze-glimmer px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-white transition-all" data-tab-target="menu" type="button" data-i18n="home.reservationSecondary">
+                            <button
+                                class="border border-bronze-glimmer text-bronze-glimmer px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-white transition-all"
+                                data-tab-target="menu" type="button" data-i18n="home.reservationSecondary">
                                 Zur Speisekarte
                             </button>
                         </div>
@@ -228,17 +278,20 @@
         <div class="tab-content" id="menu">
             <section class="relative h-[614px] flex items-center justify-center overflow-hidden pt-20">
                 <div class="absolute inset-0 z-0">
-                    <img class="w-full h-full object-cover brightness-50" src="./assets/images/site/hero-menu.jpg"/>
+                    <img class="w-full h-full object-cover brightness-50" src="./assets/images/site/hero-menu.jpg" />
                 </div>
                 <div class="relative z-10 text-center px-4">
-                    <span class="font-label-lg text-bronze-glimmer tracking-[0.3em] uppercase mb-4 block" data-i18n="menu.eyebrow">Kulinarische Meisterschaft</span>
-                    <h1 class="font-display-lg text-display-lg text-on-surface mb-6" data-i18n="nav.menu">Speisekarte</h1>
+                    <span class="font-label-lg text-bronze-glimmer tracking-[0.3em] uppercase mb-4 block"
+                        data-i18n="menu.eyebrow">Kulinarische Meisterschaft</span>
+                    <h1 class="font-display-lg text-display-lg text-on-surface mb-6" data-i18n="nav.menu">Speisekarte
+                    </h1>
                     <div class="w-24 h-1 bg-bronze-glimmer mx-auto"></div>
                 </div>
             </section>
 
             <section class="py-section-padding px-margin-desktop max-w-[800px] mx-auto text-center">
-                <p class="font-headline-md text-bronze-glimmer italic mb-8" data-i18n="menu.quote">"Qualität, die man schmeckt. Tradition, die man fühlt."</p>
+                <p class="font-headline-md text-bronze-glimmer italic mb-8" data-i18n="menu.quote">"Qualität, die man
+                    schmeckt. Tradition, die man fühlt."</p>
                 <p class="font-body-lg text-on-surface-variant leading-relaxed" data-i18n="menu.intro"></p>
             </section>
 
@@ -248,12 +301,16 @@
                         <section class="glass-panel p-6 md:p-8">
                             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
                                 <div>
-                                    <span class="block mb-3 text-xs uppercase tracking-[0.28em] text-bronze-glimmer" data-i18n="book.viewerLabel">Doppelseite</span>
-                                    <h2 class="font-headline-lg text-headline-lg text-on-surface" data-i18n="book.title"></h2>
+                                    <span class="block mb-3 text-xs uppercase tracking-[0.28em] text-bronze-glimmer"
+                                        data-i18n="book.viewerLabel">Doppelseite</span>
+                                    <h2 class="font-headline-lg text-headline-lg text-on-surface"
+                                        data-i18n="book.title"></h2>
                                 </div>
                                 <div class="book-controls">
-                                    <button aria-label="Previous pages" class="icon-button" data-book-prev type="button">&#8592;</button>
-                                    <button aria-label="Next pages" class="icon-button" data-book-next type="button">&#8594;</button>
+                                    <button aria-label="Previous pages" class="icon-button" data-book-prev
+                                        type="button">&#8592;</button>
+                                    <button aria-label="Next pages" class="icon-button" data-book-next
+                                        type="button">&#8594;</button>
                                 </div>
                             </div>
                             <div class="menu-book-preview">
@@ -262,21 +319,27 @@
                                     <small>Menu Ritual</small>
                                 </div>
                                 <div class="menu-book menu-book-trigger" data-menu-book></div>
-                                <button aria-label="Open menu book" class="book-preview-overlay" data-open-book-modal type="button"></button>
+                                <button aria-label="Open menu book" class="book-preview-overlay" data-open-book-modal
+                                    type="button"></button>
                             </div>
                             <div class="book-stage-bottom mt-6">
                                 <span data-book-caption data-i18n="book.caption"></span>
                                 <div class="flex items-center gap-5">
                                     <strong data-book-page-indicator>1 - 2</strong>
-                                    <button class="ghost-link" data-open-book-modal type="button" data-i18n="book.expandLink">Buch gross offnen</button>
+                                    <button class="ghost-link" data-open-book-modal type="button"
+                                        data-i18n="book.expandLink">Buch gross offnen</button>
                                 </div>
                             </div>
                         </section>
                         <section class="glass-panel p-8 md:p-10 text-center">
-                            <p class="font-label-lg text-label-lg uppercase tracking-[0.3em] text-bronze-glimmer mb-4" data-i18n="menu.title">Bestellen aus den Live-Menudaten</p>
-                            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Bestellung auf eigener Seite</h2>
-                            <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8" data-i18n="menu.subtitle"></p>
-                            <a class="inline-flex items-center justify-center bg-bronze-glimmer text-on-primary px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 duration-150" href="./order.html">
+                            <p class="font-label-lg text-label-lg uppercase tracking-[0.3em] text-bronze-glimmer mb-4"
+                                data-i18n="menu.title">Bestellen aus den Live-Menudaten</p>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Bestellung auf eigener
+                                Seite</h2>
+                            <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8"
+                                data-i18n="menu.subtitle"></p>
+                            <a class="inline-flex items-center justify-center bg-bronze-glimmer text-on-primary px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 duration-150"
+                                href="./order.html">
                                 <span data-i18n="nav.order">Bestellen</span>
                             </a>
                         </section>
@@ -284,13 +347,17 @@
 
                     <aside class="space-y-8">
                         <div class="glass-panel p-8">
-                            <h3 class="font-headline-md text-headline-md text-bronze-glimmer mb-4" data-i18n="menu.title"></h3>
-                            <p class="font-body-md text-on-surface-variant leading-relaxed" data-i18n="menu.subtitle"></p>
+                            <h3 class="font-headline-md text-headline-md text-bronze-glimmer mb-4"
+                                data-i18n="menu.title"></h3>
+                            <p class="font-body-md text-on-surface-variant leading-relaxed" data-i18n="menu.subtitle">
+                            </p>
                         </div>
                         <div class="glass-panel p-8">
-                            <p class="font-label-lg text-bronze-glimmer uppercase tracking-widest mb-4" data-i18n="book.noteOneLabel">Quelle</p>
+                            <p class="font-label-lg text-bronze-glimmer uppercase tracking-widest mb-4"
+                                data-i18n="book.noteOneLabel">Quelle</p>
                             <p class="font-body-md text-on-surface-variant mb-6" data-i18n="book.noteOneValue"></p>
-                            <p class="font-label-lg text-bronze-glimmer uppercase tracking-widest mb-4" data-i18n="book.noteTwoLabel">Flow</p>
+                            <p class="font-label-lg text-bronze-glimmer uppercase tracking-widest mb-4"
+                                data-i18n="book.noteTwoLabel">Flow</p>
                             <p class="font-body-md text-on-surface-variant" data-i18n="book.noteTwoValue"></p>
                         </div>
                     </aside>
@@ -300,47 +367,80 @@
 
         <div class="tab-content" id="reservation">
             <header class="relative pt-32 pb-20 overflow-hidden">
-                <div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
-                    <span class="font-label-lg text-label-lg text-bronze-glimmer uppercase mb-4 block" data-i18n="reservation.eyebrow">Exklusiv Genießen</span>
-                    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6" data-i18n="reservation.title">Tisch Reservieren</h1>
-                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto" data-i18n="reservation.intro"></p>
+                <div
+                    class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+                    <span class="font-label-lg text-label-lg text-bronze-glimmer uppercase mb-4 block"
+                        data-i18n="reservation.eyebrow">Exklusiv Genießen</span>
+                    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6"
+                        data-i18n="reservation.title">Tisch Reservieren</h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto"
+                        data-i18n="reservation.intro"></p>
                 </div>
             </header>
             <main class="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-section-padding">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
-                    <div class="lg:col-span-8 bg-surface-container p-8 md:p-12 border border-outline-variant/30 relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-bronze-glimmer/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-bronze-glimmer/10 transition-all duration-700"></div>
+                    <div
+                        class="lg:col-span-8 bg-surface-container p-8 md:p-12 border border-outline-variant/30 relative overflow-hidden group">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-bronze-glimmer/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-bronze-glimmer/10 transition-all duration-700">
+                        </div>
                         <form class="space-y-10 relative z-10" data-reservation-form>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                                 <div class="space-y-2 group">
-                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.date">Datum</label>
-                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300" name="date" required="" type="date"/>
+                                    <label
+                                        class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                                        data-i18n="reservation.date">Datum</label>
+                                    <input
+                                        class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300"
+                                        name="date" required="" type="date" />
                                 </div>
                                 <div class="space-y-2 group">
-                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.time">Uhrzeit</label>
-                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300" name="time" required="" type="time"/>
+                                    <label
+                                        class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                                        data-i18n="reservation.time">Uhrzeit</label>
+                                    <input
+                                        class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300"
+                                        name="time" required="" type="time" />
                                 </div>
                                 <div class="space-y-2 group">
-                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.guests">Personenanzahl</label>
-                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300" min="1" name="guests" required="" type="number"/>
+                                    <label
+                                        class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                                        data-i18n="reservation.guests">Personenanzahl</label>
+                                    <input
+                                        class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300"
+                                        min="1" name="guests" required="" type="number" />
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
                                 <div class="space-y-2 group">
-                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.name">Vollständiger Name</label>
-                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300 placeholder:text-outline-variant/50" name="name" required="" type="text"/>
+                                    <label
+                                        class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                                        data-i18n="reservation.name">Vollständiger Name</label>
+                                    <input
+                                        class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300 placeholder:text-outline-variant/50"
+                                        name="name" required="" type="text" />
                                 </div>
                                 <div class="space-y-2 group">
-                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.phone">Telefonnummer</label>
-                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300 placeholder:text-outline-variant/50" name="phone" required="" type="tel"/>
+                                    <label
+                                        class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                                        data-i18n="reservation.phone">Telefonnummer</label>
+                                    <input
+                                        class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300 placeholder:text-outline-variant/50"
+                                        name="phone" required="" type="tel" />
                                 </div>
                                 <div class="space-y-2 group md:col-span-2">
-                                    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest" data-i18n="reservation.note">Besondere Wünsche</label>
-                                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300 placeholder:text-outline-variant/50" name="note" type="text"/>
+                                    <label
+                                        class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                                        data-i18n="reservation.note">Besondere Wünsche</label>
+                                    <input
+                                        class="w-full bg-transparent border-0 border-b border-outline-variant py-3 text-on-surface font-body-md form-input-focus transition-all duration-300 placeholder:text-outline-variant/50"
+                                        name="note" type="text" />
                                 </div>
                             </div>
                             <div class="pt-8">
-                                <button class="w-full md:w-auto px-12 py-5 bg-bronze-glimmer text-on-surface-variant font-label-lg text-label-lg uppercase tracking-[0.2em] font-bold hover:bg-opacity-80 transition-all duration-300 active:scale-95" data-i18n="reservation.submit" type="submit">
+                                <button
+                                    class="w-full md:w-auto px-12 py-5 bg-bronze-glimmer text-on-surface-variant font-label-lg text-label-lg uppercase tracking-[0.2em] font-bold hover:bg-opacity-80 transition-all duration-300 active:scale-95"
+                                    data-i18n="reservation.submit" type="submit">
                                     Jetzt Tisch Anfragen
                                 </button>
                             </div>
@@ -348,21 +448,29 @@
                     </div>
                     <div class="lg:col-span-4 space-y-gutter">
                         <div class="relative h-64 w-full group overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="./assets/images/site/hero-reservation.jpg"/>
-                            <div class="absolute inset-0 bg-surface/40 group-hover:bg-surface/20 transition-all duration-500"></div>
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="./assets/images/site/hero-reservation.jpg" />
+                            <div
+                                class="absolute inset-0 bg-surface/40 group-hover:bg-surface/20 transition-all duration-500">
+                            </div>
                         </div>
                         <div class="bg-surface-container-high p-8 border border-outline-variant/30">
-                            <h3 class="font-headline-md text-[24px] text-on-surface mb-4" data-i18n="reservation.expressTitle">Express Buchung</h3>
-                            <p class="font-body-md text-on-surface-variant mb-8" data-i18n="reservation.expressBody"></p>
-                            <a class="inline-flex items-center gap-3 px-6 py-4 border border-bronze-glimmer text-bronze-glimmer font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-on-primary transition-all duration-300" data-business-link="phone" href="#">
+                            <h3 class="font-headline-md text-[24px] text-on-surface mb-4"
+                                data-i18n="reservation.expressTitle">Express Buchung</h3>
+                            <p class="font-body-md text-on-surface-variant mb-8" data-i18n="reservation.expressBody">
+                            </p>
+                            <a class="inline-flex items-center gap-3 px-6 py-4 border border-bronze-glimmer text-bronze-glimmer font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-on-primary transition-all duration-300"
+                                data-business-link="phone" href="#">
                                 <span class="material-symbols-outlined">chat</span>
                                 <span data-i18n="reservation.expressButton">WhatsApp Reservierung</span>
                             </a>
                         </div>
                         <div class="p-8 border-l-2 border-bronze-glimmer bg-earth-shadow/30">
-                            <h4 class="font-label-lg text-label-lg text-bronze-glimmer uppercase mb-2" data-i18n="reservation.questionsTitle"></h4>
+                            <h4 class="font-label-lg text-label-lg text-bronze-glimmer uppercase mb-2"
+                                data-i18n="reservation.questionsTitle"></h4>
                             <p class="font-body-md text-on-surface mb-4" data-i18n="reservation.questionsBody"></p>
-                            <a class="font-body-md text-on-surface underline hover:text-bronze-glimmer transition-colors" data-business="email" data-business-link="email" href="#"></a>
+                            <a class="font-body-md text-on-surface underline hover:text-bronze-glimmer transition-colors"
+                                data-business="email" data-business-link="email" href="#"></a>
                         </div>
                     </div>
                 </div>
@@ -373,59 +481,82 @@
             <main class="pt-32 pb-section-padding">
                 <header class="px-margin-desktop max-w-container-max mx-auto mb-24">
                     <div class="max-w-3xl">
-                        <span class="text-bronze-glimmer font-label-lg uppercase tracking-[0.3em] block mb-4" data-i18n="contact.eyebrow">Verbindung aufnehmen</span>
-                        <h1 class="font-display-lg text-display-lg leading-tight mb-8" data-i18n="contact.title">Kontakt &amp; Anfahrt</h1>
-                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl" data-i18n="contact.intro"></p>
+                        <span class="text-bronze-glimmer font-label-lg uppercase tracking-[0.3em] block mb-4"
+                            data-i18n="contact.eyebrow">Verbindung aufnehmen</span>
+                        <h1 class="font-display-lg text-display-lg leading-tight mb-8" data-i18n="contact.title">Kontakt
+                            &amp; Anfahrt</h1>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl" data-i18n="contact.intro">
+                        </p>
                     </div>
                 </header>
-                <section class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+                <section
+                    class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter">
                     <div class="lg:col-span-5 space-y-gutter">
                         <div class="glass-panel p-10 flex flex-col justify-between h-full min-h-[400px]">
                             <div>
-                                <h2 class="font-headline-md text-headline-md text-on-surface mb-8" data-i18n="contact.location">Standort</h2>
+                                <h2 class="font-headline-md text-headline-md text-on-surface mb-8"
+                                    data-i18n="contact.location">Standort</h2>
                                 <div class="space-y-6">
                                     <div class="flex items-start gap-4">
-                                        <span class="material-symbols-outlined text-bronze-glimmer mt-1">location_on</span>
+                                        <span
+                                            class="material-symbols-outlined text-bronze-glimmer mt-1">location_on</span>
                                         <div>
                                             <p class="font-body-lg text-body-lg" data-business="address"></p>
                                         </div>
                                     </div>
                                     <div class="flex items-start gap-4">
                                         <span class="material-symbols-outlined text-bronze-glimmer mt-1">call</span>
-                                        <a class="font-body-lg text-body-lg" data-business="phoneDisplay" data-business-link="phone" href="#"></a>
+                                        <a class="font-body-lg text-body-lg" data-business="phoneDisplay"
+                                            data-business-link="phone" href="#"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-12 pt-12 border-t border-outline-variant/30">
-                                <h3 class="font-label-lg text-bronze-glimmer uppercase tracking-widest mb-6" data-i18n="contact.opening">Öffnungszeiten</h3>
+                                <h3 class="font-label-lg text-bronze-glimmer uppercase tracking-widest mb-6"
+                                    data-i18n="contact.opening">Öffnungszeiten</h3>
                                 <div class="space-y-3 font-body-md text-on-surface-variant" data-business-hours></div>
                             </div>
                         </div>
                     </div>
                     <div class="lg:col-span-7">
                         <div class="bg-surface-container p-10 h-full border border-outline-variant/10">
-                            <h2 class="font-headline-md text-headline-md text-on-surface mb-8" data-i18n="contact.messageTitle">Nachricht senden</h2>
+                            <h2 class="font-headline-md text-headline-md text-on-surface mb-8"
+                                data-i18n="contact.messageTitle">Nachricht senden</h2>
                             <form class="space-y-8">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div class="relative">
-                                        <label class="block text-label-sm text-on-surface-variant uppercase mb-2">Name</label>
-                                        <input class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all" placeholder="Ihr vollständiger Name" type="text"/>
+                                        <label
+                                            class="block text-label-sm text-on-surface-variant uppercase mb-2">Name</label>
+                                        <input
+                                            class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all"
+                                            placeholder="Ihr vollständiger Name" type="text" />
                                     </div>
                                     <div class="relative">
-                                        <label class="block text-label-sm text-on-surface-variant uppercase mb-2">E-Mail</label>
-                                        <input class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all" placeholder="ihre@mail.de" type="email"/>
+                                        <label
+                                            class="block text-label-sm text-on-surface-variant uppercase mb-2">E-Mail</label>
+                                        <input
+                                            class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all"
+                                            placeholder="ihre@mail.de" type="email" />
                                     </div>
                                 </div>
                                 <div class="relative">
-                                    <label class="block text-label-sm text-on-surface-variant uppercase mb-2">Betreff</label>
-                                    <input class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all" placeholder="Worum geht es?" type="text"/>
+                                    <label
+                                        class="block text-label-sm text-on-surface-variant uppercase mb-2">Betreff</label>
+                                    <input
+                                        class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all"
+                                        placeholder="Worum geht es?" type="text" />
                                 </div>
                                 <div class="relative">
-                                    <label class="block text-label-sm text-on-surface-variant uppercase mb-2">Ihre Nachricht</label>
-                                    <textarea class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all resize-none" placeholder="Wie können wir Ihnen helfen?" rows="4"></textarea>
+                                    <label class="block text-label-sm text-on-surface-variant uppercase mb-2">Ihre
+                                        Nachricht</label>
+                                    <textarea
+                                        class="w-full bg-surface-container-low border-0 border-b border-outline-variant py-3 px-0 bronze-glow text-on-surface placeholder:text-on-surface-variant/30 transition-all resize-none"
+                                        placeholder="Wie können wir Ihnen helfen?" rows="4"></textarea>
                                 </div>
                                 <div class="pt-4">
-                                    <button class="bg-bronze-glimmer text-on-primary font-label-lg px-12 py-4 tracking-widest hover:opacity-90 transition-all active:scale-95" type="button" data-i18n="contact.messageSubmit">
+                                    <button
+                                        class="bg-bronze-glimmer text-on-primary font-label-lg px-12 py-4 tracking-widest hover:opacity-90 transition-all active:scale-95"
+                                        type="button" data-i18n="contact.messageSubmit">
                                         NACHRICHT ABSCHICKEN
                                     </button>
                                 </div>
@@ -433,16 +564,22 @@
                         </div>
                     </div>
                     <div class="lg:col-span-12 mt-12 relative group overflow-hidden">
-                        <div class="w-full h-[500px] bg-surface-container-highest flex items-center justify-center relative">
-                            <img class="w-full h-full object-cover opacity-60 grayscale group-hover:scale-105 transition-transform duration-700" src="./assets/images/site/philosophy.jpg"/>
-                            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40"></div>
+                        <div
+                            class="w-full h-[500px] bg-surface-container-highest flex items-center justify-center relative">
+                            <img class="w-full h-full object-cover opacity-60 grayscale group-hover:scale-105 transition-transform duration-700"
+                                src="./assets/images/site/philosophy.jpg" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40">
+                            </div>
                             <div class="absolute flex flex-col items-center justify-center text-center p-8">
-                                <div class="w-16 h-16 bg-bronze-glimmer flex items-center justify-center mb-4 rounded-full shadow-2xl">
+                                <div
+                                    class="w-16 h-16 bg-bronze-glimmer flex items-center justify-center mb-4 rounded-full shadow-2xl">
                                     <span class="material-symbols-outlined text-on-primary text-3xl">location_on</span>
                                 </div>
                                 <a class="glass-panel px-8 py-4" data-business-link="map" href="#">
-                                    <h4 class="font-headline-md text-headline-md text-on-surface mb-1">SESAMIE Ingolstadt</h4>
-                                    <p class="font-body-md text-on-surface-variant" data-i18n="contact.route">Klicken Sie, um die Route in Google Maps zu planen</p>
+                                    <h4 class="font-headline-md text-headline-md text-on-surface mb-1">SESAMIE
+                                        Ingolstadt</h4>
+                                    <p class="font-body-md text-on-surface-variant" data-i18n="contact.route">Klicken
+                                        Sie, um die Route in Google Maps zu planen</p>
                                 </a>
                             </div>
                             <iframe class="sr-only" data-map-frame src=""></iframe>
@@ -457,23 +594,29 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
             <div class="space-y-6">
                 <div class="font-headline-md text-headline-md text-bronze-glimmer">SESAMIE</div>
-                <p class="font-body-md text-body-md text-on-surface-variant max-w-xs leading-relaxed" data-i18n="footer.text"></p>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-xs leading-relaxed"
+                    data-i18n="footer.text"></p>
                 <div class="flex space-x-6">
-                    <a class="text-on-surface hover:text-bronze-glimmer transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-                    <a class="text-on-surface hover:text-bronze-glimmer transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
-                    <a class="text-on-surface hover:text-bronze-glimmer transition-colors" href="#"><span class="material-symbols-outlined">restaurant</span></a>
+                    <a class="text-on-surface hover:text-bronze-glimmer transition-colors" href="#"><span
+                            class="material-symbols-outlined">public</span></a>
+                    <a class="text-on-surface hover:text-bronze-glimmer transition-colors" href="#"><span
+                            class="material-symbols-outlined">language</span></a>
+                    <a class="text-on-surface hover:text-bronze-glimmer transition-colors" href="#"><span
+                            class="material-symbols-outlined">restaurant</span></a>
                 </div>
             </div>
             <div class="space-y-8">
-                <h4 class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface" data-i18n="contact.opening">Öffnungszeiten</h4>
+                <h4 class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface"
+                    data-i18n="contact.opening">Öffnungszeiten</h4>
                 <div class="space-y-4 font-body-md text-body-md text-on-surface-variant" data-business-hours></div>
             </div>
             <div class="space-y-8">
-                <h4 class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface" data-i18n="nav.contact">Kontakt</h4>
+                <h4 class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface"
+                    data-i18n="nav.contact">Kontakt</h4>
                 <address class="not-italic space-y-4 font-body-md text-body-md text-on-surface-variant">
                     <p data-business="address"></p>
                     <p>
-                        <a data-business="phoneDisplay" data-business-link="phone" href="#"></a><br/>
+                        <a data-business="phoneDisplay" data-business-link="phone" href="#"></a><br />
                         <a data-business="email" data-business-link="email" href="#"></a>
                     </p>
                 </address>
@@ -481,15 +624,18 @@
         </div>
     </footer>
 
-    <div class="md:hidden fixed bottom-0 w-full z-50 bg-bronze-glimmer px-6 py-4 flex justify-center shadow-[0_-10px_20px_rgba(0,0,0,0.3)]">
-        <button class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-white flex items-center gap-3" data-tab-target="reservation" type="button">
+    <div
+        class="md:hidden fixed bottom-0 w-full z-50 bg-bronze-glimmer px-6 py-4 flex justify-center shadow-[0_-10px_20px_rgba(0,0,0,0.3)]">
+        <button class="font-label-lg text-label-lg uppercase tracking-[0.2em] text-white flex items-center gap-3"
+            data-tab-target="reservation" type="button">
             <span class="material-symbols-outlined">calendar_today</span>
             <span data-i18n="nav.reserve">Reservierung</span>
         </button>
     </div>
 
     <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
-    <aside class="cart-drawer" data-cart-drawer aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="site-cart-title">
+    <aside class="cart-drawer" data-cart-drawer aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="site-cart-title">
         <div class="drawer-header">
             <div>
                 <p class="text-xs uppercase tracking-[0.28em] text-bronze-glimmer">SESAMIE</p>
@@ -501,8 +647,9 @@
             <div class="cart-body">
                 <div class="cart-items" data-cart-items></div>
                 <div class="drawer-form">
-                    <label><span data-i18n="order.name">Name</span><input name="name" required type="text"/></label>
-                    <label><span data-i18n="order.phone">Telefon</span><input name="phone" required type="tel"/></label>
+                    <label><span data-i18n="order.name">Name</span><input name="name" required type="text" /></label>
+                    <label><span data-i18n="order.phone">Telefon</span><input name="phone" required
+                            type="tel" /></label>
                     <label>
                         <span data-i18n="order.typeLabel">Anfrage</span>
                         <select name="type">
@@ -511,8 +658,10 @@
                             <option value="general">Allgemeine Anfrage</option>
                         </select>
                     </label>
-                    <label><span data-i18n="order.desiredTime">Gewunschte Zeit</span><input name="desiredTime" type="text"/></label>
-                    <label><span data-i18n="order.message">Ihre Nachricht</span><textarea name="note" rows="3"></textarea></label>
+                    <label><span data-i18n="order.desiredTime">Gewunschte Zeit</span><input name="desiredTime"
+                            type="text" /></label>
+                    <label><span data-i18n="order.message">Ihre Nachricht</span><textarea name="note"
+                            rows="3"></textarea></label>
                 </div>
             </div>
             <div class="drawer-summary">
@@ -530,7 +679,8 @@
         <div class="option-modal-card">
             <div class="drawer-header">
                 <div>
-                    <p class="text-xs uppercase tracking-[0.28em] text-bronze-glimmer" data-i18n="menu.chooseOption">Option auswahlen</p>
+                    <p class="text-xs uppercase tracking-[0.28em] text-bronze-glimmer" data-i18n="menu.chooseOption">
+                        Option auswahlen</p>
                     <h2 data-option-title></h2>
                 </div>
                 <button aria-label="Close options" class="icon-button" data-close-options type="button">&times;</button>
@@ -545,7 +695,8 @@
         <div class="book-modal-shell">
             <div class="drawer-header">
                 <div>
-                    <p class="text-xs uppercase tracking-[0.28em] text-bronze-glimmer" data-i18n="book.modalEyebrow"></p>
+                    <p class="text-xs uppercase tracking-[0.28em] text-bronze-glimmer" data-i18n="book.modalEyebrow">
+                    </p>
                     <h2 data-i18n="book.modalTitle"></h2>
                 </div>
                 <button aria-label="Close book" class="icon-button" data-close-book-modal type="button">&times;</button>
@@ -554,7 +705,8 @@
             <div class="book-stage-top modal-book-stage-top">
                 <strong data-book-page-indicator-modal>1 - 2</strong>
                 <div class="book-controls">
-                    <button aria-label="Previous pages" class="icon-button" data-book-prev type="button">&#8592;</button>
+                    <button aria-label="Previous pages" class="icon-button" data-book-prev
+                        type="button">&#8592;</button>
                     <button aria-label="Next pages" class="icon-button" data-book-next type="button">&#8594;</button>
                 </div>
             </div>
@@ -567,4 +719,5 @@
     <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
     <script src="./assets/js/app.js" type="module"></script>
 </body>
+
 </html>
