@@ -637,6 +637,41 @@ button {
   transform: translateX(0);
 }
 
+.drawer-order-form {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(166, 124, 82, 0.38) rgba(255, 250, 244, 0.05);
+}
+
+.cart-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-body::-webkit-scrollbar-track {
+  background: rgba(255, 250, 244, 0.05);
+  border-radius: 999px;
+}
+
+.cart-body::-webkit-scrollbar-thumb {
+  background: rgba(166, 124, 82, 0.38);
+  border-radius: 999px;
+}
+
+.cart-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(166, 124, 82, 0.56);
+}
+
 .drawer-header {
   display: flex;
   justify-content: space-between;
@@ -657,32 +692,7 @@ button {
 }
 
 .cart-items {
-  flex: 1;
-  min-height: 0;
-  overflow: auto;
-  padding: 1.25rem 0;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(166, 124, 82, 0.38) rgba(255, 250, 244, 0.05);
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-}
-
-.cart-items::-webkit-scrollbar {
-  width: 6px;
-}
-
-.cart-items::-webkit-scrollbar-track {
-  background: rgba(255, 250, 244, 0.05);
-  border-radius: 999px;
-}
-
-.cart-items::-webkit-scrollbar-thumb {
-  background: rgba(166, 124, 82, 0.38);
-  border-radius: 999px;
-}
-
-.cart-items::-webkit-scrollbar-thumb:hover {
-  background: rgba(166, 124, 82, 0.56);
+  padding: 1.25rem 0 0.9rem;
 }
 
 .cart-empty {
@@ -773,6 +783,14 @@ button {
 .drawer-form {
   display: grid;
   gap: 0.9rem;
+}
+
+.cart-body > .drawer-form {
+  padding-bottom: 0.35rem;
+}
+
+.drawer-form > strong[data-cart-total] {
+  display: none;
 }
 
 .drawer-form label span {
@@ -1648,13 +1666,14 @@ body.has-cart-open .order-page .order-ui__button {
   }
 
   .order-page .cart-items {
-    flex: 1 1 auto;
-    min-height: 0;
-    max-height: none;
-    padding-bottom: 1rem;
-    overflow: auto;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
+    padding-top: 0.85rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .order-page .cart-body {
+    padding-right: 0.15rem;
+    padding-bottom: 0.8rem;
+    touch-action: pan-y;
   }
 
   .order-page .cart-line {

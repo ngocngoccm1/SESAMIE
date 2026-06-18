@@ -47,7 +47,7 @@ const elements = {
   drawerBackdrop: document.querySelector("[data-drawer-backdrop]"),
   cartDrawer: document.querySelector("[data-cart-drawer]"),
   cartItems: document.querySelector("[data-cart-items]"),
-  cartTotal: document.querySelector("[data-cart-total]"),
+  cartTotals: document.querySelectorAll("[data-cart-total]"),
   orderForm: document.querySelector("[data-order-form]"),
   reservationForm: document.querySelector("[data-reservation-form]"),
   optionBackdrop: document.querySelector("[data-option-backdrop]"),
@@ -802,11 +802,13 @@ function addToCart(item, variant = null) {
 }
 
 function updateCart() {
-  if (!elements.cartTotal || !elements.cartItems) return;
+  if (!elements.cartTotals || elements.cartTotals.length === 0 || !elements.cartItems) return;
   const copy = getCopy();
   const total = state.cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
 
-  elements.cartTotal.textContent = formatPrice(total);
+  elements.cartTotals.forEach((node) => {
+    node.textContent = formatPrice(total);
+  });
   updateOrderUi();
 
   if (state.cart.length === 0) {
