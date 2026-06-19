@@ -36,9 +36,24 @@ function inferFilterKeys(sectionName, tags) {
   const result = new Set(["all"]);
 
   if (
-    /(limonade|lassi|cafe|wasser|nektar|tee|softdrink|cocktail|aperitif|bier|beer|spirit|wein|wine|mocktail)/.test(
-      haystack
-    )
+    [
+      "hausgemachte limonade",
+      "lassi-shakes",
+      "cafe",
+      "mocktails",
+      "wasser",
+      "nektar & spritzer",
+      "tee",
+      "softdrink",
+      "cocktails",
+      "long drink / aperitif drink",
+      "bier",
+      "beer",
+      "spirituosen",
+      "spirits",
+      "wein",
+      "wine"
+    ].includes(haystack)
   ) {
     result.add("drinks");
   }
@@ -51,6 +66,28 @@ function inferFilterKeys(sectionName, tags) {
   if (/dessert/.test(haystack)) result.add("dessert");
 
   return [...result];
+}
+
+function inferOnlineAvailability(sectionName) {
+  const haystack = sectionName.toLowerCase().trim();
+  return ![
+    "hausgemachte limonade",
+    "lassi-shakes",
+    "cafe",
+    "mocktails",
+    "wasser",
+    "nektar & spritzer",
+    "tee",
+    "softdrink",
+    "cocktails",
+    "long drink / aperitif drink",
+    "bier",
+    "beer",
+    "spirituosen",
+    "spirits",
+    "wein",
+    "wine"
+  ].includes(haystack);
 }
 
 function createVariant(sectionId, itemName, variant, fallbackPrice, fallbackAllergens, fallbackAdditives, fallbackTags) {
@@ -81,6 +118,7 @@ export function normalizeMenu(rawData, language) {
         createVariant(sectionId, item.name, variant, price, allergens, additives, tags)
       );
       const filterKeys = inferFilterKeys(section.name, tags);
+      const availableOnline = inferOnlineAvailability(section.name);
 
       return {
         id: slugify(`${sectionId}-${item.name}`),
@@ -98,6 +136,7 @@ export function normalizeMenu(rawData, language) {
         tags,
         variants,
         filterKeys,
+        availableOnline,
         searchText: [
           section.name,
           item.name,
@@ -115,6 +154,7 @@ export function normalizeMenu(rawData, language) {
       id: sectionId,
       name: section.name,
       items,
+      availableOnline: items.some((item) => item.availableOnline),
       filterKeys: [...new Set(items.flatMap((item) => item.filterKeys))]
     };
   });

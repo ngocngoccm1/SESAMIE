@@ -94,11 +94,11 @@ function getMenuTabNameFromHash() {
   const hash = window.location.hash.replace("#", "").trim().toLowerCase();
   if (hash.startsWith("menu-section-")) return "menu";
   const allowedTabs = new Set(["home", "menu", "reservation", "contact"]);
-  return allowedTabs.has(hash) ? hash : "home";
+  return allowedTabs.has(hash) ? hash : "menu";
 }
 
 function setActiveTab(tabName, { updateHash = true, scrollToTop = true } = {}) {
-  const safeTab = ["home", "menu", "reservation", "contact"].includes(tabName) ? tabName : "home";
+  const safeTab = ["home", "menu", "reservation", "contact"].includes(tabName) ? tabName : "menu";
 
   elements.tabPanels.forEach((panel) => {
     panel.classList.toggle("active", panel.id === safeTab);
@@ -320,7 +320,22 @@ async function loadMenu(language) {
 
 function renderFilters() {
   if (!state.menu || !elements.filterList) return;
-  const filtersMarkup = state.menu.filters
+  const sourceItems = isOrderPage ? state.menu.items.filter((item) => item.availableOnline) : state.menu.items;
+  const filters = state.menu.filters
+    .map((filter) => ({
+      ...filter,
+      count:
+        filter.key === "all"
+          ? sourceItems.length
+          : sourceItems.filter((item) => item.filterKeys.includes(filter.key)).length
+    }))
+    .filter((filter) => filter.count > 0);
+
+  if (!filters.some((filter) => filter.key === state.activeFilter)) {
+    state.activeFilter = "all";
+  }
+
+  const filtersMarkup = filters
     .map(
       (filter) => `
         <button
@@ -393,9 +408,10 @@ function getVisibleSections() {
     .map((section) => ({
       ...section,
       items: section.items.filter((item) => {
+        const matchesAvailability = !isOrderPage || item.availableOnline;
         const matchesFilter = state.activeFilter === "all" || item.filterKeys.includes(state.activeFilter);
         const matchesQuery = !query || item.searchText.includes(query);
-        return matchesFilter && matchesQuery;
+        return matchesAvailability && matchesFilter && matchesQuery;
       })
     }))
     .filter((section) => section.items.length > 0);
@@ -785,19 +801,30 @@ function getLocalizedCartEntry(entry) {
 }
 
 function addToCart(item, variant = null) {
-  state.cart.push({
-    id: `${item.id}-${variant?.id || "default"}-${Date.now()}`,
-    itemId: item.id,
-    variantId: variant?.id || "",
-    name: item.name,
-    sectionName: item.sectionName,
-    variantLabel: [variant?.name, variant?.size].filter(Boolean).join(" - "),
-    quantity: 1,
-    note: "",
-    unitPrice: variant?.price ?? item.price ?? 0
-  });
+  const variantId = variant?.id || "";
+  const existingEntry = state.cart.find((entry) => entry.itemId === item.id && entry.variantId === variantId);
+
+  if (existingEntry) {
+    existingEntry.quantity += 1;
+  } else {
+    state.cart.push({
+      id: `${item.id}-${variantId || "default"}`,
+      itemId: item.id,
+      variantId,
+      name: item.name,
+      sectionName: item.sectionName,
+      variantLabel: [variant?.name, variant?.size].filter(Boolean).join(" - "),
+      quantity: 1,
+      note: "",
+      unitPrice: variant?.price ?? item.price ?? 0
+    });
+  }
 
   updateCart();
+  if (isOrderPage) {
+    showToast(getCopy().menu.added);
+    return;
+  }
   openCart();
 }
 
