@@ -43,22 +43,20 @@ export const UI_COPY = {
       fullMenu: "Online bestellen"
     },
     home: {
-      philosophyEyebrow: "Philosophie & Handwerk",
+      philosophyEyebrow: "Mit Liebe gekocht",
       philosophyBodyOne:
-        "Bei SESAMIE wird Essen als ruhiges Gesamterlebnis gedacht - mit warmem Licht, klarer Prasentation und Aromen, die bewusst aufeinander aufbauen.",
+        "Bei SESAMIE glauben wir, dass gutes Essen keine großen Worte braucht.",
       philosophyBodyTwo:
-        "Die Speisekarte verbindet Asia Kitchen, Sushi und moderne Teller mit handwerklicher Zubereitung, frischen Zutaten und einem entspannten Rhythmus fur den Abend.",
-      freshValue: "100%",
-      freshLabel: "Frische Zutaten",
-      craftValue: "Artisan",
-      craftLabel: "Handgemachte Details",
-      featuredEyebrow: "Auswahl des Hauses",
-      featuredTitle: "Kulinarische Highlights",
+        "Frische Zutaten, authentische Rezepte und sorgfältige Handarbeit stehen im Mittelpunkt dessen, was wir täglich servieren. Ob Sushi, warme Küche oder vegane Gerichte - jedes Gericht wird mit Respekt vor den Zutaten und Liebe zum Detail zubereitet.",
+      craftStatement:
+        "Frisch Sorgfaltig Ausgewahlte Zutaten Mit Liebe zubereitet Vielfaltig Herzlich Inspiriert von Asien Serviert wie fur Freunde",
+      featuredEyebrow: "Aus der Sesamie Küche",
+      featuredTitle: "Unsere Empfehlungen",
       featuredCta: "Online bestellen",
       reservationEyebrow: "Reservierung",
-      reservationTitle: "Reservieren Sie Ihren Tisch",
+      reservationTitle: "Wir freuen uns auf Ihren Besuch",
       reservationBody:
-        "Sichern Sie sich Ihren Platz fur einen entspannten Abend bei SESAMIE oder wechseln Sie direkt zur separaten Bestellseite.",
+        "Ob bei uns im Restaurant oder zu Hause - genieBen Sie die Vielfalt asiatischer Kuche, frisch zubereitet und mit Sorgfalt serviert.",
       reservationPrimary: "Zur Reservierung",
       reservationSecondary: "Online bestellen"
     },
@@ -87,15 +85,17 @@ export const UI_COPY = {
     },
     menu: {
       title: "Online bestellen",
+      orderHeading: "Fur zu Hause genieBen",
       subtitle:
-        "Alle Gerichte fur die Vorbestellung finden Sie auf der separaten Bestellseite in einer klaren Ubersicht.",
+        "Ihre Lieblingsgerichte von SESAMIE - frisch zubereitet und bequem online bestellt. 10% Rabatt bei Abholung.",
       eyebrow: "Kulinarische Meisterschaft",
-      quote: "Qualitat, die man schmeckt. Tradition, die man fuhlt.",
+      quote: "Mit Liebe gekocht. Ehrlich serviert.",
       intro:
-        "Blattern Sie zuerst durch die Speisekarte und wechseln Sie dann zur separaten Bestellseite fur eine komplette Bestellung in einem Durchgang.",
+        "Unsere Speisekarte vereint frisches Sushi, asiatische Klassiker und vielfaltige vegane Gerichte - mit Respekt vor den Zutaten und Freude am Kochen.",
       navLabel: "Kategorien",
       search: "Gericht suchen...",
       filtersLabel: "Kategorien",
+      orderCta: "Jetzt bestellen",
       empty: "Speisekarte konnte nicht geladen werden.",
       loading: "Speisekarte wird geladen...",
       results: "Gerichte sichtbar",
@@ -108,7 +108,7 @@ export const UI_COPY = {
       choose: "Auswahlen"
     },
     book: {
-      title: "Die echte Speisekarte als atmospharisches Buch",
+      title: "Aus der Sesamie Kuche",
       subtitle:
         "Blattern Sie durch die echten Menu-Seiten. Fur Bestellungen wechseln Sie danach auf die separate Bestellseite.",
       noteOneLabel: "Quelle",
@@ -134,7 +134,7 @@ export const UI_COPY = {
       total: "Gesamt",
       pageTitle: "Online bestellen",
       pageIntro: "Alle Gerichte fur die Vorbestellung auf einer separaten Seite. Wahlen Sie Ihre Speisen, sammeln Sie alles im Warenkorb und senden Sie die Bestellung erst am Ende.",
-      alert: "Derzeit sind nur Vorbestellungen moglich.",
+      alert: "Einfach auswahlen. Bequem bestellen.",
       sidebarTitle: "Bestellung in einem Schritt",
       sidebarBody: "Wahlen Sie alle Gerichte in Ruhe aus, offnen Sie danach den Warenkorb und senden Sie die komplette Bestellung gesammelt.",
       cartCta: "Warenkorb",
@@ -157,11 +157,11 @@ export const UI_COPY = {
       note: "Notiz"
     },
     reservation: {
-      eyebrow: "Exklusiv geniessen",
+      eyebrow: "Ein Platz fur Genuss",
       title: "Tisch reservieren",
       subtitle: "Schnell, direkt und unkompliziert.",
       intro:
-        "Senden Sie Ihre Anfrage direkt an SESAMIE. Fur Gruppen oder besondere Wunsche konnen Sie uns jederzeit zusatzlich per E-Mail kontaktieren.",
+        " Ein Platz für Genuss Ob mit Freunden, mit der Familie oder einfach für eine kleine Auszeit vom Alltag - wir freuen uns darauf, Sie bei SESAMIE willkommen zu heißen.",
       name: "Name",
       phone: "Telefon",
       date: "Datum",
@@ -173,8 +173,8 @@ export const UI_COPY = {
       expressTitle: "Express Buchung",
       expressBody: "Senden Sie Ihre Reservierungsanfrage direkt und erhalten Sie schnell eine Ruckmeldung.",
       expressButton: "Reservierung senden",
-      questionsTitle: "Fragen zur Reservierung?",
-      questionsBody: "Fur Gruppenanfragen oder besondere Events erreichen Sie uns direkt per E-Mail."
+      questionsTitle: "Gruppen & Veranstaltungen",
+      questionsBody: "Fur Gruppenreservierungen oder besondere Anlasse erreichen Sie uns gerne per E-Mail."
     },
     contact: {
       title: "Besuchen Sie SESAMIE",
@@ -270,8 +270,9 @@ export const UI_COPY = {
     },
     menu: {
       title: "Order online",
+      orderHeading: "Enjoy SESAMIE at home",
       subtitle:
-        "All dishes for preorder are available on the separate ordering page in one clear overview.",
+        "Your favorite SESAMIE dishes, freshly prepared and easy to order online. 10% discount for pickup.",
       eyebrow: "Culinary mastery",
       quote: "Quality you can taste. Tradition you can feel.",
       intro:
@@ -279,6 +280,7 @@ export const UI_COPY = {
       navLabel: "Categories",
       search: "Search dishes...",
       filtersLabel: "Categories",
+      orderCta: "Order now",
       empty: "The menu could not be loaded.",
       loading: "Loading the menu...",
       results: "visible dishes",
