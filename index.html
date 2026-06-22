@@ -126,6 +126,10 @@
                 data-tab="contact" data-i18n="nav.contact">Kontakt</span>
         </div>
         <div class="flex items-center gap-3">
+            <a class="hidden md:inline-flex items-center justify-center bg-bronze-glimmer text-on-primary px-6 py-3 font-body-md text-body-md uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 duration-150"
+                href="./order.html">
+                <span data-i18n="nav.order">Bestellen</span>
+            </a>
             <div class="language-switch" role="group" aria-label="Language switch">
                 <button class="is-active" data-language-switch="de" type="button">DE</button>
                 <button data-language-switch="en" type="button">EN</button>
@@ -234,12 +238,6 @@
                 </div>
                 <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter"
                     data-featured-menu></div>
-                <div class="mt-20 text-center">
-                    <a class="font-label-lg text-label-lg uppercase tracking-widest text-bronze-glimmer border-b border-bronze-glimmer pb-2 hover:opacity-70 transition-opacity"
-                        href="./order.html" data-i18n="home.featuredCta">
-                        Online bestellen
-                    </a>
-                </div>
             </section>
 
             <section class="relative py-section-padding bg-earth-shadow overflow-hidden">
@@ -255,11 +253,6 @@
                                 data-tab-target="reservation" type="button" data-i18n="home.reservationPrimary">
                                 JETZT RESERVIEREN
                             </button>
-                            <a
-                                class="border border-bronze-glimmer text-bronze-glimmer px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-white transition-all"
-                                href="./order.html" data-i18n="home.reservationSecondary">
-                                Online bestellen
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -296,12 +289,6 @@
                                         data-i18n="book.viewerLabel">Doppelseite</span>
                                     <h2 class="font-headline-lg text-headline-lg text-on-surface"
                                         data-i18n="book.title"></h2>
-                                </div>
-                                <div class="book-controls">
-                                    <button aria-label="Previous pages" class="icon-button" data-book-prev
-                                        type="button">&#8592;</button>
-                                    <button aria-label="Next pages" class="icon-button" data-book-next
-                                        type="button">&#8594;</button>
                                 </div>
                             </div>
                             <div class="menu-book-preview">
@@ -482,12 +469,18 @@
                                 <h2 class="font-headline-md text-headline-md text-on-surface mb-8"
                                     data-i18n="contact.location">Standort</h2>
                                 <div class="space-y-6">
-                                    <div class="flex items-start gap-4">
-                                        <span
-                                            class="material-symbols-outlined text-bronze-glimmer mt-1">location_on</span>
-                                        <div>
-                                            <p class="font-body-lg text-body-lg" data-business="address"></p>
+                                    <div class="space-y-4">
+                                        <div class="overflow-hidden border border-outline-variant/30 bg-surface-container-low">
+                                            <iframe
+                                                class="block w-full h-[260px]"
+                                                data-map-frame
+                                                src=""
+                                                loading="lazy"
+                                                referrerpolicy="no-referrer-when-downgrade"
+                                                allowfullscreen
+                                                title="SESAMIE map"></iframe>
                                         </div>
+                                        <p class="font-body-md text-on-surface-variant" data-business="address"></p>
                                     </div>
                                     <div class="flex items-start gap-4">
                                         <span class="material-symbols-outlined text-bronze-glimmer mt-1">call</span>
@@ -548,27 +541,16 @@
                             </form>
                         </div>
                     </div>
-                    <div class="lg:col-span-12 mt-12 relative group overflow-hidden">
-                        <div
-                            class="w-full h-[500px] bg-surface-container-highest flex items-center justify-center relative">
-                            <img class="w-full h-full object-cover opacity-60 grayscale group-hover:scale-105 transition-transform duration-700"
-                                src="./assets/images/site/philosophy.jpg" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40">
+                    <div class="lg:col-span-12 mt-12">
+                        <a class="glass-panel flex items-center justify-between gap-6 p-6 md:p-8 hover:border-bronze-glimmer/50 transition-colors"
+                            data-business-link="map" href="#">
+                            <div>
+                                <h4 class="font-headline-md text-headline-md text-on-surface mb-2">SESAMIE Ingolstadt</h4>
+                                <p class="font-body-md text-on-surface-variant" data-i18n="contact.route">Klicken
+                                    Sie, um die Route in Google Maps zu planen</p>
                             </div>
-                            <div class="absolute flex flex-col items-center justify-center text-center p-8">
-                                <div
-                                    class="w-16 h-16 bg-bronze-glimmer flex items-center justify-center mb-4 rounded-full shadow-2xl">
-                                    <span class="material-symbols-outlined text-on-primary text-3xl">location_on</span>
-                                </div>
-                                <a class="glass-panel px-8 py-4" data-business-link="map" href="#">
-                                    <h4 class="font-headline-md text-headline-md text-on-surface mb-1">SESAMIE
-                                        Ingolstadt</h4>
-                                    <p class="font-body-md text-on-surface-variant" data-i18n="contact.route">Klicken
-                                        Sie, um die Route in Google Maps zu planen</p>
-                                </a>
-                            </div>
-                            <iframe class="sr-only" data-map-frame src=""></iframe>
-                        </div>
+                            <span class="material-symbols-outlined text-bronze-glimmer text-3xl">north_east</span>
+                        </a>
                     </div>
                 </section>
             </main>

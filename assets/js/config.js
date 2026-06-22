@@ -11,7 +11,8 @@ export const BUSINESS = {
     { days: "Fr. - So.", time: "11:00 - 23:00" }
   ],
   mapUrl: "https://www.google.com/maps/search/?api=1&query=Neuburgerstr.%2019%2085057%20Ingolstadt",
-  mapEmbedUrl: "https://www.google.com/maps?q=Neuburgerstr.%2019%2085057%20Ingolstadt&output=embed",
+  mapEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2629.6848006609134!2d11.406047512469998!3d48.768815306885756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479efe5d55665e01%3A0x1c62ac0dd14b5538!2sNeuburger%20Str.%2019%2C%2085057%20Ingolstadt%2C%20%C4%90%E1%BB%A9c!5e0!3m2!1svi!2s!4v1782108220638!5m2!1svi!2s",
   phoneHref: "tel:+4984123238112"
 };
 
