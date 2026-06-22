@@ -79,6 +79,7 @@ const featuredHomeImages = [
   "./assets/images/site/featured-2.jpg",
   "./assets/images/site/featured-3.jpg"
 ];
+const CASH_DISCOUNT_RATE = 0.1;
 
 function loadAnime() {
   if (prefersReducedMotion) return Promise.resolve(null);
@@ -214,6 +215,24 @@ function formatPrice(value) {
     style: "currency",
     currency: "EUR"
   }).format(value);
+}
+
+function getCartSubtotal() {
+  return state.cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
+}
+
+function getSelectedPaymentMethod() {
+  if (!elements.orderForm) return "cash";
+  const selected = elements.orderForm.querySelector('input[name="paymentMethod"]:checked');
+  return selected?.value === "card" ? "card" : "cash";
+}
+
+function getCartDiscountAmount(subtotal = getCartSubtotal()) {
+  return getSelectedPaymentMethod() === "cash" ? subtotal * CASH_DISCOUNT_RATE : 0;
+}
+
+function getCartTotalAmount(subtotal = getCartSubtotal()) {
+  return Math.max(0, subtotal - getCartDiscountAmount(subtotal));
 }
 
 function getCopy() {
@@ -536,11 +555,12 @@ function updateBookIndicators() {
 
 function updateOrderUi() {
   const quantityTotal = state.cart.reduce((sum, item) => sum + item.quantity, 0);
-  const priceTotal = state.cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
+  const subtotal = getCartSubtotal();
+  const totalAmount = getCartTotalAmount(subtotal);
   const checkoutButtons = document.querySelectorAll(".drawer-submit");
 
   if (elements.orderUiTotal) {
-    elements.orderUiTotal.textContent = formatPrice(priceTotal);
+    elements.orderUiTotal.textContent = formatPrice(totalAmount);
   }
 
   if (elements.orderUiBadge) {
@@ -831,10 +851,21 @@ function addToCart(item, variant = null) {
 function updateCart() {
   if (!elements.cartTotals || elements.cartTotals.length === 0 || !elements.cartItems) return;
   const copy = getCopy();
-  const total = state.cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
+  const subtotal = getCartSubtotal();
+  const discount = getCartDiscountAmount(subtotal);
+  const total = getCartTotalAmount(subtotal);
 
   elements.cartTotals.forEach((node) => {
     node.textContent = formatPrice(total);
+  });
+  document.querySelectorAll("[data-cart-subtotal]").forEach((node) => {
+    node.textContent = formatPrice(subtotal);
+  });
+  document.querySelectorAll("[data-cart-discount]").forEach((node) => {
+    node.textContent = `-${formatPrice(discount)}`;
+  });
+  document.querySelectorAll("[data-cart-discount-row]").forEach((node) => {
+    node.hidden = discount <= 0;
   });
   updateOrderUi();
 
@@ -953,13 +984,20 @@ function buildWhatsAppOrderMessage() {
   if (!elements.orderForm) return "";
   const copy = getCopy();
   const formData = new FormData(elements.orderForm);
-  const total = state.cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
+  const subtotal = getCartSubtotal();
+  const discount = getCartDiscountAmount(subtotal);
+  const total = getCartTotalAmount(subtotal);
   const type = formData.get("type");
+  const paymentMethod = formData.get("paymentMethod") || "cash";
 
   const typeLabelMap = {
     pickup: copy.order.pickup,
     reservation: copy.order.reservation,
     general: copy.order.general
+  };
+  const paymentLabelMap = {
+    cash: copy.order.paymentCash,
+    card: copy.order.paymentCard
   };
 
   const itemsText = state.cart.length
@@ -979,12 +1017,15 @@ function buildWhatsAppOrderMessage() {
     `Name: ${formData.get("name") || ""}`,
     `Telefon: ${formData.get("phone") || ""}`,
     `${state.language === "de" ? "Typ" : "Type"}: ${typeLabelMap[type] || type}`,
+    `${copy.order.paymentLabel}: ${paymentLabelMap[paymentMethod] || paymentMethod}`,
     `${copy.order.desiredTime}: ${formData.get("desiredTime") || ""}`,
     "",
     `${state.language === "de" ? "Bestellung" : "Order"}:`,
     "",
     itemsText,
     "",
+    `${copy.order.subtotal}: ${formatPrice(subtotal)}`,
+    discount > 0 ? `${copy.order.discount}: -${formatPrice(discount)}` : "",
     `${copy.order.total}: ${formatPrice(total)}`,
     `${state.language === "de" ? "Adresse" : "Address"}: ${BUSINESS.address}`,
     formData.get("note") ? `${copy.order.message}: ${formData.get("note")}` : ""
@@ -1264,6 +1305,10 @@ function handleGlobalKeydown(event) {
 }
 
 function handleCartInput(event) {
+  if (event.target.matches('input[name="paymentMethod"]')) {
+    updateCart();
+    return;
+  }
   const noteField = event.target.closest("[data-note-item]");
   if (!noteField) return;
   const item = state.cart.find((entry) => entry.id === noteField.getAttribute("data-note-item"));

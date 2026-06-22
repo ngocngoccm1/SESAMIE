@@ -26,10 +26,10 @@ export const UI_COPY = {
       contact: "Kontakt"
     },
     hero: {
-      eyebrow: "Asia Kitchen & Sushi",
-      title: "Mystische Asia Kitchen & Sushi Abende in Ingolstadt",
+      eyebrow: "COMING SOON",
+      title: "SESAMIE",
       subtitle:
-        "Warme Lichter, feine Aromen und ein ruhiger Abend voller Charakter mitten in Ingolstadt.",
+        "Authentic Asian Food & Fresh Sushi\nIngolstadt\n\nWir bereiten gerade alles fur Sie vor - mit frischen Zutaten, viel Sorgfalt und Liebe zum Detail.",
       reserve: "Tisch reservieren",
       menu: "Menu Buch ansehen",
       order: "Online bestellen",
@@ -129,6 +129,8 @@ export const UI_COPY = {
     order: {
       title: "Ihre Bestellung",
       empty: "Noch keine Gerichte ausgewahlt.",
+      subtotal: "Zwischensumme",
+      discount: "10% Barzahlungsrabatt",
       total: "Gesamt",
       pageTitle: "Online bestellen",
       pageIntro: "Alle Gerichte fur die Vorbestellung auf einer separaten Seite. Wahlen Sie Ihre Speisen, sammeln Sie alles im Warenkorb und senden Sie die Bestellung erst am Ende.",
@@ -146,6 +148,11 @@ export const UI_COPY = {
       name: "Name",
       phone: "Telefon",
       message: "Ihre Nachricht",
+      paymentLabel: "Zahlungsart",
+      paymentCash: "Barzahlung bei Abholung (bevorzugt)",
+      paymentCard: "Kartenzahlung bei Abholung",
+      paymentHint:
+        "Wir freuen uns uber Barzahlung, da sie einen schnellen und unkomplizierten Ablauf ermoglicht. Vielen Dank!",
       remove: "Entfernen",
       note: "Notiz"
     },
@@ -215,10 +222,10 @@ export const UI_COPY = {
       contact: "Contact"
     },
     hero: {
-      eyebrow: "Asia Kitchen & Sushi",
-      title: "Mystic Asian dining nights in Ingolstadt",
+      eyebrow: "COMING SOON",
+      title: "SESAMIE",
       subtitle:
-        "Warm light, refined flavors and a quietly dramatic atmosphere in the heart of Ingolstadt.",
+        "Authentic Asian Food & Fresh Sushi\nIngolstadt\n\nWe are getting everything ready for you - with fresh ingredients, great care and love for detail.",
       reserve: "Reserve a table",
       menu: "Open the menu book",
       order: "Order online",
@@ -305,6 +312,8 @@ export const UI_COPY = {
     order: {
       title: "Your order",
       empty: "No dishes selected yet.",
+      subtotal: "Subtotal",
+      discount: "10% cash discount",
       total: "Total",
       pageTitle: "Order online",
       pageIntro: "All dishes for preorder on one separate page. Choose everything first, open the cart when you are ready, and send the full order once at the end.",
@@ -322,6 +331,11 @@ export const UI_COPY = {
       name: "Name",
       phone: "Phone",
       message: "Your message",
+      paymentLabel: "Payment method",
+      paymentCash: "Cash payment on pickup (preferred)",
+      paymentCard: "Card payment on pickup",
+      paymentHint:
+        "We appreciate cash payment because it keeps pickup quick and uncomplicated. Thank you very much!",
       remove: "Remove",
       note: "Note"
     },

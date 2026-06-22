@@ -149,10 +149,32 @@
           </label>
           <label><span data-i18n="order.desiredTime">Gewuenschte Zeit</span><input name="desiredTime" type="text" /></label>
           <label><span data-i18n="order.message">Ihre Nachricht</span><textarea name="note" rows="3"></textarea></label>
+          <fieldset class="payment-methods">
+            <legend data-i18n="order.paymentLabel">Zahlungsart</legend>
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="cash" checked />
+              <span data-i18n="order.paymentCash">Barzahlung bei Abholung (bevorzugt)</span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="card" />
+              <span data-i18n="order.paymentCard">Kartenzahlung bei Abholung</span>
+            </label>
+            <p class="payment-hint" data-i18n="order.paymentHint">
+              Wir freuen uns uber Barzahlung, da sie einen schnellen und unkomplizierten Ablauf ermoglicht. Vielen Dank!
+            </p>
+          </fieldset>
         </div>
       </div>
 
       <div class="drawer-summary">
+        <div class="summary-row summary-row--minor">
+          <span data-i18n="order.subtotal">Zwischensumme</span>
+          <strong class="summary-aux" data-cart-subtotal>0,00 EUR</strong>
+        </div>
+        <div class="summary-row summary-row--discount" data-cart-discount-row>
+          <span data-i18n="order.discount">10% Barzahlungsrabatt</span>
+          <strong class="summary-discount" data-cart-discount>-0,00 EUR</strong>
+        </div>
         <div class="summary-row">
           <span data-i18n="order.total">Gesamt</span>
           <strong data-cart-total>0,00 EUR</strong>
