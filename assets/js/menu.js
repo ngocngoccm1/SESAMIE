@@ -1,6 +1,7 @@
 import { UI_COPY } from "./config.js";
 
 const FILTER_ORDER = ["all", "drinks", "tapas", "vegan", "chef", "mains", "sushi", "dessert"];
+const HIDDEN_SECTION_NAMES = new Set(["hauptspeisen 2", "hauptspeisen / main course 2"]);
 
 function slugify(value) {
   return value
@@ -107,7 +108,9 @@ function createVariant(sectionId, itemName, variant, fallbackPrice, fallbackAlle
 }
 
 export function normalizeMenu(rawData, language) {
-  const sections = rawData.sections.map((section) => {
+  const sections = rawData.sections
+    .filter((section) => !HIDDEN_SECTION_NAMES.has(String(section.name || "").trim().toLowerCase()))
+    .map((section) => {
     const sectionId = slugify(`${language}-${section.name}`);
     const items = section.items.map((item) => {
       const price = parsePrice(item.price_eur ?? item.price_display);

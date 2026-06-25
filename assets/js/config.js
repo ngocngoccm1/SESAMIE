@@ -132,8 +132,8 @@ export const UI_COPY = {
       subtotal: "Zwischensumme",
       discount: "10% Barzahlungsrabatt",
       total: "Gesamt",
-      pageTitle: "Online bestellen",
-      pageIntro: "Alle Gerichte fur die Vorbestellung auf einer separaten Seite. Wahlen Sie Ihre Speisen, sammeln Sie alles im Warenkorb und senden Sie die Bestellung erst am Ende.",
+      pageTitle: "SESAMIE fur Zuhause",
+      pageIntro: "Frisches Sushi, asiatische Klassiker und vegane Spezialitaten - bequem online bestellen. Bei Abholung erhalten Sie 10% Rabatt.",
       alert: "Einfach auswahlen. Bequem bestellen.",
       sidebarTitle: "Bestellung in einem Schritt",
       sidebarBody: "Wahlen Sie alle Gerichte in Ruhe aus, offnen Sie danach den Warenkorb und senden Sie die komplette Bestellung gesammelt.",
@@ -157,8 +157,8 @@ export const UI_COPY = {
       note: "Notiz"
     },
     reservation: {
-      eyebrow: "Ein Platz fur Genuss",
-      title: "Tisch reservieren",
+      eyebrow: "Tisch reservieren",
+      title: "Ein Platz fur Genuss",
       subtitle: "Schnell, direkt und unkompliziert.",
       intro:
         " Ein Platz für Genuss Ob mit Freunden, mit der Familie oder einfach für eine kleine Auszeit vom Alltag - wir freuen uns darauf, Sie bei SESAMIE willkommen zu heißen.",
@@ -190,7 +190,7 @@ export const UI_COPY = {
       opening: "Offnungszeiten"
     },
     footer: {
-      text: "Modern Asian Kitchen & Sushi in Ingolstadt."
+      text: "Authentic Asian Food & Fresh Sushi · Ingolstadt"
     },
     toast: {
       opening: "Nachricht wird geoffnet...",
@@ -317,8 +317,8 @@ export const UI_COPY = {
       subtotal: "Subtotal",
       discount: "10% cash discount",
       total: "Total",
-      pageTitle: "Order online",
-      pageIntro: "All dishes for preorder on one separate page. Choose everything first, open the cart when you are ready, and send the full order once at the end.",
+      pageTitle: "SESAMIE at home",
+      pageIntro: "Fresh sushi, Asian classics and vegan specialties - conveniently order online. Pick-up orders receive a 10% discount.",
       alert: "Preorders only at the moment.",
       sidebarTitle: "One clear ordering flow",
       sidebarBody: "Choose all dishes at your own pace, then open the cart and send the complete order together.",
@@ -375,7 +375,7 @@ export const UI_COPY = {
       opening: "Opening hours"
     },
     footer: {
-      text: "Modern Asian Kitchen & Sushi in Ingolstadt."
+      text: "Authentic Asian Food & Fresh Sushi · Ingolstadt"
     },
     toast: {
       opening: "Opening your message...",
@@ -399,3 +399,7 @@ export const UI_COPY = {
     }
   }
 };
+
+UI_COPY.de.reservation.title = "Ein Platz für Genuss";
+UI_COPY.de.reservation.intro =
+  "Ob mit Freunden, mit der Familie oder einfach für eine kleine Auszeit vom Alltag - wir freuen uns darauf, Sie bei SESAMIE willkommen zu heißen.";

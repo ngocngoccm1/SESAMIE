@@ -987,14 +987,7 @@ function buildWhatsAppOrderMessage() {
   const subtotal = getCartSubtotal();
   const discount = getCartDiscountAmount(subtotal);
   const total = getCartTotalAmount(subtotal);
-  const type = formData.get("type");
   const paymentMethod = formData.get("paymentMethod") || "cash";
-
-  const typeLabelMap = {
-    pickup: copy.order.pickup,
-    reservation: copy.order.reservation,
-    general: copy.order.general
-  };
   const paymentLabelMap = {
     cash: copy.order.paymentCash,
     card: copy.order.paymentCard
@@ -1016,7 +1009,6 @@ function buildWhatsAppOrderMessage() {
     "",
     `Name: ${formData.get("name") || ""}`,
     `Telefon: ${formData.get("phone") || ""}`,
-    `${state.language === "de" ? "Typ" : "Type"}: ${typeLabelMap[type] || type}`,
     `${copy.order.paymentLabel}: ${paymentLabelMap[paymentMethod] || paymentMethod}`,
     `${copy.order.desiredTime}: ${formData.get("desiredTime") || ""}`,
     "",
