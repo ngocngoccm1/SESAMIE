@@ -34,7 +34,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inter", sans-serif;
   min-height: 100dvh;
 }
 
@@ -141,7 +141,6 @@ button {
   color: white;
 }
 
-.site-header .font-headline-md,
 .order-brand strong,
 .font-display-lg,
 .font-display-lg-mobile,
@@ -152,9 +151,16 @@ button {
 .book-modal-shell h2,
 .option-modal-card h2,
 .menu-section-header h3 {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Inter", sans-serif !important;
   font-weight: 700 !important;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand-mark {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
   text-transform: uppercase;
 }
 
@@ -242,9 +248,11 @@ button {
 
 .featured-menu-heading h3 {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   font-size: 2rem;
   color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .featured-menu-heading span,
@@ -508,7 +516,7 @@ button {
 
 .menu-section-header h3 {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   font-size: clamp(2rem, 2vw, 2.75rem);
   color: var(--accent);
 }
@@ -546,9 +554,11 @@ button {
 
 .menu-card h3 {
   margin: 0.35rem 0 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   font-size: 2rem;
   line-height: 1.12;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .menu-card p {
@@ -609,7 +619,7 @@ button {
 .price-display,
 .option-price {
   color: var(--accent-strong);
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   font-size: 2rem;
   white-space: nowrap;
 }
@@ -702,10 +712,11 @@ button {
 .option-modal-card h2,
 .book-modal-shell h2 {
   margin: 0.35rem 0 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   font-size: 2.2rem;
   color: #f7ebdd;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  text-transform: uppercase;
 }
 
 .cart-items {
@@ -731,9 +742,11 @@ button {
 
 .cart-line h3 {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.35rem;
   color: #f3e6d8;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .cart-line-meta,
@@ -792,7 +805,7 @@ button {
 }
 
 .summary-row strong {
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   font-size: 2rem;
   color: var(--accent-strong);
 }
@@ -809,7 +822,7 @@ button {
 
 .summary-aux,
 .summary-discount {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -1356,8 +1369,9 @@ button {
 
 .order-sidebar-contact h2 {
   margin: 0 0 0.75rem;
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .order-sidebar-contact p,
@@ -1385,10 +1399,11 @@ button {
 
 .order-page-head h1 {
   margin: 0 0 1rem;
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.08;
   color: #2f241c;
+  text-transform: uppercase;
 }
 
 .order-page-head p {
@@ -1505,9 +1520,11 @@ button {
 
 .order-product-copy h3 {
   margin: 0 0 0.55rem;
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.28rem;
   color: #2f241c;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .order-page .menu-category {

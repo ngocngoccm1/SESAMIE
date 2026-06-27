@@ -9,7 +9,7 @@
         name="description" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
@@ -85,14 +85,14 @@
                         gutter: "24px"
                     },
                     fontFamily: {
-                        "body-md": ["Montserrat"],
-                        "headline-md": ["Playfair Display"],
-                        "display-lg-mobile": ["Playfair Display"],
-                        "display-lg": ["Playfair Display"],
-                        "body-lg": ["Montserrat"],
-                        "label-lg": ["Montserrat"],
-                        "headline-lg": ["Playfair Display"],
-                        "label-sm": ["Montserrat"]
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"]
                     },
                     fontSize: {
                         "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
@@ -114,7 +114,7 @@
 <body class="bg-surface text-on-surface selection:bg-bronze-glimmer selection:text-white">
     <nav class="site-header fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md" data-header>
     <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
-        <div class="font-headline-md text-headline-md text-bronze-glimmer tracking-tighter">SESAMIE</div>
+        <div class="brand-mark font-headline-md text-headline-md text-bronze-glimmer tracking-tighter">SESAMIE</div>
         <div class="hidden md:flex items-center space-x-8">
             <span class="tab-link active font-body-md text-body-md uppercase tracking-widest" data-tab="home"
                 data-i18n="nav.home">Home</span>
@@ -215,12 +215,6 @@
                             data-i18n="home.philosophyBodyOne"></p>
                         <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed"
                             data-i18n="home.philosophyBodyTwo"></p>
-                        <div class="border-t border-outline-variant pt-10">
-                            <p class="font-body-lg text-body-lg text-bronze-glimmer leading-relaxed max-w-3xl"
-                                data-i18n="home.craftStatement">
-                                Frisch Sorgfaltig Ausgewahlte Zutaten Mit Liebe zubereitet Vielfaltig Herzlich Inspiriert von Asien Serviert wie fur Freunde
-                            </p>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -287,7 +281,7 @@
                             </div>
                             <div class="menu-book-preview">
                                 <div class="book-spine" aria-hidden="true">
-                                    <span>SESAMIE</span>
+                                    <span class="brand-mark">SESAMIE</span>
                                     <small>Menu Ritual</small>
                                 </div>
                                 <div class="menu-book menu-book-trigger" data-menu-book></div>
@@ -522,7 +516,7 @@
     <footer class="bg-surface-container-lowest py-section-padding border-t border-outline-variant/10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
             <div class="space-y-6">
-                <div class="font-headline-md text-headline-md text-bronze-glimmer">SESAMIE</div>
+                <div class="brand-mark font-headline-md text-headline-md text-bronze-glimmer">SESAMIE</div>
                 <p class="font-body-md text-body-md text-on-surface-variant max-w-xs leading-relaxed"
                     data-i18n="footer.text"></p>
             </div>
