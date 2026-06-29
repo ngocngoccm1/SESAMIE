@@ -120,14 +120,14 @@
                 data-i18n="nav.home">Home</span>
             <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface" data-tab="menu"
                 data-i18n="nav.menu">Speisekarte</span>
-            <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
-                data-tab="reservation" data-i18n="nav.reserve">Reservierung</span>
+            <a class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
+                href="https://www.foodbooking.com/api/res/8_yjp4" data-i18n="nav.reserve">Reservierung</a>
             <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
                 data-tab="contact" data-i18n="nav.contact">Kontakt</span>
         </div>
         <div class="flex items-center gap-3">
             <a class="hidden md:inline-flex items-center justify-center bg-bronze-glimmer text-on-primary px-6 py-3 font-body-md text-body-md uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 duration-150"
-                href="./order.html">
+                href="https://www.foodbooking.com/api/fb/8_yjp4">
                 <span data-i18n="nav.order">Bestellen</span>
             </a>
             <div class="language-switch" role="group" aria-label="Language switch">
@@ -142,12 +142,12 @@
             data-i18n="nav.home">Home</span>
         <span class="tab-link active font-label-sm text-label-sm uppercase tracking-widest" data-tab="menu"
             data-i18n="nav.menu">Speisekarte</span>
-        <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface"
-            data-tab="reservation" data-i18n="nav.reserve">Reservierung</span>
+        <a class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface"
+            href="https://www.foodbooking.com/api/res/8_yjp4" data-i18n="nav.reserve">Reservierung</a>
         <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="contact"
             data-i18n="nav.contact">Kontakt</span>
         <a class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface whitespace-nowrap"
-            href="./order.html">
+            href="https://www.foodbooking.com/api/fb/8_yjp4">
             <span data-i18n="nav.order">Bestellen</span>
         </a>
     </div>
@@ -175,14 +175,14 @@
                         Einzigartige Geschmackserlebnisse in Ingolstadt. Wo Tradition auf Innovation trifft.
                     </p>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                        <button
+                        <a
                             class="bg-bronze-glimmer text-white px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer/90 transition-all bronze-glow"
-                            data-tab-target="reservation" type="button">
+                            href="https://www.foodbooking.com/api/res/8_yjp4">
                             <span data-i18n="hero.reserve">Tisch reservieren</span>
-                        </button>
+                        </a>
                         <a
                             class="border border-bronze-glimmer text-bronze-glimmer px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-white transition-all"
-                            href="./order.html">
+                            href="https://www.foodbooking.com/api/fb/8_yjp4">
                             <span data-i18n="hero.order">Online bestellen</span>
                         </a>
                     </div>
@@ -238,11 +238,11 @@
                         <p class="font-body-lg text-body-lg text-on-surface-variant mb-12"
                             data-i18n="home.reservationBody"></p>
                         <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                            <button
+                            <a
                                 class="bg-bronze-glimmer text-on-primary px-16 py-6 font-label-lg text-label-lg uppercase tracking-[0.2em] hover:scale-105 transition-all duration-300 bronze-glow"
-                                data-tab-target="reservation" type="button" data-i18n="home.reservationPrimary">
+                                href="https://www.foodbooking.com/api/res/8_yjp4" data-i18n="home.reservationPrimary">
                                 JETZT RESERVIEREN
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -305,7 +305,7 @@
                             <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8"
                                 data-i18n="menu.subtitle"></p>
                             <a class="inline-flex items-center justify-center bg-bronze-glimmer text-on-primary px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 duration-150"
-                                href="./order.html">
+                                href="https://www.foodbooking.com/api/fb/8_yjp4">
                                 <span data-i18n="menu.orderCta">Jetzt bestellen</span>
                             </a>
                         </section>
@@ -333,7 +333,7 @@
                         <div
                             class="absolute top-0 right-0 w-32 h-32 bg-bronze-glimmer/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-bronze-glimmer/10 transition-all duration-700">
                         </div>
-                        <form class="space-y-10 relative z-10" data-reservation-form>
+                        <form class="space-y-10 relative z-10" data-reservation-form hidden>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                                 <div class="space-y-2 group">
                                     <label
@@ -394,6 +394,14 @@
                                 </button>
                             </div>
                         </form>
+                        <div class="space-y-8 relative z-10">
+                            <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+                                data-i18n="reservation.externalBody"></p>
+                            <a class="inline-flex w-full md:w-auto items-center justify-center px-12 py-5 bg-bronze-glimmer text-on-surface-variant font-label-lg text-label-lg uppercase tracking-[0.2em] font-bold hover:bg-opacity-80 transition-all duration-300 active:scale-95"
+                                href="https://www.foodbooking.com/api/res/8_yjp4" data-i18n="reservation.submit">
+                                Jetzt Tisch Anfragen
+                            </a>
+                        </div>
                     </div>
                     <div class="lg:col-span-4 space-y-gutter">
                         <div class="relative h-64 w-full group overflow-hidden">

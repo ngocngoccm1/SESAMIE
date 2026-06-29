@@ -13,7 +13,9 @@ export const BUSINESS = {
   mapUrl: "https://www.google.com/maps/search/?api=1&query=Neuburgerstr.%2019%2085057%20Ingolstadt",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2629.6848006609134!2d11.406047512469998!3d48.768815306885756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479efe5d55665e01%3A0x1c62ac0dd14b5538!2sNeuburger%20Str.%2019%2C%2085057%20Ingolstadt%2C%20%C4%90%E1%BB%A9c!5e0!3m2!1svi!2s!4v1782108220638!5m2!1svi!2s",
-  phoneHref: "tel:+4984123238112"
+  phoneHref: "tel:+4984123238112",
+  reservationUrl: "https://www.foodbooking.com/api/res/8_yjp4",
+  orderUrl: "https://www.foodbooking.com/api/fb/8_yjp4"
 };
 
 export const UI_COPY = {
@@ -96,6 +98,7 @@ export const UI_COPY = {
       search: "Gericht suchen...",
       filtersLabel: "Kategorien",
       orderCta: "Jetzt bestellen",
+      externalOrderCta: "Jetzt online bestellen",
       empty: "Speisekarte konnte nicht geladen werden.",
       loading: "Speisekarte wird geladen...",
       results: "Gerichte sichtbar",
@@ -169,6 +172,7 @@ export const UI_COPY = {
       guests: "Personen",
       note: "Ihre Nachricht",
       submit: "Reservierung senden",
+      externalBody: "Reservieren Sie Ihren Tisch direkt uber unser Online-Buchungssystem.",
       hotline: "Fur schnelle Ruckfragen: 0841 23238112",
       expressTitle: "Express Buchung",
       expressBody: "Senden Sie Ihre Reservierungsanfrage direkt und erhalten Sie schnell eine Ruckmeldung.",
@@ -281,6 +285,7 @@ export const UI_COPY = {
       search: "Search dishes...",
       filtersLabel: "Categories",
       orderCta: "Order now",
+      externalOrderCta: "Order online now",
       empty: "The menu could not be loaded.",
       loading: "Loading the menu...",
       results: "visible dishes",
@@ -354,6 +359,7 @@ export const UI_COPY = {
       guests: "Guests",
       note: "Your message",
       submit: "Send reservation",
+      externalBody: "Reserve your table directly through our online booking system.",
       hotline: "For quick questions: 0841 23238112",
       expressTitle: "Express booking",
       expressBody: "Send your reservation request directly and receive a quick response.",

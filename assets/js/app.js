@@ -217,6 +217,11 @@ function formatPrice(value) {
   }).format(value);
 }
 
+function openBookingUrl(url) {
+  if (!url) return;
+  window.location.href = url;
+}
+
 function getCartSubtotal() {
   return state.cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
 }
@@ -773,7 +778,6 @@ function renderMenuCard(item, tagLabels, copy) {
           ${tagsMarkup ? `<div class="tag-row">${tagsMarkup}</div>` : ""}
           <div class="order-product-footer">
             <strong class="price-display">${priceText}</strong>
-            <button type="button" class="menu-add order-add" data-add-item="${item.id}" aria-label="${copy.menu.add}">+</button>
           </div>
           ${allergenText}
         </div>
@@ -1140,26 +1144,28 @@ function handleGlobalClick(event) {
 
   const addButton = event.target.closest("[data-add-item]");
   if (addButton && state.menu) {
-    const item = state.menu.items.find((entry) => entry.id === addButton.getAttribute("data-add-item"));
-    if (!item) return;
-    if (item.variants.length > 0) {
-      openOptions(item);
-    } else {
-      addToCart(item);
-    }
+    openBookingUrl(BUSINESS.orderUrl);
+    return;
+  }
+
+  if (event.target.closest("[data-open-cart]")) {
+    openBookingUrl(BUSINESS.orderUrl);
+    return;
+  }
+
+  if (event.target.closest("[data-external-order]")) {
+    openBookingUrl(BUSINESS.orderUrl);
+    return;
+  }
+
+  if (event.target.closest("[data-external-reservation]")) {
+    openBookingUrl(BUSINESS.reservationUrl);
     return;
   }
 
   const optionButton = event.target.closest("[data-option-index]");
   if (optionButton && state.optionItem) {
-    const variant = state.optionItem.variants[Number(optionButton.getAttribute("data-option-index"))];
-    addToCart(state.optionItem, variant);
-    closeOptions();
-    return;
-  }
-
-  if (event.target.closest("[data-open-cart]")) {
-    openCart();
+    openBookingUrl(BUSINESS.orderUrl);
     return;
   }
 
@@ -1328,14 +1334,14 @@ function bindEvents() {
   if (elements.orderForm) {
     elements.orderForm.addEventListener("submit", (event) => {
       event.preventDefault();
-      sendWhatsApp(buildWhatsAppOrderMessage());
+      openBookingUrl(BUSINESS.orderUrl);
     });
   }
 
   if (elements.reservationForm) {
     elements.reservationForm.addEventListener("submit", (event) => {
       event.preventDefault();
-      sendWhatsApp(buildWhatsAppReservationMessage());
+      openBookingUrl(BUSINESS.reservationUrl);
     });
   }
 

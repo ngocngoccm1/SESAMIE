@@ -1412,6 +1412,28 @@ button {
   line-height: 1.75;
 }
 
+.order-page-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.4rem;
+  min-height: 3.35rem;
+  padding: 0 1.6rem;
+  background: var(--order-primary);
+  color: var(--order-primary-contrast);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+  font-weight: 800;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.order-page-cta:hover {
+  background: #9a6837;
+  transform: translateY(-1px);
+}
+
 .order-toolbar {
   margin-top: 1.25rem;
   padding: 1.1rem 1.25rem;
