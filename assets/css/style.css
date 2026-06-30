@@ -158,9 +158,9 @@ button {
 }
 
 .brand-mark {
-  font-family: "Playfair Display", serif !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
   text-transform: uppercase;
 }
 
@@ -258,6 +258,11 @@ button {
 .featured-menu-heading span,
 .featured-menu-copy p {
   color: var(--text-muted);
+}
+
+[data-i18n="menu.orderHeading"] {
+  text-transform: none;
+  letter-spacing: 0.02em;
 }
 
 .menu-book-preview {
@@ -1160,9 +1165,10 @@ button {
 
 .order-brand strong {
   display: block;
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
   font-size: 1.8rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
 }
 
 .order-brand span {

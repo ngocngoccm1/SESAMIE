@@ -87,7 +87,7 @@ export const UI_COPY = {
     },
     menu: {
       title: "Online bestellen",
-      orderHeading: "Fur zu Hause genieBen",
+      orderHeading: "Für zu Hause genießen",
       subtitle:
         "Ihre Lieblingsgerichte von SESAMIE - frisch zubereitet und bequem online bestellt. 10% Rabatt bei Abholung.",
       eyebrow: "Kulinarische Meisterschaft",
