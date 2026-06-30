@@ -7,8 +7,8 @@ export const BUSINESS = {
   whatsappPhone: "4984123238112",
   email: "sesamiesesamie@gmail.com",
   hours: [
-    { days: "Mo. - Do.", time: "11:00 - 22:30" },
-    { days: "Fr. - So.", time: "11:00 - 23:00" }
+    { days: "Mo. - Do.", time: "11:30 - 22:30" },
+    { days: "Fr. - So.", time: "11:30 - 23:00" }
   ],
   mapUrl: "https://www.google.com/maps/search/?api=1&query=Neuburgerstr.%2019%2085057%20Ingolstadt",
   mapEmbedUrl:
