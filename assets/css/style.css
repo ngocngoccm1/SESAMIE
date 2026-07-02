@@ -141,7 +141,6 @@ button {
   color: white;
 }
 
-.order-brand strong,
 .font-display-lg,
 .font-display-lg-mobile,
 .font-headline-lg,
@@ -261,8 +260,8 @@ button {
 }
 
 [data-i18n="menu.orderHeading"] {
-  text-transform: none;
-  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .menu-book-preview {
