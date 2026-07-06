@@ -113,44 +113,44 @@
 
 <body class="bg-surface text-on-surface selection:bg-bronze-glimmer selection:text-white">
     <nav class="site-header fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md" data-header>
-    <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
-        <div class="brand-mark font-headline-md text-headline-md text-bronze-glimmer tracking-tighter">SESAMIE</div>
-        <div class="hidden md:flex items-center space-x-8">
-            <span class="tab-link active font-body-md text-body-md uppercase tracking-widest" data-tab="home"
+        <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="brand-mark font-headline-md text-headline-md text-bronze-glimmer tracking-tighter">SESAMIE</div>
+            <div class="hidden md:flex items-center space-x-8">
+                <span class="tab-link active font-body-md text-body-md uppercase tracking-widest" data-tab="home"
+                    data-i18n="nav.home">Home</span>
+                <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
+                    data-tab="menu" data-i18n="nav.menu">Speisekarte</span>
+                <a class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
+                    href="https://www.foodbooking.com/api/res/8_yjp4" data-i18n="nav.reserve">Reservierung</a>
+                <a class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
+                    href="https://www.foodbooking.com/api/fb/8_yjp4">
+                    <span data-i18n="nav.order">Bestellen</span>
+                </a>
+                <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
+                    data-tab="contact" data-i18n="nav.contact">Kontakt</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="language-switch" role="group" aria-label="Language switch">
+                    <button class="is-active" data-language-switch="de" type="button">DE</button>
+                    <button data-language-switch="en" type="button">EN</button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="md:hidden flex items-center gap-6 px-6 py-2 border-t border-outline-variant/30 overflow-x-auto no-scrollbar tab-links-mobile bg-surface/80">
+            <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="home"
                 data-i18n="nav.home">Home</span>
-            <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface" data-tab="menu"
+            <span class="tab-link active font-label-sm text-label-sm uppercase tracking-widest" data-tab="menu"
                 data-i18n="nav.menu">Speisekarte</span>
-            <a class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
+            <a class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface"
                 href="https://www.foodbooking.com/api/res/8_yjp4" data-i18n="nav.reserve">Reservierung</a>
-            <a class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
+            <a class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface whitespace-nowrap"
                 href="https://www.foodbooking.com/api/fb/8_yjp4">
                 <span data-i18n="nav.order">Bestellen</span>
             </a>
-            <span class="tab-link font-body-md text-body-md uppercase tracking-widest text-on-surface"
+            <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface"
                 data-tab="contact" data-i18n="nav.contact">Kontakt</span>
         </div>
-        <div class="flex items-center gap-3">
-            <div class="language-switch" role="group" aria-label="Language switch">
-                <button class="is-active" data-language-switch="de" type="button">DE</button>
-                <button data-language-switch="en" type="button">EN</button>
-            </div>
-        </div>
-    </div>
-    <div
-        class="md:hidden flex items-center gap-6 px-6 py-2 border-t border-outline-variant/30 overflow-x-auto no-scrollbar tab-links-mobile bg-surface/80">
-        <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="home"
-            data-i18n="nav.home">Home</span>
-        <span class="tab-link active font-label-sm text-label-sm uppercase tracking-widest" data-tab="menu"
-            data-i18n="nav.menu">Speisekarte</span>
-        <a class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface"
-            href="https://www.foodbooking.com/api/res/8_yjp4" data-i18n="nav.reserve">Reservierung</a>
-        <a class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface whitespace-nowrap"
-            href="https://www.foodbooking.com/api/fb/8_yjp4">
-            <span data-i18n="nav.order">Bestellen</span>
-        </a>
-        <span class="tab-link font-label-sm text-label-sm uppercase tracking-widest text-on-surface" data-tab="contact"
-            data-i18n="nav.contact">Kontakt</span>
-    </div>
     </nav>
 
     <main>
@@ -175,13 +175,11 @@
                         Einzigartige Geschmackserlebnisse in Ingolstadt. Wo Tradition auf Innovation trifft.
                     </p>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                        <a
-                            class="bg-bronze-glimmer text-white px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer/90 transition-all bronze-glow"
+                        <a class="bg-bronze-glimmer text-white px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer/90 transition-all bronze-glow"
                             href="https://www.foodbooking.com/api/res/8_yjp4">
                             <span data-i18n="hero.reserve">Tisch reservieren</span>
                         </a>
-                        <a
-                            class="border border-bronze-glimmer text-bronze-glimmer px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-white transition-all"
+                        <a class="border border-bronze-glimmer text-bronze-glimmer px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-bronze-glimmer hover:text-white transition-all"
                             href="https://www.foodbooking.com/api/fb/8_yjp4">
                             <span data-i18n="hero.order">Online bestellen</span>
                         </a>
@@ -238,8 +236,7 @@
                         <p class="font-body-lg text-body-lg text-on-surface-variant mb-12"
                             data-i18n="home.reservationBody"></p>
                         <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                            <a
-                                class="bg-bronze-glimmer text-on-primary px-16 py-6 font-label-lg text-label-lg uppercase tracking-[0.2em] hover:scale-105 transition-all duration-300 bronze-glow"
+                            <a class="bg-bronze-glimmer text-on-primary px-16 py-6 font-label-lg text-label-lg uppercase tracking-[0.2em] hover:scale-105 transition-all duration-300 bronze-glow"
                                 href="https://www.foodbooking.com/api/res/8_yjp4" data-i18n="home.reservationPrimary">
                                 JETZT RESERVIEREN
                             </a>
@@ -252,7 +249,8 @@
         <div class="tab-content active" id="menu">
             <section class="relative h-[614px] flex items-center justify-center overflow-hidden pt-20">
                 <div class="absolute inset-0 z-0">
-                    <img class="w-full h-full object-cover brightness-50" src="./assets/images/site/hero-menu-sushi.png" />
+                    <img class="w-full h-full object-cover brightness-50"
+                        src="./assets/images/site/hero-menu-sushi.png" />
                 </div>
                 <div class="relative z-10 text-center px-4">
                     <span class="font-label-lg text-bronze-glimmer tracking-[0.3em] uppercase mb-4 block"
@@ -434,14 +432,10 @@
                                     data-i18n="contact.location">Standort</h2>
                                 <div class="space-y-6">
                                     <div class="space-y-4">
-                                        <div class="overflow-hidden border border-outline-variant/30 bg-surface-container-low">
-                                            <iframe
-                                                class="block w-full h-[260px]"
-                                                data-map-frame
-                                                src=""
-                                                loading="lazy"
-                                                referrerpolicy="no-referrer-when-downgrade"
-                                                allowfullscreen
+                                        <div
+                                            class="overflow-hidden border border-outline-variant/30 bg-surface-container-low">
+                                            <iframe class="block w-full h-[260px]" data-map-frame src="" loading="lazy"
+                                                referrerpolicy="no-referrer-when-downgrade" allowfullscreen
                                                 title="SESAMIE map"></iframe>
                                         </div>
                                         <p class="font-body-md text-on-surface-variant" data-business="address"></p>
@@ -509,7 +503,8 @@
                         <a class="glass-panel flex items-center justify-between gap-6 p-6 md:p-8 hover:border-bronze-glimmer/50 transition-colors"
                             data-business-link="map" href="#">
                             <div>
-                                <h4 class="font-headline-md text-headline-md text-on-surface mb-2">SESAMIE Ingolstadt</h4>
+                                <h4 class="font-headline-md text-headline-md text-on-surface mb-2">SESAMIE Ingolstadt
+                                </h4>
                                 <p class="font-body-md text-on-surface-variant" data-i18n="contact.route">Klicken
                                     Sie, um die Route in Google Maps zu planen</p>
                             </div>
